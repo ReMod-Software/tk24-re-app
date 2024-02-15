@@ -10,9 +10,9 @@
     <img src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
   </header>
 
-  <main class="p-4 rounded-lg flex flex-col justify-center items-center text-white">
+  <main class="p-4 rounded-lg flex flex-col">
     <div
-      class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0"
+      class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0 text-white"
       id="main-hero">
       <h1 class="text-center text-xl md:text-3xl font-extralight">Looking for a <span
           class="font-serif text-2xl px-2 italic font-semibold">space?</span> We have one <span
@@ -20,6 +20,16 @@
       <div class="flex w-auto md:w-[65%]">
         <input type="search" placeholder="Search for Properties!" class="border-box flex-grow p-2 px-4 rounded-none">
         <img src="/svg/search.svg" class="aspect-square bg-white invert p-2 h-full" />
+      </div>
+    </div>
+    <div class="content md:mx-40">
+      <h1 class="text-2xl text-center">
+        We care about our <span class="font-serif">consumers</span>, and their quality of place...
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div v-for="ft in CONSUMER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4">
+           <img :src="'/svg/' + ft.icon + '.svg' " class="h-16 w-16">
+        </div>
       </div>
     </div>
   </main>
@@ -87,6 +97,20 @@ const FOOTER_ITEMS = {
     "Partners"
   ]
 }
+
+interface Feature {
+  icon: string
+  name: string
+  description: string
+}
+
+const CONSUMER_FEATURES: Feature[] = [
+
+]
+
+const PROVIDER_FEATURES: Feature[] = [
+  
+]
 </script>
 
 <style>#main-hero {
