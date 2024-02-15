@@ -2,7 +2,8 @@
   <header class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0">
     <img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
     <nav class="hidden md:flex gap-6 justify-center items-center">
-      <a v-for="item in HEADER_NAV" href="{{ item.content }}" class="uppercase text-2xl text-center text-black no-underline hover:underline">
+      <a v-for="item in HEADER_NAV" href="{{ item.content }}"
+        class="uppercase text-2xl text-center text-black no-underline hover:underline">
         {{ item.content }}
       </a>
     </nav>
@@ -10,8 +11,12 @@
   </header>
 
   <main class="p-4 rounded-lg flex flex-col justify-center items-center text-white">
-    <div class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0" id="main-hero">
-      <h1 class="text-center text-xl md:text-3xl font-extralight">Looking for a <span class="font-serif text-2xl px-2 italic font-semibold">space?</span> We have one <span class="font-serif text-2xl px-2 italic font-semibold">for you!</span></h1>
+    <div
+      class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0"
+      id="main-hero">
+      <h1 class="text-center text-xl md:text-3xl font-extralight">Looking for a <span
+          class="font-serif text-2xl px-2 italic font-semibold">space?</span> We have one <span
+          class="font-serif text-2xl px-2 italic font-semibold">for you!</span></h1>
       <div class="flex w-auto md:w-[65%]">
         <input type="search" placeholder="Search for Properties!" class="border-box flex-grow p-2 px-4 rounded-none">
         <img src="/svg/search.svg" class="aspect-square bg-white invert p-2 h-full" />
@@ -33,7 +38,8 @@
     </div>
 
     <div class="flex justify-center items-center gap-4">
-      <img class="invert opacity-60 h-8 w-8" v-for="social in SOCIALS" :src="'/svg/logo--' + social.toLowerCase() + '.svg' " />
+      <img class="invert opacity-60 h-8 w-8" v-for="social in SOCIALS"
+        :src="'/svg/logo--' + social.toLowerCase() + '.svg'" />
     </div>
 
     <p class="text-center text-white">
@@ -83,9 +89,7 @@ const FOOTER_ITEMS = {
 }
 </script>
 
-<style>
-#main-hero {
+<style>#main-hero {
   background-image: url("/photos/search_bg.webp");
   background-size: cover;
-}
-</style>
+}</style>
