@@ -2,7 +2,7 @@
     <header class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0">
         <img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
         <nav class="hidden md:flex gap-6 justify-center items-center">
-            <a v-for="item in HEADER_NAV" href="{{ item.content }}"
+            <a v-for="item in HEADER_NAV" :href="item.content"
                 class="uppercase text-2xl text-center text-black no-underline hover:underline">
                 {{ item.content }}
             </a>
@@ -11,26 +11,33 @@
     </header>
 
     <main class="m-4 mb-16 md:mx-40 rounded-lg flex flex-col gap-4">
-        <h1 class="text-2xl font-semibold text-black">Welcome to our Real Estate Insights!</h1>
-        <p>
-            Embark on a journey of discovery with our engaging blog, where we delve into the dynamic world of real estate,
-            offering valuable insights, expert advice, and inspiring stories to guide you through your property journey.
-            Whether you're a first-time buyer, a seasoned investor, or a curious observer, our blog is your go-to
-            destination for all things real estate. Let's explore together and unlock the possibilities that await!
+        <h1 class="text-2xl text-black hover:underline gap-4 font-semibold pt-8">About <span class="italic">Beacon</span>
+        </h1>
+
+        <p class="text-gray-600 font-serif">
+            At <span class="italic">Beacon</span>, we are driven by a simple yet powerful mission: to revolutionize the real
+            estate experience for
+            consumers like you. We exist because we were not satisfied with the status quo. In a landscape dominated by
+            opaque processes and profit-driven motives, we saw an opportunity to redefine the industry and put the needs
+            of consumers first.
+
+            With a relentless spirit and unwavering determination, we set out to challenge the norms and bring about a
+            consumer-friendly change in an ecosystem often plagued by greedy brokers and landlords. We believe that
+            transparency, honesty, and integrity should be the cornerstones of every real estate transaction, and we are
+            committed to delivering a platform that embodies these values.
+
+            <span class="italic">Beacon</span> is powered by ReMod Limited, a forward-thinking company dedicated to driving
+            innovation and positive
+            change in the real estate sector. Behind our platform are three passionate individuals who bring a wealth of
+            experience and expertise to the table:
+
+            Together, we are committed to building a trusted and transparent real estate platform that empowers
+            consumers, fosters community, and drives positive change in the industry. Welcome to <span
+                class="italic">Beacon</span>, where your
+            property journey begins with trust and ends with satisfaction.
+
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div v-for="[k, v] in Object.entries(BLOG_POSTS)" class="border-solid border p-4 border-gray-500">
-                <!--          <img src="{{ v.imageUrl }}" /> -->
-
-                <h1 class="text-lg font-semibold mb-4">{{ v.name }}</h1>
-
-                <p>
-                    {{ v.description }}
-                </p>
-
-            </div>
-        </div>
     </main>
 
     <footer class="flex flex-col p-12 bg-[#262626] gap-12">
@@ -47,8 +54,9 @@
         </div>
 
         <div class="flex justify-center items-center gap-4">
-            <img class="invert opacity-60 h-8 w-8" v-for="social in SOCIALS"
-                :src="'/svg/logo--' + social.toLowerCase() + '.svg'" />
+            <a class="invert opacity-60 h-8 w-8" v-for="[k, v] in Object.entries(SOCIALS)" :href="v.url">
+                <img :src="'/svg/logo--' + v.name.toLowerCase() + '.svg'" :alt="v.name" />
+            </a>
         </div>
 
         <p class="text-center text-white">
@@ -58,45 +66,21 @@
 </template>
   
 <script setup lang="ts">
-const HEADER_NAV = [{
-    "type": "text",
-    "content": "properties"
-},
-{
-    "type": "text",
-    "content": "blog"
-},
-{
-    "type": "text",
-    "content": "about"
-},
+import { HEADER_NAV, SOCIALS, FOOTER_ITEMS } from './constants'
+import type { Author } from './constants'
+
+const AUTHORS: Array<Author> = [
+    {
+        "name": "LePichu",
+        "pfp": "",
+        "description": "dev"
+    },
+    {
+        "name": "joe",
+        "pfp": "",
+        "description": "dev"
+    }
 ]
-
-const SOCIALS = [
-    "Discord",
-    "Facebook",
-    "Github",
-    "Twitter",
-    "YouTube"
-]
-
-const FOOTER_ITEMS = {
-    "Services": [
-        "Buy or Rent",
-        "List a Property",
-        "Newsletter"
-    ],
-    "Legal": [
-        "Terms and Conditions",
-        "Privacy Policy"
-    ],
-    "Careers": [
-        "Internships",
-        "Jobs",
-        "Partners"
-    ]
-}
-
 
 </script>
   
@@ -104,4 +88,13 @@ const FOOTER_ITEMS = {
 #main-hero {
     background-image: url("/photos/search_bg.webp");
     background-size: cover;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1.25rem;
+}
+
+a {
+    font-family: sans-serif;
 }</style>

@@ -2,8 +2,8 @@
   <header class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0">
     <img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
     <nav class="hidden md:flex gap-6 justify-center items-center">
-      <a v-for="item in HEADER_NAV" href="{{ item.content }}"
-        class="uppercase text-2xl text-center text-black no-underline hover:underline">
+      <a v-for="item in HEADER_NAV" :href="'../' + item.content"
+        class="uppercase text-2xl text-center text-black no-underline hover:underline font-serif">
         {{ item.content }}
       </a>
     </nav>
@@ -24,11 +24,11 @@
     </div>
     <div class="content md:mx-40">
       <h1 class="text-2xl text-center">
-        We care about our <span class="font-serif italics">consumers</span>, and their quality of place...
+        We care about our <span class="italic">consumers</span>, and their quality of place...
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div v-for="ft in CONSUMER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4">
-           <img :src="'/svg/' + ft.icon + '.svg' " class="h-16 w-16">
+          <img :src="'/svg/' + ft.icon + '.svg'" class="h-16 w-16">
         </div>
       </div>
     </div>
@@ -47,10 +47,11 @@
       </div>
     </div>
 
-    <div class="flex justify-center items-center gap-4">
-      <img class="invert opacity-60 h-8 w-8" v-for="social in SOCIALS"
-        :src="'/svg/logo--' + social.toLowerCase() + '.svg'" />
-    </div>
+     <div class="flex justify-center items-center gap-4">
+            <a class="invert opacity-60 h-8 w-8" v-for="[k, v] in Object.entries(SOCIALS)" :href="v.url">
+                <img :src="'/svg/logo--' + v.name.toLowerCase() + '.svg'" :alt="v.name" />
+            </a>
+        </div>
 
     <p class="text-center text-white">
       © 2024 The Beacon Inc. - All Rights Reserved
@@ -59,44 +60,7 @@
 </template>
 
 <script setup lang="ts">
-const HEADER_NAV = [{
-  "type": "text",
-  "content": "properties"
-},
-{
-  "type": "text",
-  "content": "blog"
-},
-{
-  "type": "text",
-  "content": "about"
-},
-]
-
-const SOCIALS = [
-  "Discord",
-  "Facebook",
-  "Github",
-  "Twitter",
-  "YouTube"
-]
-
-const FOOTER_ITEMS = {
-  "Services": [
-    "Buy or Rent",
-    "List a Property",
-    "Newsletter"
-  ],
-  "Legal": [
-    "Terms and Conditions",
-    "Privacy Policy"
-  ],
-  "Careers": [
-    "Internships",
-    "Jobs",
-    "Partners"
-  ]
-}
+import { HEADER_NAV, SOCIALS, FOOTER_ITEMS } from './constants'
 
 interface Feature {
   icon: string
@@ -109,11 +73,17 @@ const CONSUMER_FEATURES: Feature[] = [
 ]
 
 const PROVIDER_FEATURES: Feature[] = [
-  
+
 ]
 </script>
 
-<style>#main-hero {
+<style>
+#main-hero {
   background-image: url("/photos/search_bg.webp");
   background-size: cover;
-}</style>
+}
+
+span {
+  font-family: sans-serif;
+}
+</style>

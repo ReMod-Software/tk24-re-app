@@ -2,8 +2,8 @@
     <header class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0">
         <img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
         <nav class="hidden md:flex gap-6 justify-center items-center">
-            <a v-for="item in HEADER_NAV" href="{{ item.content }}"
-                class="uppercase text-2xl text-center text-black no-underline hover:underline">
+            <a v-for="item in HEADER_NAV" :href="'../' + item.content"
+                class="uppercase text-xl text-center text-black no-underline hover:underline">
                 {{ item.content }}
             </a>
         </nav>
@@ -21,7 +21,13 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div v-for="[k, v] in Object.entries(BLOG_POSTS)" class="border-solid border p-4 border-gray-500">
-                <!--          <img src="{{ v.imageUrl }}" /> -->
+                <img class="w-full rounded-xl mb-4" :src="v.imageUrl" />
+
+                <div class="flex justify-between opacity-50 mb-2">
+
+                    <p>{{ v.date }}</p>
+                    <p>by {{ v.author }}</p>
+                </div>
 
                 <h1 class="text-lg font-semibold mb-4">{{ v.name }}</h1>
 
@@ -47,8 +53,9 @@
         </div>
 
         <div class="flex justify-center items-center gap-4">
-            <img class="invert opacity-60 h-8 w-8" v-for="social in SOCIALS"
-                :src="'/svg/logo--' + social.toLowerCase() + '.svg'" />
+            <a class="invert opacity-60 h-8 w-8" v-for="[k, v] in Object.entries(SOCIALS)" :href="v.url">
+                <img :src="'/svg/logo--' + v.name.toLowerCase() + '.svg'" :alt="v.name" />
+            </a>
         </div>
 
         <p class="text-center text-white">
@@ -58,44 +65,7 @@
 </template>
   
 <script setup lang="ts">
-const HEADER_NAV = [{
-    "type": "text",
-    "content": "properties"
-},
-{
-    "type": "text",
-    "content": "blog"
-},
-{
-    "type": "text",
-    "content": "about"
-},
-]
-
-const SOCIALS = [
-    "Discord",
-    "Facebook",
-    "Github",
-    "Twitter",
-    "YouTube"
-]
-
-const FOOTER_ITEMS = {
-    "Services": [
-        "Buy or Rent",
-        "List a Property",
-        "Newsletter"
-    ],
-    "Legal": [
-        "Terms and Conditions",
-        "Privacy Policy"
-    ],
-    "Careers": [
-        "Internships",
-        "Jobs",
-        "Partners"
-    ]
-}
+import { HEADER_NAV, SOCIALS, FOOTER_ITEMS } from '../constants'
 
 interface BlogPost {
     name: string,
@@ -111,28 +81,28 @@ const BLOG_POSTS: Array<BlogPost> = [
         "description": "In this post, we demystify the complexities of the current real estate market, providing actionable tips and strategies to help buyers navigate confidently and make informed decisions in a competitive landscape.",
         "imageUrl": "/blog/navigating_the_buyers_market.png",
         "author": "Ishat Gupta",
-        "date": "15-2-2024"
+        "date": "15 February 2024"
     },
     {
         "name": "Opportunities in Emerging Neighborhoods",
         "description": "Discover the untapped potential of emerging neighborhoods and uncover lucrative investment opportunities that promise high returns and long-term growth prospects.",
         "imageUrl": "/blog/investment_opportunities_in_emerging_neighborhoods.png",
         "author": "Ishat Gupta",
-        "date": "15-2-2024"
+        "date": "12 September 2023"
     },
     {
         "name": "The Future of Sustainable Living",
         "description": "Explore the evolving landscape of sustainable living and eco-friendly housing solutions, as we discuss innovative trends, technologies, and practices shaping the future of real estate.",
         "imageUrl": "/blog/the_future_of_sustainable_living.png",
         "author": "Ishat Gupta",
-        "date": "15-2-2024"
+        "date": "8 January 2024"
     },
     {
-        "name": "Transforming Spaces with Style",
+        "name": "Transform Spaces Style",
         "description": "Get inspired to unleash your creativity and elevate your living spaces with our showcase of stunning renovation projects, expert design tips, and budget-friendly hacks for a home that truly reflects your unique style and personality.",
-        "imageUrl": "/blog/renovation_inspiration_transforming_spaces_with_style.png",
+        "imageUrl": "/blog/transforming_spaces_with_style.png",
         "author": "Ishat Gupta",
-        "date": "15-2-2024"
+        "date": "2 May 2023"
     },
 ]
 
@@ -142,4 +112,5 @@ const BLOG_POSTS: Array<BlogPost> = [
 #main-hero {
     background-image: url("/photos/search_bg.webp");
     background-size: cover;
-}</style>
+}
+</style>
