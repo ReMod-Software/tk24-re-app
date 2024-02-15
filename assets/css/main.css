@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/ibm-plex-sans");
+@import url("https://fonts.cdnfonts.com/css/ibm-plex-serif");
