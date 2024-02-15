@@ -1,4 +1,5 @@
-const HEADER_NAV = [{
+const HEADER_NAV = [
+{
     "type": "text",
     "content": "properties"
 },
