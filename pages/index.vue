@@ -10,7 +10,7 @@
     <img src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
   </header>
 
-  <main class="p-4 rounded-lg flex flex-col">
+  <main class="p-4 rounded-lg flex flex-col gap-16 md:gap-32">
     <div
       class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0 text-white"
       id="main-hero">
@@ -24,7 +24,7 @@
     </div>
     <div class="content md:mx-40">
       <h1 class="text-2xl text-center">
-        We care about our <span class="font-serif">consumers</span>, and their quality of place...
+        We care about our <span class="font-serif italics">consumers</span>, and their quality of place...
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div v-for="ft in CONSUMER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4">
