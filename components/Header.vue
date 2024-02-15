@@ -22,7 +22,4 @@ import { HEADER_NAV } from '../pages/constants'
 </script>
 
 <style>
-p, a {
-    font-family: sans-serif;
-}
 </style>

@@ -29,7 +29,4 @@ import { SOCIALS, FOOTER_ITEMS } from '../pages/constants'
 </script>
 
 <style>
-p, a {
-    font-family: sans-serif;
-}
 </style>
