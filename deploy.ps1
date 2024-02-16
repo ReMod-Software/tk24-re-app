@@ -1,6 +1,6 @@
 pnpm build --preset=deno_deploy
 
-Set-Location ".\_site"
+Set-Location ".\.output"
 
 git init
 git add . 
