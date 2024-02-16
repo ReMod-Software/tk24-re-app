@@ -6,15 +6,14 @@
 @tailwind utilities;
 
 * {
-    font-family: "IBM Plex Sans";
+	font-family: "IBM Plex Sans";
 }
 
 .font-serif {
-    font-family: "IBM Plex Serif";
+	font-family: "IBM Plex Serif";
 }
 
 .grad-box {
-    /* add box shadow of 45 degree linear gradient of #E49DDC then #86B5FC */
-/*    border: 2px solid; border-image-slice: 1; border-image-source: linear-gradient(135deg, #E49DDC, #86B5FC); border-radius: 1rem; */
-    
+	/* add box shadow of 45 degree linear gradient of #E49DDC then #86B5FC */
+	/*    border: 2px solid; border-image-slice: 1; border-image-source: linear-gradient(135deg, #E49DDC, #86B5FC); border-radius: 1rem; */
 }
