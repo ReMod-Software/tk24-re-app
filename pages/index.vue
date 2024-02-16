@@ -19,7 +19,7 @@
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div v-for="ft in CONSUMER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-6 bg-gray-50 rounded-lg grad-box">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center gap-4">
             <img :src="'/svg/' + ft.icon + '.svg'" class="h-16 w-16">
             <h2 class="text-2xl font-semibold text-right">{{ ft.name }}</h2>
           </div>
@@ -55,7 +55,7 @@
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div v-for="ft in PROVIDER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-6 bg-gray-50 rounded-lg grad-box">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center gap-4">
             <img :src="'/svg/' + ft.icon + '.svg'" class="h-16 w-16">
             <h2 class="text-2xl font-semibold text-right">{{ ft.name }}</h2>
           </div>
@@ -91,7 +91,7 @@ const CONSUMER_FEATURES: Feature[] = [
     "icon": "tag"
   },
   {
-    "name": "Exceptional Customer Support",
+    "name": "Exceptional Helpdesk",
     "description": "Your satisfaction is our priority. Our dedicated support team is available round-the-clock to address your queries, guide you through the process, and ensure a seamless experience from search to purchase.",
     "icon": "user--service-desk"
   },
@@ -109,8 +109,8 @@ const PROVIDER_FEATURES: Feature[] = [
     "icon": "ibm-watson--discovery"
   },
   {
-    "name": "Customized Marketing Strategies",
-    "description": ": Your property deserves the spotlight. Our tailored marketing strategies highlight the unique features of your property, attracting qualified leads and optimizing your chances of a quick sale or rental.",
+    "name": "Marketing Strategies",
+    "description": "Your property deserves the spotlight. Our tailored marketing strategies highlight the unique features of your property, attracting qualified leads and optimizing your chances of a quick sale or rental.",
     "icon": "store"
   },
   {
@@ -138,5 +138,4 @@ textarea:focus, input:focus{
     outline: none;
     color: gray;
 }
-
 </style>
