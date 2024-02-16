@@ -1,75 +1,16 @@
-# Nuxt 3 Minimal Starter
+![Beacon - A Real Estate Platform](/public/branding/beacon_banner_light.png)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Beacon - A Real Estate Platform
 
-## Setup
+Beacon is a revolutionary real estate platform dedicated to redefining the industry and putting the needs of consumers first. Our mission is to provide a transparent, trustworthy, and user-friendly experience for buyers, sellers, renters, and landlords alike.
 
-Make sure to install the dependencies:
+## Tech Stack
+Beacon utilizes a cutting-edge tech stack to deliver seamless performance and exceptional user experience:
+- Vue.js and Nuxt.js for frontend development
+- Pocketbase and Hono for backend database management
+- Node.js for server-side scripting
+- TypeScript for enhanced code readability and maintainability
+- TailwindCSS for efficient and responsive UI design
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Licensing
+Beacon is licensed under the MIT License, allowing for flexibility and freedom to use, modify, and distribute the software for both commercial and non-commercial purposes. We believe in open collaboration and welcome contributions from developers worldwide to help us continue improving and evolving the platform.
