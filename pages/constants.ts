@@ -37,6 +37,16 @@ interface Author {
     description: string
 }
 
+interface PropertyDetail {
+    title: string,
+    description: string,
+    price: string,
+    location: string,
+    image: string,
+    date: string,
+    id: number
+}
+
 
 const SOCIALS = [
     {
@@ -62,4 +72,4 @@ const SOCIALS = [
 ]
 
 export { HEADER_NAV, SOCIALS, FOOTER_ITEMS }
-export type { Author }
+export type { Author, PropertyDetail }

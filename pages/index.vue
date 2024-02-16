@@ -6,11 +6,11 @@
       class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0 text-white"
       id="main-hero">
       <h1 class="text-center text-xl md:text-4xl font-extralight">Looking for a <span
-          class="font-serif text-2xl md:px-2 italic font-semibold md:text-6xl">space?</span> We have one <span
-          class="font-serif text-2xl md:px-2 italic font-semibold md:text-6xl">for you!</span></h1>
+          class="font-serif text-2xl md:px-2 italic font-semibold md:text-5xl">space?</span> We have one <span
+          class="font-serif text-2xl md:px-2 italic font-semibold md:text-xl">for you!</span></h1>
       <div class="flex w-auto md:w-[65%] rounded-3xl">
-        <input type="search" placeholder="Search for Properties!" class="border-box flex-grow p-2 px-4 rounded-none">
-        <img src="/svg/search.svg" class="aspect-square bg-white invert p-2 h-full" />
+        <input type="search" placeholder="Search for Properties!" class="border-box flex-grow p-2 px-4 rounded-[16px] me-2">
+        <img src="/svg/search.svg" class="aspect-square bg-white invert h-full rounded-[50%] p-3" />
       </div>
     </div>
     <div class="content md:mx-40 flex flex-col gap-8">
@@ -18,8 +18,8 @@
         We care about our <span class="font-serif italic font-semibold">consumers</span>, and their quality of place...
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div v-for="ft in CONSUMER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-4 bg-gray-50 rounded-lg grad-box">
-          <div class="flex justify-between items-center>">
+        <div v-for="ft in CONSUMER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-6 bg-gray-50 rounded-lg grad-box">
+          <div class="flex justify-between items-center">
             <img :src="'/svg/' + ft.icon + '.svg'" class="h-16 w-16">
             <h2 class="text-2xl font-semibold text-right">{{ ft.name }}</h2>
           </div>
@@ -29,13 +29,33 @@
       </div>
     </div>
 
+    <div class="flex w-full h-[400px] rounded-3xl">
+                <div class="w-1/2 h-[20px]">
+                    <img class="rounded-s-[34px] border-e-2" src="/photos/d1.jpg" />
+                </div>
+                <div class="w-1/2">
+                    <div class="flex">
+                        <img class="w-[50%] border-solid border border-s-2 border-b-2 border-white"
+                            src="/photos/d2.jpg" />
+                        <img class="w-[50%] border-solid border border-s-2 border-b-2 border-white"
+                            src="/photos/d3.jpg" />
+                    </div>
+                    <img class=" border-s-2 border-e-2 border-t-2" src="/photos/d2.jpg" id="half" />
+
+                </div>
+
+                <div class="w-1/2 h-[20px]">
+                    <img class="rounded-e-[34px] border-s-2" src="/photos/d1.jpg" />
+                </div>
+            </div>
+
     <div class="content md:mx-40 flex flex-col gap-8">
       <h1 class="text-2xl text-center">
-        ...but we also care about our <span class="font-serif italic font-semibold">agents</span>!
+        ...but, we also care about our <span class="font-serif italic font-semibold">agents!</span>
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div v-for="ft in PROVIDER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-4 bg-gray-50 rounded-lg grad-box">
-          <div class="flex justify-between items-center>">
+        <div v-for="ft in PROVIDER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-6 bg-gray-50 rounded-lg grad-box">
+          <div class="flex justify-between items-center">
             <img :src="'/svg/' + ft.icon + '.svg'" class="h-16 w-16">
             <h2 class="text-2xl font-semibold text-right">{{ ft.name }}</h2>
           </div>
@@ -113,4 +133,10 @@ const PROVIDER_FEATURES: Feature[] = [
   background-image: url("/photos/search_bg.webp");
   background-size: cover;
 }
+
+textarea:focus, input:focus{
+    outline: none;
+    color: gray;
+}
+
 </style>

@@ -1,6 +1,5 @@
 <template>
     <Header />
-
     <main class="m-4 mb-16 md:mx-40 rounded-lg flex flex-col gap-4">
         <h1 class="text-2xl text-black hover:underline gap-4 font-semibold pt-8">About <span class="italic">Beacon</span>
         </h1>
@@ -17,7 +16,8 @@
             transparency, honesty, and integrity should be the cornerstones of every real estate transaction, and we are
             committed to delivering a platform that embodies these values.
 
-            <span class="italic">Beacon</span> is powered by <b>ReMod Limited</b>, a forward-thinking company dedicated to driving
+            <span class="italic">Beacon</span> is powered by <b>ReMod Limited</b>, a forward-thinking company dedicated to
+            driving
             innovation and positive
             change in the real estate sector. Behind our platform are three passionate individuals who bring a wealth of
             experience and expertise to the table:
@@ -28,13 +28,14 @@
             property journey begins with trust and ends with satisfaction.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-20 justify-center items-center">
-            <div v-for="[k, v] in Object.entries(AUTHORS)" class="flex flex-col gap-2 border-gray-500 border-solid border p-4 justify-center items-center">
-                <img :src="v.pfp" class="h-24 w-24 rounded-full" />
-                    <p class="text-center font-semibold">{{ v.name }}</p>
-                    <hr class="w-full h-[1px] my-2 border-gray-400">
-                    {{ v.description }}
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-20 py-8 rounded-xl">
+            <div v-for="[k, v] in Object.entries(AUTHORS)"
+                class="flex flex-col gap-2 border-gray-500 border-solid border p-4 justify-center items-center rounded-xl">
+                <img :src="v.pfp" class="h-32 w-32 rounded-full" />
+                <p class="text-center font-semibold">{{ v.name }}</p>
+                <hr class="w-full h-[1px] my-2 border-gray-200">
+                {{ v.description }}
+            </div>
         </div>
 
     </main>
@@ -52,7 +53,7 @@ const AUTHORS: Array<Author> = [
     {
         "name": "LePichu",
         "pfp": "https://avatars.githubusercontent.com/u/62379502",
-        "description": "dev"
+        "description": "Hello! I'm a 17-year-old weaving digital tapestries, always curious, always exploring. Dive into my world and discover the magic I create! "
     },
     {
         "name": "Pranav",
@@ -66,7 +67,6 @@ const AUTHORS: Array<Author> = [
 </script>
   
 <style>
-
 #main-hero {
     background-image: url("/photos/search_bg.webp");
     background-size: cover;
