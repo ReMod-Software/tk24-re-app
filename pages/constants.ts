@@ -1,15 +1,15 @@
 const HEADER_NAV = [
     {
         "type": "text",
-        "content": "properties"
+        "content": "Properties"
     },
     {
         "type": "text",
-        "content": "blog"
+        "content": "Blog"
     },
     {
         "type": "text",
-        "content": "about"
+        "content": "About"
     },
 ]
 

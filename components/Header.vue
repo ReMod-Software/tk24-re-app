@@ -5,12 +5,12 @@
     </a>
     <nav class="hidden md:flex gap-6 justify-center items-center">
       <a v-for="item in HEADER_NAV" :href="'../' + item.content"
-        class="uppercase text-2xl text-center text-black no-underline hover:underline underline-offset-4 font-sans">
+        class="text-2xl font-semibold text-center text-black no-underline hover:underline underline-offset-4 font-serif">
         {{ item.content }}
       </a>
 
       <a href="/login"
-        class="uppercase text-2xl text-center no-underline hover:underline font-sans text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-4 py-2 rounded-lg">
+        class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-4 py-2 rounded-lg">
         Login
       </a>
     </nav>

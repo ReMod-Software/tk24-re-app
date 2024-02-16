@@ -79,11 +79,10 @@
         class="text-white rounded-xl uppercase font-semibold  bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4 max-w-fit">See
         All properties</button>
 
-
       <h1 class="text-center text-2xl">...of these various <span
           class="font-serif content italic font-semibold">kinds!</span></h1>
 
-      <div class="grid grid-cols-3 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4">
           <img src="/landing_grid/villa.png"
             class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />

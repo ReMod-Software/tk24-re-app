@@ -56,7 +56,7 @@ const BLOG_POSTS: Array<BlogPost> = [
         "description": "In this post, we demystify the complexities of the current real estate market, providing actionable tips and strategies to help buyers navigate confidently and make informed decisions in a competitive landscape.",
         "imageUrl": "/blog/navigating_the_buyers_market.png",
         "author": "Ishat Gupta",
-        "date": "15 February 2024",
+        "date": "15/02/24",
         "key": "navigating_the_buyers_market"
     },
     {
@@ -64,7 +64,7 @@ const BLOG_POSTS: Array<BlogPost> = [
         "description": "Discover the untapped potential of emerging neighborhoods and uncover lucrative investment opportunities that promise high returns and long-term growth prospects.",
         "imageUrl": "/blog/investment_opportunities_in_emerging_neighborhoods.png",
         "author": "Ishat Gupta",
-        "date": "12 September 2023",
+        "date": "12/09/23",
         "key": "investment_opportunities_in_emerging_neighborhoods"
     },
     {
@@ -72,7 +72,7 @@ const BLOG_POSTS: Array<BlogPost> = [
         "description": "Explore the evolving landscape of sustainable living and eco-friendly housing solutions, as we discuss innovative trends, technologies, and practices shaping the future of real estate.",
         "imageUrl": "/blog/the_future_of_sustainable_living.png",
         "author": "Ishat Gupta",
-        "date": "8 January 2024",
+        "date": "8/01/24",
         "key": "the_future_of_sustainable_living"
     },
     {
@@ -80,7 +80,7 @@ const BLOG_POSTS: Array<BlogPost> = [
         "description": "Get inspired to unleash your creativity and elevate your living spaces with our showcase of stunning renovation projects, expert design tips, and budget-friendly hacks for a home that truly reflects your unique style and personality.",
         "imageUrl": "/blog/transforming_spaces_with_style.png",
         "author": "Ishat Gupta",
-        "date": "2 May 2023",
+        "date": "2/5/23",
         "key": "transforming_spaces_with_style"
     },
 ]
