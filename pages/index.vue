@@ -80,10 +80,11 @@
         All properties</button>
 
 
-  <h1 class="text-center text-2xl">...of these various <span class="font-serif content italic font-semibold">kinds!</span></h1>
+      <h1 class="text-center text-2xl">...of these various <span
+          class="font-serif content italic font-semibold">kinds!</span></h1>
 
-  <div class="grid grid-cols-3 md:grid-cols-4 gap-8">
-    <div class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4">
+      <div class="grid grid-cols-3 md:grid-cols-4 gap-8">
+        <div class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4">
           <img src="/landing_grid/villa.png"
             class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />
           <h1 class="text-center text-2xl font-semibold">Villa</h1>
@@ -108,7 +109,7 @@
           <h1 class="text-center text-2xl font-semibold">Condominium</h1>
         </div>
 
-  </div>
+      </div>
 
     </div>
 

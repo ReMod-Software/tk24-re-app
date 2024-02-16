@@ -1,6 +1,8 @@
 <template>
     <header class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0 items-center">
-        <img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
+        <a href="/">
+            <img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
+        </a>
         <div class="hidden md:flex w-auto md:w-[65%] h-full rounded-xl items-center px-12">
             <input type="search" placeholder="Search for Properties!"
                 class="border-box flex-grow rounded-l-xl border-gray-500 p-3">
@@ -96,13 +98,13 @@
                                 <div class="" id="box">
                                     <p class="uppercase font-semibold text-xs">Size</p>
                                     <div class="flex flex-row justify-between">
-                                    <input type="checkbox" id="1bhk" value="1 BHK">
-                                    <label for="vehicle1">1 BHK</label><br>
-                                    <input type="checkbox" id="2bhk" value="2 BHK">
-                                    <label for="vehicle1">2 BHK</label><br>
-                                    <input type="checkbox" id="3bhk" value="3 BHK">
-                                    <label for="vehicle1">3 BHK</label><br>
-                                </div>
+                                        <input type="checkbox" id="1bhk" value="1 BHK">
+                                        <label for="vehicle1">1 BHK</label><br>
+                                        <input type="checkbox" id="2bhk" value="2 BHK">
+                                        <label for="vehicle1">2 BHK</label><br>
+                                        <input type="checkbox" id="3bhk" value="3 BHK">
+                                        <label for="vehicle1">3 BHK</label><br>
+                                    </div>
                                 </div>
                                 <div id="box">
                                     <p class="uppercase font-semibold text-xs">Price Range</p>

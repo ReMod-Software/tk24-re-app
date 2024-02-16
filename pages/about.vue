@@ -83,14 +83,20 @@ import Footer from '../components/Footer.vue'
 
 const AUTHORS: Array<Author> = [
     {
-        "name": "LePichu",
+        "name": "Ishat Gupta",
         "pfp": "https://avatars.githubusercontent.com/u/62379502",
         "description": "Hello! I'm a 17-year-old weaving digital tapestries, always curious, always exploring. Dive into my world and discover the magic I create! "
     },
     {
-        "name": "Pranav",
+        "name": "Pranav Purwar",
         "pfp": "https://avatars.githubusercontent.com/u/75154889",
         "description": "Hello! I'm a 16-year-old developer, always curious, always exploring. Dive into the technological world and discover the magic I create!"
+    },
+    {
+        "name": "Sambhav Arora",
+        "pfp": "https://media.discordapp.net/attachments/1208100360925741076/1208100712333185146/image.png?ex=65e20e77&is=65cf9977&hm=cb0c9c78767fbdf2d0d602f3f189186126a03c14a7470187d38c3ba37254d2f7&=&format=webp&quality=lossless&width=1052&height=1052",
+        "description": "Hello! I'm a 17-year-old tech enthusiast, always curious, always exploring. Dive into the technological world and discover the magic I create!"
+
     }
 ]
 

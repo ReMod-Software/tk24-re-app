@@ -5,7 +5,7 @@
         <div class="flex flex-col">
             <div class="grid grid-cols-2">
                 <div class="aspect-[4/3] flex items-end justify-end p-4">
-<!--desc amenities specs -->
+                    <!--desc amenities specs -->
                 </div>
             </div>
         </div>

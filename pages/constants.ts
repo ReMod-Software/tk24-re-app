@@ -1,16 +1,16 @@
 const HEADER_NAV = [
-{
-    "type": "text",
-    "content": "properties"
-},
-{
-    "type": "text",
-    "content": "blog"
-},
-{
-    "type": "text",
-    "content": "about"
-},
+    {
+        "type": "text",
+        "content": "properties"
+    },
+    {
+        "type": "text",
+        "content": "blog"
+    },
+    {
+        "type": "text",
+        "content": "about"
+    },
 ]
 
 const FOOTER_ITEMS = {

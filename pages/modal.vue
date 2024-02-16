@@ -5,7 +5,7 @@
         <img src="/branding/beacon_logo_base.png" class="h-12 w-12">
         <img src="/svg/close--filled.svg" class="h-12 w-12">
       </div>
-      
+
       <hr class="w-full h-[1px] my-6">
 
       <div class="grid grid-cols-1 gap-2">
@@ -17,9 +17,9 @@
         </div>
       </div>
     </div>
-    
+
     <div class="flex justify-between">
-    
+
     </div>
   </main>
 </template>
