@@ -10,23 +10,23 @@
             destination for all things real estate. Let's explore together and unlock the possibilities that await!
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-            <div v-for="[k, v] in Object.entries(BLOG_POSTS)" class="border-solid border border-gray-300 rounded-[32px]">
-                <a :href="`/blog/${v.key}`">
-                <img class="w-full rounded-t-3xl rounded-b-[34px] mb-4" :src="v.imageUrl" />
-                <div class="px-4 mb-4">
-                    <div class="flex justify-between opacity-50 mb-2">
-                        <p>{{ v.date }}</p>
-                        <p>by {{ v.author }}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div v-for="[k, v] in Object.entries(BLOG_POSTS)" class="border-solid border border-gray-600 flex flex-col rounded-xl">
+                <a class="flex flex-col w-full" :href="`/blog/${v.key}`">
+                    <img class="flex w-full p-4 aspect-[16/9] rounded-3xl" :src="v.imageUrl" />
+                    <div class="px-4 mb-4">
+                        <div class="flex justify-between opacity-50 mb-2">
+                            <p>{{ v.date }}</p>
+                            <p>by {{ v.author }}</p>
+                        </div>
+
+                        <h1 class="text-lg font-semibold">{{ v.name }}</h1>
+                        <hr class="h-[1px] my-2">
+
+                        <p>
+                            {{ v.description }}
+                        </p>
                     </div>
-
-                    <h1 class="text-lg font-semibold">{{ v.name }}</h1>
-                    <hr class="h-[1px] my-2">
-
-                    <p>
-                        {{ v.description }}
-                    </p>
-                </div>
                 </a>
 
             </div>

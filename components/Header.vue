@@ -4,7 +4,7 @@
     <img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
     <nav class="hidden md:flex gap-6 justify-center items-center">
       <a v-for="item in HEADER_NAV" :href="'../' + item.content"
-        class="uppercase text-2xl text-center text-black no-underline hover:underline font-serif">
+        class="uppercase text-2xl text-center text-black no-underline hover:underline underline-offset-4 font-serif">
         {{ item.content }}
       </a>
 

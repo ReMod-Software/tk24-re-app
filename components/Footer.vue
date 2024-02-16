@@ -4,7 +4,7 @@
       <img src="/branding/beacon_logo_base.png" class="w-16 h-16 mb-8 md:mb-0" />
       <div class="flex flex-col md:flex-row gap-8">
         <div v-for="[k, v] in Object.entries(FOOTER_ITEMS)" class="flex flex-col md:px-6 gap-2">
-          <p class="font-normal text-white">{{ k }}</p>
+          <p class="font-normal text-lg text-white">{{ k }}</p>
           <a v-for="item in v" class="text-white opacity-60 hover:underline underline-offset-4" :href="item.replaceAll(' ', '_').toLocaleLowerCase()">
             {{ item }}
           </a>

@@ -28,14 +28,46 @@
             property journey begins with trust and ends with satisfaction.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-20 py-8 rounded-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:px-20 py-8 rounded-xl">
             <div v-for="[k, v] in Object.entries(AUTHORS)"
-                class="flex flex-col gap-2 border-gray-500 border-solid border p-4 justify-center items-center rounded-xl">
+                class="flex flex-col gap-2 border-gray-500 border-solid border p-4 justify-center text-center items-center rounded-xl">
                 <img :src="v.pfp" class="h-32 w-32 rounded-full" />
                 <p class="text-center font-semibold">{{ v.name }}</p>
                 <hr class="w-full h-[1px] my-2 border-gray-200">
                 {{ v.description }}
             </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex flex-col gap-4">
+                <h1 class="font-semibold text-2xl">Wanna reach out?</h1>
+                <p>
+                    Please fill the form and we'll try to reach out to you as soon as possible.
+                </p>
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <img src="/svg/email.svg" class="h-8 w-8" />
+                        <p>contact@beacon.dev</p>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <img src="/svg/phone.svg" class="h-8 w-8" />
+                        <p>+91 98721 31743</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <form class="flex flex-col gap-4 md:pl-12">
+                <input type="text" placeholder="Name" class="p-4 rounded-xl border-solid border border-gray-300" />
+                <input type="tel" placeholder="Phone Number" class="p-4 rounded-xl border-solid border border-gray-300" />
+                <input type="email" placeholder="Email" class="p-4 rounded-xl border-solid border border-gray-300" />
+                <textarea placeholder="Feedback/Complaint"
+                    class="p-4 rounded-xl border-solid border border-gray-300"></textarea>
+                <button
+                    class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4">Submit</button>
+            </form>
         </div>
 
     </main>
@@ -58,7 +90,7 @@ const AUTHORS: Array<Author> = [
     {
         "name": "Pranav",
         "pfp": "https://avatars.githubusercontent.com/u/75154889",
-        "description": "dev"
+        "description": "Hello! I'm a 16-year-old developer, always curious, always exploring. Dive into the technological world and discover the magic I create!"
     }
 ]
 
@@ -80,5 +112,4 @@ p {
 a {
     font-family: sans-serif;
 }
-
 </style>

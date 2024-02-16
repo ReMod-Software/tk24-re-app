@@ -1,16 +1,16 @@
 <template>
   <Header />
 
-  <main class="p-4 rounded-lg flex flex-col gap-12 md:gap-20">
+  <main class="p-4 rounded-3xl flex flex-col gap-12 md:gap-8">
     <div
       class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0 text-white"
       id="main-hero">
       <h1 class="text-center text-xl md:text-4xl font-extralight">Looking for a <span
           class="font-serif text-2xl md:px-2 italic font-semibold md:text-5xl">space?</span> We have one <span
-          class="font-serif text-2xl md:px-2 italic font-semibold md:text-xl">for you!</span></h1>
-      <div class="flex w-auto md:w-[65%] rounded-3xl">
-        <input type="search" placeholder="Search for Properties!" class="border-box flex-grow p-2 px-4 rounded-[16px] me-2">
-        <img src="/svg/search.svg" class="aspect-square bg-white invert h-full rounded-[50%] p-3" />
+          class="font-serif text-2xl md:px-2 italic font-semibold md:text-5xl">for you!</span></h1>
+      <div class="flex w-auto md:w-[65%] rounded-3xl justify-center">
+        <input type="search" placeholder="Search for Properties!" class="border-box flex-grow p-2 px-4 rounded-l-3xl">
+        <img src="/svg/search.svg" class="aspect-square bg-white invert h-full rounded-r-3xl p-3" />
       </div>
     </div>
     <div class="content md:mx-40 flex flex-col gap-8">
@@ -18,52 +18,105 @@
         We care about our <span class="font-serif italic font-semibold">consumers</span>, and their quality of place...
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div v-for="ft in CONSUMER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-6 bg-gray-50 rounded-lg grad-box">
+        <div v-for="ft in CONSUMER_FEATURES"
+          class="border border-solid border-gray-500 flex flex-col gap-4 p-6 rounded-lg grad-box">
           <div class="flex justify-between items-center gap-4">
             <img :src="'/svg/' + ft.icon + '.svg'" class="h-16 w-16">
             <h2 class="text-2xl font-semibold text-right">{{ ft.name }}</h2>
           </div>
           <hr class="border-gray-400">
-            <p class="text-justify">{{ ft.description }}</p>
+          <p class="text-justify">{{ ft.description }}</p>
         </div>
       </div>
     </div>
-
-    <div class="flex w-full h-[400px] rounded-3xl">
-                <div class="w-1/2 h-[20px]">
-                    <img class="rounded-s-[34px] border-e-2" src="/photos/d1.jpg" />
-                </div>
-                <div class="w-1/2">
-                    <div class="flex">
-                        <img class="w-[50%] border-solid border border-s-2 border-b-2 border-white"
-                            src="/photos/d2.jpg" />
-                        <img class="w-[50%] border-solid border border-s-2 border-b-2 border-white"
-                            src="/photos/d3.jpg" />
-                    </div>
-                    <img class=" border-s-2 border-e-2 border-t-2" src="/photos/d2.jpg" id="half" />
-
-                </div>
-
-                <div class="w-1/2 h-[20px]">
-                    <img class="rounded-e-[34px] border-s-2" src="/photos/d1.jpg" />
-                </div>
-            </div>
 
     <div class="content md:mx-40 flex flex-col gap-8">
       <h1 class="text-2xl text-center">
         ...but, we also care about our <span class="font-serif italic font-semibold">agents!</span>
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div v-for="ft in PROVIDER_FEATURES" class="border border-solid border-gray-500 flex flex-col gap-4 p-6 bg-gray-50 rounded-lg grad-box">
+        <div v-for="ft in PROVIDER_FEATURES"
+          class="border border-solid border-gray-500 flex flex-col gap-4 p-6 rounded-lg grad-box">
           <div class="flex justify-between items-center gap-4">
             <img :src="'/svg/' + ft.icon + '.svg'" class="h-16 w-16">
             <h2 class="text-2xl font-semibold text-right">{{ ft.name }}</h2>
           </div>
           <hr class="border-gray-400">
-            <p class="text-justify">{{ ft.description }}</p>
+          <p class="text-justify">{{ ft.description }}</p>
         </div>
       </div>
     </div>
+
+
+    <div class="flex grid-cols-3 w-full rounded-xl md:ms-40 ">
+      <div class="md:mx-40">
+        <div class="grid grid-cols-2">
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="content md:mx-40 flex flex-col gap-8 items-center">
+
+      <h1 class="text-center text-2xl">We have <span class="font-serif content italic font-semibold">properties</span>
+        in...</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4">
+          <img src="/places/haryana.png"
+            class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />
+          <h1 class="text-center text-2xl font-semibold">Haryana</h1>
+        </div>
+
+        <div class="flex flex-col grid-item w-full  text-xl font-semibold uppercase gap-4">
+          <img src="/places/punjab.png"
+            class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />
+          <h1 class="text-center text-2xl font-semibold">Punjab</h1>
+        </div>
+      </div>
+      <button
+        class="text-white rounded-xl uppercase font-semibold  bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4 max-w-fit">See
+        All properties</button>
+
+
+  <h1 class="text-center text-2xl">...of these various <span class="font-serif content italic font-semibold">kinds!</span></h1>
+
+  <div class="grid grid-cols-3 md:grid-cols-4 gap-8">
+    <div class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4">
+          <img src="/landing_grid/villa.png"
+            class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />
+          <h1 class="text-center text-2xl font-semibold">Villa</h1>
+        </div>
+
+        <div class="flex flex-col grid-item w-full  text-xl font-semibold uppercase gap-4">
+          <img src="/landing_grid/flat.png"
+            class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />
+          <h1 class="text-center text-2xl font-semibold">Flat</h1>
+        </div>
+
+
+        <div class="flex flex-col grid-item w-full  text-xl font-semibold uppercase gap-4">
+          <img src="/landing_grid/apartment.png"
+            class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />
+          <h1 class="text-center text-2xl font-semibold">Apartment</h1>
+        </div>
+
+        <div class="flex flex-col grid-item w-full  text-xl font-semibold uppercase gap-4">
+          <img src="/landing_grid/condominium.png"
+            class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl" />
+          <h1 class="text-center text-2xl font-semibold">Condominium</h1>
+        </div>
+
+  </div>
+
+    </div>
+
+
+    <div class="content md:mx-40 flex flex-col gap-8 items-center">
+
+    </div>
+
   </main>
 
   <Footer />
@@ -134,8 +187,22 @@ const PROVIDER_FEATURES: Feature[] = [
   background-size: cover;
 }
 
-textarea:focus, input:focus{
-    outline: none;
-    color: gray;
+textarea:focus,
+input:focus {
+  outline: none;
+  color: gray;
+}
+
+/* turn font serif into gradient */
+main .content .font-serif {
+  background: linear-gradient(135deg, #E49DDC, #86B5FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.grid-item {
+  background-size: cover;
+
 }
 </style>
