@@ -130,7 +130,7 @@
                         class="border-solid border border-gray-300 rounded-[32px] p-4">
                         <a :href="`/property/${v.id}`">
                             <img class="w-full rounded-t-3xl rounded-b-[34px] mb-4" :src="v.image" />
-                            <div class="px-4 mb-4">
+                            <div class="px-1">
                                 <div class="flex justify-between opacity-50 mb-2">
                                     <p class="text-md text-gray-800">{{ v.location }}</p>
                                 </div>
