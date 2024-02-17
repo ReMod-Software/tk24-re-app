@@ -11,7 +11,7 @@
 			<input
 				type="search"
 				placeholder="Search for Properties!"
-				class="border-box flex-grow rounded-l-xl border-gray-500 p-3"
+				class="border-box flex-grow rounded-l-xl bg-gray-100 p-3"
 			>
 			<img
 				src="/svg/search.svg"

@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0"
+		class="p-4 flex justify-between bg-transparent backdrop-blur-md sticky top-0 z-10 md:px-16"
 	>
 		<a href="/">
 			<img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
