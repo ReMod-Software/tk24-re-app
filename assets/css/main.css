@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 * {
 	font-family: "IBM Plex Sans";
 }
