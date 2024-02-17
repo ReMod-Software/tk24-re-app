@@ -154,6 +154,16 @@
 							Email Now
 						</h1>
 					</a>
+
+					<a
+						class="flex flex-row items-center border border-black rounded-lg"
+						href="mailto:contact@beacon.dev"
+					>
+						<img src="/svg/location--filled.svg" class="h-10 w-10 bg-white rounded-l-md invert p-2" />
+						<h1 class="text-lg font-semibold text-center flex-grow">
+							Open in Google Maps
+						</h1>
+					</a>
 				</div>
 			</div>
 		</div>

@@ -241,7 +241,7 @@
 						v-for="([k, v]) in Object.entries(PROPERTIES)"
 						class="border-solid border border-gray-300 rounded-[32px] p-4"
 					>
-						<a :href="`/property/${v.id}`">
+						<a :href="`/properties/property`">
 							<img
 								class="w-full rounded-t-3xl rounded-b-[34px] mb-4"
 								:src="v.image"
