@@ -1,7 +1,7 @@
 <template>
 	<Header />
 
-	<main class="p-4 rounded-3xl flex flex-col gap-12 md:gap-8">
+	<main class="p-4 rounded-3xl flex flex-col gap-8 md:gap-24 ">
 		<div
 			class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0 text-white"
 			id="main-hero"
@@ -32,7 +32,7 @@
 					class="font-serif italic font-semibold"
 				>consumers</span>, and their quality of place...
 			</h1>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in CONSUMER_FEATURES"
 					class="border border-solid border-gray-500 flex flex-col gap-4 p-6 rounded-lg grad-box"
@@ -58,7 +58,7 @@
 					class="font-serif italic font-semibold"
 				>agents!</span>
 			</h1>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in PROVIDER_FEATURES"
 					class="border border-solid border-gray-500 flex flex-col gap-4 p-6 rounded-lg grad-box"
@@ -78,11 +78,6 @@
 			</div>
 		</div>
 
-		<div class="flex grid-cols-3 w-full rounded-xl md:ms-40">
-			<div class="md:mx-40">
-				<div class="grid grid-cols-2"></div>
-			</div>
-		</div>
 
 		<div class="content md:mx-40 flex flex-col gap-8 items-center">
 			<h1 class="text-center text-2xl">
@@ -92,7 +87,7 @@
 				in...
 			</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 xl:grid-cols-4">
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
@@ -123,7 +118,7 @@
 				>kinds!</span>
 			</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+			<div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-4 mb-4">
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>

@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0 items-center"
+		class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0 items-center md:px-16"
 	>
 		<a class="flex aspect-square h-12 w-12" href="/">
 			<img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
@@ -37,7 +37,7 @@
 		<img src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
 	</header>
 
-	<main class="mb-16 md:mx-20 rounded-lg flex flex-col gap-4 min-h-[80rem]">
+	<main class="mb-16 md:mx-20 rounded-lg flex flex-col gap-4 min-h-[40rem]">
 		<div
 			class="flex flex-row gap-2 mb-128 h-full"
 			style="grid-template-columns: 25% 75%;"
@@ -236,7 +236,7 @@
 						Listings</span>"
 				</p>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+				<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-4">
 					<div
 						v-for="([k, v]) in Object.entries(PROPERTIES)"
 						class="border-solid border border-gray-300 rounded-[32px] p-4"

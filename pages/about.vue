@@ -1,6 +1,6 @@
 <template>
 	<Header />
-	<main class="m-4 mb-16 md:mx-40 rounded-lg flex flex-col gap-4">
+	<main class="m-4 mb-16 md:mx-40 rounded-lg flex flex-col gap-8">
 		<h1
 			class="text-2xl text-black hover:underline gap-4 font-semibold pt-8"
 		>
@@ -35,7 +35,7 @@
 		</p>
 
 		<div
-			class="grid grid-cols-1 md:grid-cols-2 gap-4 md:px-20 py-8 rounded-xl"
+			class="grid grid-cols-1 md:grid-cols-3 gap-4 md:px-20 py-8 rounded-xl"
 		>
 			<div
 				v-for="([k, v]) in Object.entries(AUTHORS)"
@@ -84,10 +84,10 @@
 					placeholder="Email"
 					class="p-4 rounded-xl border-solid border border-gray-300"
 				/>
-				<textarea
+				<input
 					placeholder="Feedback/Complaint"
 					class="p-4 rounded-xl border-solid border border-gray-300"
-				></textarea>
+				/>
 				<button
 					class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4"
 				>Submit</button>
@@ -109,20 +109,20 @@ const AUTHORS: Array<Author> = [
 		"name": "Ishat Gupta",
 		"pfp": "https://avatars.githubusercontent.com/u/62379502",
 		"description":
-			"Hello! I'm a 17-year-old weaving digital tapestries, always curious, always exploring. Dive into my world and discover the magic I create! ",
+			"Hello! I'm a 17-year-old weaving digital tapestries. Dive into my world and discover the magic I create! ",
 	},
 	{
 		"name": "Pranav Purwar",
 		"pfp": "https://avatars.githubusercontent.com/u/75154889",
 		"description":
-			"Hello! I'm a 16-year-old developer, always curious, always exploring. Dive into the technological world and discover the magic I create!",
+			"Hello! I'm a 16-year-old developer, always curious, always exploring!",
 	},
 	{
 		"name": "Sambhav Arora",
 		"pfp":
 			"https://media.discordapp.net/attachments/1208100360925741076/1208100712333185146/image.png?ex=65e20e77&is=65cf9977&hm=cb0c9c78767fbdf2d0d602f3f189186126a03c14a7470187d38c3ba37254d2f7&=&format=webp&quality=lossless&width=1052&height=1052",
 		"description":
-			"Hello! I'm a 17-year-old tech enthusiast, always curious, always exploring. Dive into the technological world and discover the magic I create!",
+			"Hello! I'm a 17-year-old tech enthusiast, always curious, always exploring.",
 	},
 ]
 </script>

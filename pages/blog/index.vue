@@ -15,7 +15,7 @@
 			possibilities that await!
 		</p>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
 			<div
 				v-for="([k, v]) in Object.entries(BLOG_POSTS)"
 				class="border-solid border border-gray-600 flex flex-col rounded-xl"
