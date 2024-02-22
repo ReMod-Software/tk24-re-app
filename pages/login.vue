@@ -49,6 +49,7 @@ import Header from "../components/Header.vue"
 <style>
 .grad-text {
 	background: linear-gradient(135deg, #e49ddc, #86b5fc);
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }

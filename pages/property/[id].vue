@@ -6,10 +6,9 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div
 					class="aspect-[4/3] flex items-end justify-between md:justify-end p-4 gap-2 rounded-xl"
-					style="
-            background-image: url('/photos/d1.jpg');
-            background-size: cover;
-          "
+					id="image"
+					:style='"background-image: url(/photos/property/" + id
+					+ "/main.jpg); background-size: cover;"'
 				>
 					<!--desc amenities specs -->
 
@@ -35,9 +34,10 @@
 				<div class="flex flex-col justify-between">
 					<div class="flex flex-col gap-4">
 						<h1 class="text-3xl font-semibold mb-2">
-							Luxury Villa
-							<span class="font-light block text-lg">By "The Ocean
-								Group"</span>
+							{{ property.title }}
+							<span class="font-light block text-lg">By "<span
+									class="italic font-sans font-medium"
+								>{{ property.author }}</span>"</span>
 						</h1>
 
 						<div class="flex items-center gap-2">
@@ -47,7 +47,7 @@
 							/>
 
 							<p class="text-lg">
-								Port Blair, Andaman and Nicobar
+								{{ property.location }}
 							</p>
 						</div>
 						<div class="flex items-center gap-2">
@@ -57,8 +57,9 @@
 							/>
 
 							<p class="text-lg">
-								Starting from <span class="italic">₹
-									3,00,00,000</span>
+								Starting from <span class="italic">
+									{{ formatter.format(property.price) }}</span
+								>
 							</p>
 						</div>
 						<div class="flex items-center gap-2">
@@ -74,6 +75,7 @@
 						</div>
 					</div>
 					<div class="flex items-end justify-end gap-4 mt-8 md:mt-0">
+						
 						<img
 							src="/svg/share.svg"
 							class="h-8 w-8 p-1 rounded-lg"
@@ -94,17 +96,7 @@
 						About the Property
 					</h1>
 					<p class="text-lg">
-						Unveil your beachfront sanctuary. Wake to turquoise
-						infinity pool vistas and the gentle whisper of the
-						Andaman Sea. Sunlight dances on handwoven textiles
-						adorning your spacious villa, while lush greenery frames
-						floor-to-ceiling windows. Indulge in fresh seafood
-						delicacies prepared by your private chef on the
-						sunset-kissed terrace. Unwind in the spa room's aromatic
-						embrace, catered to by your dedicated butler. Embark on
-						bespoke island adventures, all from the unparalleled
-						haven of your luxury villa. Experience paradise,
-						redefined. Contact us today!
+						{{ property.description }}
 					</p>
 
 					<h1 class="font-semibold text-2xl -mb-4">Amenities</h1>
@@ -136,20 +128,25 @@
 
 					<a
 						class="flex flex-row items-center border border-black rounded-lg"
-						href="tel:+919872131743"
+						:href='"tel:" + property.contact'
 					>
-						<img src="/svg/phone.svg" class="h-10 w-10 bg-white rounded-l-md invert p-2" />
+						<img
+							src="/svg/phone.svg"
+							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+						/>
 						<h1 class="text-lg font-semibold text-center flex-grow">
 							Call Now
 						</h1>
 					</a>
 
-
 					<a
 						class="flex flex-row items-center border border-black rounded-lg"
-						href="mailto:contact@beacon.dev"
+						:href='"mailto:" + property.email'
 					>
-						<img src="/svg/email.svg" class="h-10 w-10 bg-white rounded-l-md invert p-2" />
+						<img
+							src="/svg/email.svg"
+							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+						/>
 						<h1 class="text-lg font-semibold text-center flex-grow">
 							Email Now
 						</h1>
@@ -159,7 +156,10 @@
 						class="flex flex-row items-center border border-black rounded-lg"
 						href="mailto:contact@beacon.dev"
 					>
-						<img src="/svg/location--filled.svg" class="h-10 w-10 bg-white rounded-l-md invert p-2" />
+						<img
+							src="/svg/location--filled.svg"
+							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+						/>
 						<h1 class="text-lg font-semibold text-center flex-grow">
 							Open in Google Maps
 						</h1>
@@ -172,8 +172,9 @@
 </template>
 
 <script setup lang="ts">
-import Footer from "../components/Footer.vue"
-import Header from "../components/Header.vue"
+import axios from "axios"
+import { useRoute } from "vue-router"
+import type { Property } from "~/server/types"
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",
@@ -209,6 +210,24 @@ const SPECS = {
 	"Property on Floor": "Ground",
 	"Address": "Port Blair, Andaman and Nicobar",
 }
+
+const route = useRoute()
+const id = route.params.id
+
+const property: Property = await axios.get(
+	`http://localhost:3000/api/property?id=${id}`,
+)
+	.then((response) => response.data)
+	.catch((error) => {
+		console.error("There was an error!", error)
+		return {}
+	})
+
+const formatter = new Intl.NumberFormat("en-IN", {
+	style: "currency",
+	currency: "INR",
+	maximumFractionDigits: 0,
+})
 </script>
 
 <style>

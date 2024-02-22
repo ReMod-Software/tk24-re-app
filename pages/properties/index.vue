@@ -236,15 +236,17 @@
 						Listings</span>"
 				</p>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-4">
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-4"
+				>
 					<div
 						v-for="([k, v]) in Object.entries(PROPERTIES)"
 						class="border-solid border border-gray-300 rounded-[32px] p-4"
 					>
-						<a :href="`/properties/property`">
+						<a :href="`/property/` + v.id">
 							<img
 								class="w-full rounded-t-3xl rounded-b-[34px] mb-4"
-								:src="v.image"
+								:src='"/photos/property/" + v.id + "/main.jpg"'
 							/>
 							<div class="px-1">
 								<div
@@ -262,7 +264,7 @@
 								>
 									<p>{{ v.description }}</p>
 									<p class="text-right text-gray-500 pt-4">
-										{{ v.price }}
+										{{ formatter.format(v.price) }}
 									</p>
 								</div>
 							</div>
@@ -277,43 +279,26 @@
 </template>
 
 <script setup lang="ts">
+import type { Property } from "~/server/types"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
-import type { PropertyDetail } from "../constants"
 import { HEADER_NAV } from "../constants"
 
-const PROPERTIES: PropertyDetail[] = [
-	{
-		"title": "3 BHK Apartment",
-		"description":
-			"A beautiful 3 BHK apartment in the heart of the city, with stunning views and modern amenities.",
-		"image": "/photos/d1.jpg",
-		"date": "15 February 2024",
-		"price": "₹ 1,50,00,000",
-		"location": "Nariman Point, Mumbai",
-		"id": 1,
-	},
-	{
-		"title": "Luxury Villa",
-		"description":
-			"A luxurious villa nestled in the serene countryside, offering a perfect blend of comfort and tranquility.",
-		"image": "/photos/d2.jpg",
-		"price": "₹ 3,00,00,000",
-		"date": "15 February 2024",
-		"location": "Port Blair",
-		"id": 2,
-	},
-	{
-		"title": "3 BHK Mansion",
-		"description":
-			"A 3 BHK mansion with sprawling gardens and opulent interiors, perfect for lavish living.",
-		"image": "/photos/d3.jpg",
-		"price": "₹ 5,00,00,000",
-		"date": "15 February 2024",
-		"location": "Lutyens' Delhi",
-		"id": 3,
-	},
-]
+import axios from "axios"
+
+
+const PROPERTIES: Property[] = await axios.get("/api/properties")
+	.then((response) => response.data as Property[])
+	.catch((error) => {
+		console.error("There was an error!", error)
+		return []
+	})
+
+const formatter = new Intl.NumberFormat("en-IN", {
+	style: "currency",
+	currency: "INR",
+	maximumFractionDigits: 0,
+})
 </script>
 
 <style>
@@ -336,6 +321,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type=number] {
+	appearance: textfield;
 	-moz-appearance: textfield;
 }
 </style>

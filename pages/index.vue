@@ -1,7 +1,7 @@
 <template>
 	<Header />
 
-	<main class="p-4 rounded-3xl flex flex-col gap-8 md:gap-24 ">
+	<main class="p-4 rounded-3xl flex flex-col gap-8 md:gap-24">
 		<div
 			class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0 text-white"
 			id="main-hero"
@@ -78,7 +78,6 @@
 			</div>
 		</div>
 
-
 		<div class="content md:mx-40 flex flex-col gap-8 items-center">
 			<h1 class="text-center text-2xl">
 				We have <span
@@ -118,7 +117,9 @@
 				>kinds!</span>
 			</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-4 mb-4">
+			<div
+				class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-4 mb-4"
+			>
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
@@ -250,6 +251,7 @@ textarea:focus, input:focus {
 /* turn font serif into gradient */
 main .content .font-serif {
 	background: linear-gradient(135deg, #e49ddc, #86b5fc);
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
