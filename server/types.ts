@@ -14,7 +14,6 @@ interface Property {
 interface Blog {
 	name: string
 	description: string
-	content: string
 	imageUrl: string
 	author: string
 	date: string

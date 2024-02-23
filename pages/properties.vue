@@ -287,12 +287,7 @@ import { HEADER_NAV } from "./constants"
 import axios from "axios"
 
 
-const PROPERTIES: Property[] = await axios.get("/api/properties")
-	.then((response) => response.data as Property[])
-	.catch((error) => {
-		console.error("There was an error!", error)
-		return []
-	})
+const PROPERTIES: Property[] = await $fetch("/api/properties")
 
 const formatter = new Intl.NumberFormat("en-IN", {
 	style: "currency",
