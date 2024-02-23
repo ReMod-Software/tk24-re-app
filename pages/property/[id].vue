@@ -214,14 +214,7 @@ const SPECS = {
 const route = useRoute()
 const id = route.params.id
 
-const property: Property = await axios.get(
-	`http://localhost:3000/api/property?id=${id}`,
-)
-	.then((response) => response.data)
-	.catch((error) => {
-		console.error("There was an error!", error)
-		return {}
-	})
+const property: Property = await $fetch(`/api/property?id=${id}`)
 
 const formatter = new Intl.NumberFormat("en-IN", {
 	style: "currency",

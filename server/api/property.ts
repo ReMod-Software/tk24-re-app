@@ -2,8 +2,6 @@ import { Property } from "~/server/types"
 
 export default defineEventHandler(async (event) => {
 	const { id } = getQuery(event)
-	const url = "http://" + getRequestHost(event) + "/api/properties"
-	console.log(url)
 
 	if (!id) {
 		return new Response("Property ID is required", {
@@ -11,11 +9,15 @@ export default defineEventHandler(async (event) => {
 		})
 	}
 
-	const props: Property[] = await fetch(url).then((res) => res.json())
+	const props: Property[] = await $fetch("/api/properties")
 
 	const property = props.find((p) => p.id == parseInt(id.toString()))
 
 	return new Response(JSON.stringify(property), {
+		headers: {
+			"content-type": "application/json",
+			// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
+		},
 		status: 200,
 	})
 })

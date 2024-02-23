@@ -44,6 +44,10 @@ export default defineEventHandler((event) => {
 	]
 
 	const response = new Response(JSON.stringify(properties), {
+		headers: {
+			"content-type": "application/json",
+			// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
+		},
 		status: 200,
 	})
 

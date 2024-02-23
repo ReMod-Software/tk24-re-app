@@ -11,4 +11,14 @@ interface Property {
 	email: string
 }
 
-export type { Property }
+interface Blog {
+	name: string
+	description: string
+	content: string
+	imageUrl: string
+	author: string
+	date: string
+	key: string
+}
+
+export type { Blog, Property }

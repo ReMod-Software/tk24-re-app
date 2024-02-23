@@ -282,7 +282,7 @@
 import type { Property } from "~/server/types"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
-import { HEADER_NAV } from "../constants"
+import { HEADER_NAV } from "./constants"
 
 import axios from "axios"
 

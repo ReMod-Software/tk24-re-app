@@ -5,7 +5,7 @@ const HEADER_NAV = [
 	},
 	{
 		"type": "text",
-		"content": "Blog",
+		"content": "Blogs",
 	},
 	{
 		"type": "text",
