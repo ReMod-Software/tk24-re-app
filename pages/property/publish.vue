@@ -185,7 +185,6 @@
 
 <script setup lang="ts">
 import { auth } from "~/server/firebase"
-import type { Property } from "~/server/types"
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",

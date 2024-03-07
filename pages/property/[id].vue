@@ -172,7 +172,6 @@
 </template>
 
 <script setup lang="ts">
-import axios from "axios"
 import { useRoute } from "vue-router"
 import type { Property } from "~/server/types"
 

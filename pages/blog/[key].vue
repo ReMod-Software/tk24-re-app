@@ -38,11 +38,7 @@ import DOMPurify from 'dompurify';
 const route = useRoute()
 const key = route.params.key
 
-const post = await $fetch(`/api/blog?key=${key}`)
-
-console.log(key)
-
-console.log(post)
+const post: Blog = await $fetch(`/api/blog?key=${key}`)
 
 marked.use({
 	renderer: {
