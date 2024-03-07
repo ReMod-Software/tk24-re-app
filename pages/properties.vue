@@ -6,7 +6,7 @@
 			<img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
 		</a>
 		<div
-			class="hidden md:flex w-auto md:w-[65%] h-full rounded-xl items-center px-12"
+			class="hidden md:flex w-auto md:w-[80%] h-full rounded-xl items-center px-12"
 		>
 			<input
 				type="search"
@@ -21,17 +21,10 @@
 		<nav class="hidden md:flex gap-6 justify-center items-center">
 			<a
 				v-for="item in HEADER_NAV"
-				:href='"../" + item.content'
+				:href='item.content'
 				class="text-2xl text-center text-black no-underline hover:underline underline-offset-4 font-serif font-semibold"
 			>
 				{{ item.content }}
-			</a>
-
-			<a
-				href="/login"
-				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-4 py-2 rounded-lg"
-			>
-				Login
 			</a>
 		</nav>
 		<img src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
@@ -65,15 +58,15 @@
 								id="apartment"
 								value="Apartment"
 							>
-							<label for="vehicle1">Apartment</label><br>
+							<label>Apartment</label><br>
 							<input
 								type="checkbox"
 								id="bungalow"
 								value="Bungalow"
 							>
-							<label for="vehicle1">Bungalow</label><br>
+							<label>Bungalow</label><br>
 							<input type="checkbox" id="flat" value="Flat">
-							<label for="vehicle1">Mansion</label><br>
+							<label>Mansion</label><br>
 						</div>
 						<div class="py-2" id="box">
 							<p class="uppercase font-semibold text-xs">Size</p>
@@ -112,6 +105,15 @@
 								>
 							</div>
 						</div>
+
+						<div class="flex justify-center">
+							<button
+								class="border-solid border-2 b-[#E49DDC] bg-gray-50 font-semibold text-lg p-2 rounded-lg w-full"
+							>
+								APPLY
+							</button>
+
+							</div>
 					</div>
 				</div>
 			</div>
@@ -231,10 +233,16 @@
 					</div>
 				</div>
 
+				<div class="flex justify-between items-center">
 				<p class="text-left text-2xl py-4">
 					Showing results for "<span class="italic">Latest
 						Listings</span>"
 				</p>
+
+				<a href="/property/publish" class="text-center text-blue-500 text-xl font-bold hover:underline">
+					Post a Property
+				</a>
+			</div>
 
 				<div
 					class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-4"
@@ -283,8 +291,7 @@ import type { Property } from "~/server/types"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
 import { HEADER_NAV } from "./constants"
-
-import axios from "axios"
+import auth from "~/server/firebase"
 
 
 const PROPERTIES: Property[] = await $fetch("/api/properties")

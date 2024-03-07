@@ -8,13 +8,19 @@
 		/>
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
-			<h1 class="text-4xl font-semibold">Great to see you again!</h1>
+			<h1 class="text-4xl font-semibold">
+		        Hey! Welcome to Beacon!
+			</h1>
 			<p class="text-justify">
-				Sign in to your account to access your saved properties,
-				preferences, and more.
+				Sign up to get view our collection of properties
 			</p>
 
 			<form class="flex flex-col gap-4">
+                <input
+					placeholder="Full Name"
+					id="name"
+					class="p-4 rounded-xl border-solid border border-gray-300"
+				/>
 				<input
 					type="email"
 					placeholder="Email"
@@ -30,14 +36,14 @@
 				<button
 					class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4"
 					@click="register"
-				>Login</button>
+				>Register</button>
 			</form>
 
 			<p class="text-right text-sm">
-				Don't have an account? <a
-					href="/signup"
+				Already have an account? <a
+					href="/login"
 					class="underline grad-text underline-offset-2"
-				>Sign up</a>
+				>Login</a>
 			</p>
 		</div>
 	</main>
@@ -51,8 +57,27 @@ import Header from "../components/Header.vue"
 async function register() {
 	const email = document.getElementById("email") as HTMLInputElement
 	const password = document.getElementById("password") as HTMLInputElement
+	const name = document.getElementById("name") as HTMLInputElement
 
-	const res = await fetch("/api/auth/login", {
+	const res = await fetch("/api/auth/register", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			email: email.value,
+			password: password.value,
+			name: name.value
+		}),
+	})
+
+	alert(await res.text())
+
+	if (res.status !== 200) {
+		return
+	}
+
+	const login = await fetch("/api/auth/login", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -63,13 +88,12 @@ async function register() {
 		}),
 	})
 
-    if (res.status !== 200) {
-		alert(await res.text())
+	if (login.status !== 200) {
+		alert(await login.text())
 		return
 	}
 
-	const data = await res.json()
-	console.log(data)
+	document.location.href = "/"
 }
 
 </script>
