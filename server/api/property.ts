@@ -1,23 +1,31 @@
-import { Property } from "~/server/types"
+import { getDatabase, ref, onValue } from "firebase/database"
+
 
 export default defineEventHandler(async (event) => {
 	const { id } = getQuery(event)
 
 	if (!id) {
-		return new Response("Property ID is required", {
+		return new Response("Property id is required", {
 			status: 400,
 		})
 	}
 
-	const props: Property[] = await $fetch("/api/properties")
+	const db = getDatabase()
 
-	const property = props.find((p) => p.id == parseInt(id.toString()))
+    const refProp = ref(db, 'properties/' + id);
 
-	return new Response(JSON.stringify(property), {
-		headers: {
-			"content-type": "application/json",
-			// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
-		},
-		status: 200,
+	return new Promise((resolve, reject) => {
+		onValue(refProp, (snapshot) => {			
+			resolve(new Response(JSON.stringify(snapshot.val()), {
+				headers: {
+					"content-type": "application/json",
+					// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
+				},
+				status: 200,
+			}))
+		}
+		, {
+			onlyOnce: true
+		})
 	})
-})
+});

@@ -9,9 +9,10 @@ const firebaseConfig = {
     messagingSenderId: "456606038445",
     appId: "1:456606038445:web:c418d4d6ae19aa86a24924",
     measurementId: "G-G0R6Y96HZD",
+    databaseURL: "https://beacon-735fe-default-rtdb.firebaseio.com",
 }
 
 const firebaseApp = initializeApp(firebaseConfig)
 const auth = getAuth(firebaseApp)
 
-export default auth
+export { firebaseApp, auth }

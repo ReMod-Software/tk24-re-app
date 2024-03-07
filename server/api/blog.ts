@@ -1,4 +1,6 @@
 import { Blog } from "~/server/types"
+import { getDatabase, ref, get, onValue, child } from "firebase/database"
+
 
 export default defineEventHandler(async (event) => {
 	const { key } = getQuery(event)
@@ -9,15 +11,22 @@ export default defineEventHandler(async (event) => {
 		})
 	}
 
-	const blogs: Blog[] = await $fetch(`/api/blogs`)
+	const db = getDatabase()
 
-	const blog = blogs.find((p) => p.key == key)
+    const refBlog = ref(db, 'blogs/' + key);
 
-	return new Response(JSON.stringify(blog), {
-		headers: {
-			"content-type": "application/json",
-			// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
-		},
-		status: 200,
+	return new Promise((resolve, reject) => {
+		onValue(refBlog, (snapshot) => {			
+			resolve(new Response(JSON.stringify(snapshot.val()), {
+				headers: {
+					"content-type": "application/json",
+					// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
+				},
+				status: 200,
+			}))
+		}
+		, {
+			onlyOnce: true
+		})
 	})
-})
+});

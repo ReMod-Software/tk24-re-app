@@ -18,6 +18,7 @@ interface Blog {
 	author: string
 	date: string
 	key: string
+	content: string
 }
 
 export type { Blog, Property }

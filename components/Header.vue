@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { HEADER_NAV } from "../pages/constants"
-import auth from "~/server/firebase";
+import { auth } from "~/server/firebase";
 
 const logout = async () => {
 	await auth.signOut();

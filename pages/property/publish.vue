@@ -139,7 +139,6 @@
 
 					<a
 						class="flex flex-row items-center border border-black rounded-lg"
-						:href='"tel:" + property.contact'
 					>
 						<img
 							src="/svg/phone.svg"
@@ -150,7 +149,6 @@
 
 					<a
 						class="flex flex-row items-center border border-black rounded-lg"
-						:href='"mailto:" + property.email'
 					>
 						<img
 							src="/svg/email.svg"
@@ -162,7 +160,6 @@
 
 					<a
 						class="flex flex-row items-center border border-black rounded-lg"
-						href="mailto:contact@beacon.dev"
 					>
 						<img
 							src="/svg/location--filled.svg"
@@ -187,7 +184,7 @@
 </template>
 
 <script setup lang="ts">
-import auth from "~/server/firebase"
+import { auth } from "~/server/firebase"
 import type { Property } from "~/server/types"
 
 const AMENITIES = {
@@ -227,19 +224,7 @@ const SPECS = {
 
 const username = auth.currentUser?.displayName
 
-const property: Property = await $fetch(`/api/property?id=1`)
 
-const formatter = new Intl.NumberFormat("en-IN", {
-	style: "currency",
-	currency: "INR",
-	maximumFractionDigits: 0,
-})
-
-function adjustHeight(el) {
-	el.style.height = (el.scrollHeight > el.clientHeight)
-		? (el.scrollHeight) + "px"
-		: "60px"
-}
 </script>
 
 <style>

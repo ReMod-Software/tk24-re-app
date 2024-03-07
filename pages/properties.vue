@@ -291,7 +291,6 @@ import type { Property } from "~/server/types"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
 import { HEADER_NAV } from "./constants"
-import auth from "~/server/firebase"
 
 
 const PROPERTIES: Property[] = await $fetch("/api/properties")
