@@ -7,8 +7,8 @@
 				<div
 					class="aspect-[4/3] flex items-end justify-between md:justify-end p-4 gap-2 rounded-xl"
 					id="image"
-					:style='"background-image: url(/photos/property/" + id
-					+ "/main.jpg); background-size: cover;"'
+					:style='"background-image: url(" + property.image
+					+ "); background-size: cover;"'
 				>
 					<!--desc amenities specs -->
 

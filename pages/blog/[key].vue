@@ -61,7 +61,7 @@ marked.use({
 onMounted(async () => {
 	const content = document.getElementById("content")
 	if (content) {
-		content.innerHTML = DOMPurify.sanitize(marked.parse(await $fetch(`/blogs/${key}.md`)))
+		content.innerHTML = DOMPurify.sanitize(marked.parse(post.content.replace(/\\n/g, '\n')))
 	}
 })
 </script>

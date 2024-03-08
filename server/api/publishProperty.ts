@@ -1,4 +1,7 @@
-import { getDatabase, ref, set } from "firebase/database"
+import { get, getDatabase, ref, set } from "firebase/database"
+import { randomUUID } from 'crypto'
+import { getStorage, uploadString, ref as storageRef, getDownloadURL } from "firebase/storage";
+
 
 export default defineEventHandler(async (event) => {
 	const {
@@ -9,37 +12,56 @@ export default defineEventHandler(async (event) => {
 		date,
 		price,
 		location,
-		id,
 		contact,
 		email,
+		ready,
+		mapsLink
 	} = await readBody(event)
 
-	if (!id) {
-		return new Response("Property id is required", {
-			status: 400,
-		})
+	const db = getDatabase()		
+
+	const propsRef = ref(db, "properties/")
+	
+	var id = randomUUID()
+
+	const checkExistingProperty = await get(propsRef)
+	if (checkExistingProperty.exists()) {
+		id = randomUUID()
 	}
 
-	const db = getDatabase()
+		
+	const storage = getStorage()
 
-	set(ref(db, "properties/" + id), {
-		title: title,
-		author: author,
-		description: description,
-		image: image,
-		date: date,
-		price: price,
-		location: location,
-		id: id,
-		contact: contact,
-		email: email,
-	})
+	const imageRef = storageRef(storage, "properties/" + id + "/cover")
+		
+	uploadString(imageRef, image, 'data_url').then((snapshot) => {
+		console.log('Uploaded cover image!');
+		
+		getDownloadURL(snapshot.ref).then((imageURL) => {
 
-	return new Response(JSON.stringify("Successfully published property"), {
-		headers: {
-			"content-type": "application/json",
-			// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
-		},
-		status: 200,
-	})
-})
+		set(ref(db, "properties/" + id), {
+			title: title,
+			author: author,
+			description: description,
+			image: imageURL, // don't ask me why I'm saving the image as base64 :kappa:
+			date: date,
+			price: price,
+			location: location,
+			id: id,
+			contact: contact,
+			email: email,
+			ready: ready,
+			mapsLink: mapsLink
+		})
+	
+		return new Response(JSON.stringify("Successfully published property"), {
+			headers: {
+				"content-type": "application/json",
+				// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain
+			},
+			status: 200,
+		});
+	});
+});
+});
+

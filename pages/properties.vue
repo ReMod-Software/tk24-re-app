@@ -11,7 +11,7 @@
 			<input
 				type="search"
 				placeholder="Search for Properties!"
-				class="border-box flex-grow rounded-l-xl bg-gray-100 p-3"
+				class="flex-grow rounded-l-xl bg-gray-100 p-3 outline-0"
 			>
 			<img
 				src="/svg/search.svg"
@@ -253,8 +253,8 @@
 					>
 						<a :href="`/property/` + v.id">
 							<img
-								class="w-full rounded-t-3xl rounded-b-[34px] mb-4"
-								:src='"/photos/property/" + v.id + "/main.jpg"'
+								class="w-full rounded-t-3xl rounded-b-[34px] h-[22vh] mb-4"
+								:src='v.image'
 							/>
 							<div class="px-1">
 								<div
@@ -303,10 +303,8 @@ const formatter = new Intl.NumberFormat("en-IN", {
 </script>
 
 <style>
-#main-hero {
-	background-image: url("/photos/search_bg.webp");
-	background-size: cover;
-	background-position: center;
+img {
+	object-fit: cover;
 }
 
 #box > * {

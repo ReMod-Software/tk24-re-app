@@ -19,6 +19,8 @@ export default defineEventHandler(async (event) => {
 			id: propertyData.id,
 			contact: propertyData.contact,
 			email: propertyData.email,
+			ready: propertyData.ready,
+			mapsLink: propertyData.mapsLink
 		}
 		propertiesList.push(property)
 	})

@@ -9,6 +9,8 @@ interface Property {
 	id: number
 	contact: number
 	email: string
+	ready: boolean,
+	mapsLink: string
 }
 
 interface Blog {
