@@ -23,5 +23,6 @@ export default defineNuxtConfig({
 			appId: "1:456606038445:web:c418d4d6ae19aa86a24924",
 			measurementId: "G-G0R6Y96HZD",
 		},
+		pocketbaseUrl: process.env.POCKETBASE_URL,
 	},
 })

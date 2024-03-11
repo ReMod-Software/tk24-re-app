@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
 			contact: propertyData.contact,
 			email: propertyData.email,
 			ready: propertyData.ready,
-			mapsLink: propertyData.mapsLink
+			mapsLink: propertyData.mapsLink,
 		}
 		propertiesList.push(property)
 	})
