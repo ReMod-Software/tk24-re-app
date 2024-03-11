@@ -9,8 +9,10 @@ interface Property {
 	id: number
 	contact: number
 	email: string
-	ready: boolean,
+	ready: boolean
 	mapsLink: string
+	city: string
+	state: string
 }
 
 interface Blog {
@@ -19,7 +21,7 @@ interface Blog {
 	imageUrl: string
 	author: string
 	date: string
-	key: string
+	id: string
 	content: string
 }
 
