@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@epic-web/cachified':
+    specifier: ^5.1.2
+    version: 5.1.2
   '@nuxt/image':
     specifier: ^1.4.0
     version: 1.4.0(@upstash/redis@1.28.4)
@@ -19,6 +22,9 @@ dependencies:
   axios:
     specifier: ^1.6.7
     version: 1.6.7
+  cachified-redis-json-adapter:
+    specifier: ^2.0.0
+    version: 2.0.0(@epic-web/cachified@5.1.2)
   dompurify:
     specifier: ^3.0.9
     version: 3.0.9
@@ -500,6 +506,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@epic-web/cachified@5.1.2:
+    resolution: {integrity: sha512-8Q1J/jF0bOKUN+XPTSUo+z34WJHMBLkuDv+HkPPS9ufs+cHvInWrLOLi3qIljhe03Xq777pwEDBKnMafetnPhA==}
+    dev: false
 
   /@esbuild/aix-ppc64@0.19.12:
     resolution: {integrity: sha512-bmoCYyWdEL3wDQIVbcyzRyeKLgk2WtWLTWz1ZIAZF/EGbNOwSA6ew3PftJ1PqMiOOGu0OyFMzG53L0zqIpPeNA==}
@@ -3144,6 +3154,15 @@ packages:
     dependencies:
       mime-types: 2.1.35
       ylru: 1.3.2
+    dev: false
+
+  /cachified-redis-json-adapter@2.0.0(@epic-web/cachified@5.1.2):
+    resolution: {integrity: sha512-BKp2Aj+bUMyAgXDkcYXg549u1zGLc9A7fVp1kFDQ6zqmlZc40uZHq2+jUpXvxTZNSyrtBaA99N5IFnsnrkS9GA==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      '@epic-web/cachified': ^5.0.0
+    dependencies:
+      '@epic-web/cachified': 5.1.2
     dev: false
 
   /callsites@3.1.0:

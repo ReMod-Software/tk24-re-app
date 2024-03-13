@@ -8,15 +8,18 @@
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
-		"dprint": "dprint"
+		"dprint": "dprint",
+		"start": "node --env-file=.env .output/server/index.mjs"
 	},
 	"dependencies": {
+		"@epic-web/cachified": "^5.1.2",
 		"@nuxt/image": "^1.4.0",
 		"@nuxtjs/tailwindcss": "^6.11.4",
 		"@types/dompurify": "^3.0.5",
 		"@upstash/redis": "^1.28.4",
 		"autoprefixer": "^10.4.17",
 		"axios": "^1.6.7",
+		"cachified-redis-json-adapter": "^2.0.0",
 		"dompurify": "^3.0.9",
 		"dprint": "^0.45.0",
 		"firebase": "^10.8.1",

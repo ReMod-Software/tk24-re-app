@@ -1,6 +1,5 @@
 import { getDatabase, ref, set } from "firebase/database"
 import { BlogSchema } from "../validate"
-
 export default defineEventHandler(async (event) => {
 	const { id, content, name, description, imageUrl, author, date } =
 		BlogSchema.parse(await readBody(event))
@@ -22,7 +21,6 @@ export default defineEventHandler(async (event) => {
 		date: date,
 		id: id,
 	})
-
 	return new Response(JSON.stringify("Success publishing blog"), {
 		headers: {
 			"content-type": "application/json",

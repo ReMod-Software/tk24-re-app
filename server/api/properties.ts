@@ -1,5 +1,6 @@
 import { get, getDatabase, ref } from "firebase/database"
 import { PropertySchema, Property } from "~/server/validate"
+import { cache } from "../cache"
 
 export default defineEventHandler(async (event) => {
 	const db = getDatabase()
