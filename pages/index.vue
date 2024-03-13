@@ -3,18 +3,18 @@
 
 	<main class="p-4 rounded-3xl flex flex-col gap-8 md:gap-24">
 		<div
-			class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-8 md:p-0 text-white"
+			class="rounded-lg flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-4 md:p-0 text-white"
 			id="main-hero"
 		>
-			<h1 class="text-center text-xl md:text-4xl font-extralight">
+			<h1 class="text-center text-2xl md:text-4xl font-extralight">
 				Looking for a <span
-					class="font-serif text-2xl md:px-2 italic font-semibold md:text-5xl"
+					class="font-serif text-3xl md:px-2 italic font-semibold md:text-5xl"
 				>space?</span>
 				We have one <span
-					class="font-serif text-2xl md:px-2 italic font-semibold md:text-5xl"
+					class="font-serif text-3xl md:px-2 italic font-semibold md:text-5xl"
 				>for you!</span>
 			</h1>
-			<div class="flex w-auto md:w-[65%] rounded-3xl justify-center">
+			<div class="flex w-auto w-full md:w-[65%] rounded-3xl justify-center">
 				<input
 					type="search"
 					placeholder="Search for Properties!"
@@ -40,9 +40,9 @@
 					<div class="flex justify-between items-center gap-4">
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
-							class="h-16 w-16"
+							class="h-10 w-10 md:h-16 md:w-16"
 						>
-						<h2 class="text-2xl font-semibold text-right">
+						<h2 class="text-xl md:text-2xl font-semibold text-right">
 							{{ ft.name }}
 						</h2>
 					</div>
@@ -66,9 +66,9 @@
 					<div class="flex justify-between items-center gap-4">
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
-							class="h-16 w-16"
+							class="h-10 md:h-16 w-10 md:w-16"
 						>
-						<h2 class="text-2xl font-semibold text-right">
+						<h2 class="text-xl md:text-2xl font-semibold text-right">
 							{{ ft.name }}
 						</h2>
 					</div>
