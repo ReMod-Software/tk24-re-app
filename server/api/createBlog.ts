@@ -1,10 +1,11 @@
 import { getDatabase, ref, set } from "firebase/database"
+import { BlogSchema } from "../validate"
 
 export default defineEventHandler(async (event) => {
-	const { key, content, name, description, imageUrl, author, date } =
-		await readBody(event)
+	const { id, content, name, description, imageUrl, author, date } =
+		BlogSchema.parse(await readBody(event))
 
-	if (!key) {
+	if (!id) {
 		return new Response("Blog key is required", {
 			status: 400,
 		})
@@ -12,14 +13,14 @@ export default defineEventHandler(async (event) => {
 
 	const db = getDatabase()
 
-	set(ref(db, "blogs/" + key), {
+	set(ref(db, "blogs/" + id), {
 		content: content,
 		name: name,
 		description: description,
 		imageUrl: imageUrl,
 		author: author,
 		date: date,
-		key: key,
+		id: id,
 	})
 
 	return new Response(JSON.stringify("Success publishing blog"), {

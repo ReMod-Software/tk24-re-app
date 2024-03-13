@@ -173,7 +173,7 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router"
-import type { Property } from "~/server/types"
+import type { Property } from "~/server/validate"
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",

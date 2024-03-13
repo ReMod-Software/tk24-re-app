@@ -1,11 +1,11 @@
-import { Blog } from "~/server/types"
+import { BlogSchema } from "~/server/validate"
 import { getDatabase, ref, get, onValue, child } from "firebase/database"
 
 
 export default defineEventHandler(async (event) => {
-	const { key } = getQuery(event)
+	const { id } = BlogSchema.parse(getQuery(event));
 
-	if (!key) {
+	if (!id) {
 		return new Response("Blog key is required", {
 			status: 400,
 		})
@@ -13,11 +13,10 @@ export default defineEventHandler(async (event) => {
 
 	const db = getDatabase()
 
-    const refBlog = ref(db, 'blogs/' + key);
-
+    const refBlog = ref(db, 'blogs/' + id);
 	return new Promise((resolve, reject) => {
 		onValue(refBlog, (snapshot) => {			
-			resolve(new Response(JSON.stringify(snapshot.val()), {
+			resolve(new Response(JSON.stringify(BlogSchema.parse(snapshot.val())), {
 				headers: {
 					"content-type": "application/json",
 					// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain

@@ -287,7 +287,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Property } from "~/server/types"
+import type { Property } from "~/server/validate"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
 import { HEADER_NAV } from "./constants"

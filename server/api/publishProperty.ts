@@ -1,6 +1,7 @@
 import { get, getDatabase, ref, set } from "firebase/database"
 import { randomUUID } from 'crypto'
 import { getStorage, uploadString, ref as storageRef, getDownloadURL } from "firebase/storage";
+import { PropertySchema } from "../validate";
 
 
 export default defineEventHandler(async (event) => {
@@ -15,8 +16,10 @@ export default defineEventHandler(async (event) => {
 		contact,
 		email,
 		ready,
-		mapsLink
-	} = await readBody(event)
+		mapsLink,
+		city,
+		state
+	} = PropertySchema.parse(await readBody(event));
 
 	const db = getDatabase()		
 
@@ -51,7 +54,9 @@ export default defineEventHandler(async (event) => {
 			contact: contact,
 			email: email,
 			ready: ready,
-			mapsLink: mapsLink
+			mapsLink: mapsLink,
+			state: state,
+			city: city
 		})
 	
 		return new Response(JSON.stringify("Successfully published property"), {

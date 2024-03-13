@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Blog } from "~/server/types"
+import type { Blog } from "~/server/validate"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
 import { marked } from 'marked';
