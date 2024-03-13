@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
 
 	return new Promise((resolve, reject) => {
 		onValue(refProp, async(snapshot) => {			
-			resolve(new Response(JSON.stringify(PropertySchema.parse(await cache(snapshot.val(), String(id)))), {
+			resolve(new Response(JSON.stringify(await cache(snapshot.val(), String(id))), {
 				headers: {
 					"content-type": "application/json",
 					// "Access-Control-Allow-Origin": "https://tk24-beacon.deno.dev" // Replace with your website's domain

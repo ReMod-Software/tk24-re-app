@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     const refBlog = ref(db, 'blogs/' + id);
 	return new Promise((resolve, reject) => {
 		onValue(refBlog, async (snapshot) => {	
-			const cachedData = BlogSchema.parse(await cache(snapshot.val(), String(id)));		
+			const cachedData = await cache(snapshot.val(), String(id));		
 			resolve(new Response(JSON.stringify(cachedData), {
 				headers: {
 					"content-type": "application/json",

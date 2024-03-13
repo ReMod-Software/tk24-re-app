@@ -1,6 +1,5 @@
 import { get, getDatabase, ref } from "firebase/database"
-import { PropertySchema, Property } from "~/server/validate"
-import { cache } from "../cache"
+import {  Property } from "~/server/validate"
 
 export default defineEventHandler(async (event) => {
 	const db = getDatabase()
@@ -8,7 +7,7 @@ export default defineEventHandler(async (event) => {
 	const propertySnapshot = await get(properties)
 	const propertiesList: Property[] = []
 	propertySnapshot.forEach((child) => {
-		const propertyData = PropertySchema.parse(child.val());
+		const propertyData = child.val();
 		const property: Property = {
 			title: propertyData.title,
 			author: propertyData.author,

@@ -1,5 +1,5 @@
 import { get, getDatabase, ref } from "firebase/database"
-import { Blog, BlogSchema } from "~/server/validate"
+import { Blog } from "~/server/validate"
 
 export default defineEventHandler(async (event) => {
 	const db = getDatabase()
@@ -8,7 +8,6 @@ export default defineEventHandler(async (event) => {
 	const blogList: Blog[] = []
 	blogSnapshot.forEach((child) => {
 		const blog: Blog = child.val()
-		BlogSchema.parse(blog);
 		blogList.push(blog)
 	})
 

@@ -20,7 +20,7 @@
 				v-for="([k, v]) in Object.entries(BLOG_POSTS)"
 				class="border-solid border border-gray-300 flex flex-col rounded-3xl"
 			>
-				<a class="flex flex-col w-full" :href="`/blog/${v.id}`">
+				<NuxtLink class="flex flex-col w-full" :to="`/blog/${v.id}`">
 					<NuxtImg
 						class="flex w-full p-4 aspect-[16/9] rounded-3xl"
 						:src="v.imageUrl"
@@ -39,7 +39,7 @@
 							{{ v.description }}
 						</p>
 					</div>
-				</a>
+				</NuxtLink>
 			</div>
 		</div>
 	</main>
