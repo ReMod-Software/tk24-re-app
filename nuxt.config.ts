@@ -3,6 +3,7 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	modules: [
 		"@nuxtjs/tailwindcss",
+		'@nuxt/image',
 	],
 	css: [
 		"~/assets/css/main.css",
@@ -13,6 +14,9 @@ export default defineNuxtConfig({
 			autoprefixer: {},
 		},
 	},
+	image: {
+		inject: true
+	  },
 	runtimeConfig: {
 		firebase: {
 			apiKey: "AIzaSyAYjZmseIlXNXpvTl0RIvHAEvsuKsku2VE",

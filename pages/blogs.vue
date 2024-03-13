@@ -21,9 +21,10 @@
 				class="border-solid border border-gray-300 flex flex-col rounded-3xl"
 			>
 				<a class="flex flex-col w-full" :href="`/blog/${v.id}`">
-					<img
+					<NuxtImg
 						class="flex w-full p-4 aspect-[16/9] rounded-3xl"
 						:src="v.imageUrl"
+						loading="lazy"
 					/>
 					<div class="px-4 mb-4">
 						<div class="flex justify-between opacity-50 mb-2">
