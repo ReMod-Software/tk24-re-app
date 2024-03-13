@@ -108,8 +108,13 @@ const AUTHORS: Array<Author> = [
 	{
 		"name": "Ishat Gupta",
 		"pfp": "https://avatars.githubusercontent.com/u/62379502",
-		"description":
-			"Hello! I'm a 17-year-old weaving digital tapestries. Dive into my world and discover the magic I create! ",
+		"description": "Hello! I'm a 17-year-old weaving digital tapestries. Dive into my world and discover the magic I create! ",
+	},
+	{
+		"name": "Ishan Jaiswal",
+		"pfp": "https://avatars.githubusercontent.com/u/71317082",
+		"description": "Hello! I'm a 18-year-old developer and tech entusiast and I love learning and exploring things beyond my own domain! "
+			
 	},
 	{
 		"name": "Pranav Purwar",
