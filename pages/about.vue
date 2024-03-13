@@ -25,7 +25,7 @@
 			is powered by <b>ReMod Limited</b>
 			, a forward-thinking company dedicated to driving innovation and
 			positive change in the real estate sector. Behind our platform are
-			three passionate individuals who bring a wealth of experience and
+			four passionate individuals who bring a wealth of experience and
 			expertise to the table: Together, we are committed to building a
 			trusted and transparent real estate platform that empowers
 			consumers, fosters community, and drives positive change in the
