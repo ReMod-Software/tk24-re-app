@@ -1,34 +1,5 @@
 <template>
-	<header
-		class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0 items-center md:px-16"
-	>
-		<a class="flex aspect-square h-12 w-12" href="/">
-			<NuxtImg loading="lazy" src="/branding/beacon_logo_base.png" class="h-12 w-12" />
-		</a>
-		<div
-			class="hidden md:flex w-auto md:w-[80%] h-full rounded-xl items-center px-12"
-		>
-			<input
-				type="search"
-				placeholder="Search for Properties!"
-				class="flex-grow rounded-l-xl bg-gray-100 p-3 outline-0"
-			>
-			<NuxtImg
-				src="/svg/search.svg"
-				class="aspect-square bg-white invert h-full rounded-r-xl p-2"
-			/>
-		</div>
-		<nav class="hidden md:flex gap-6 justify-center items-center">
-			<NuxtLink
-				v-for="item in HEADER_NAV"
-				:to='item.content'
-				class="text-2xl text-center text-black no-underline hover:underline underline-offset-4 font-serif font-semibold"
-			>
-				{{ item.content }}
-		</NuxtLink>
-		</nav>
-		<NuxtImg src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
-	</header>
+	<Header />
 
 	<main class="mb-16 md:mx-20 rounded-lg flex flex-col gap-4 min-h-[40rem]">
 		<div
@@ -290,7 +261,6 @@
 import type { Property } from "~/server/validate"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
-import { HEADER_NAV } from "./constants"
 
 
 const PROPERTIES: Property[] = await $fetch("/api/properties")

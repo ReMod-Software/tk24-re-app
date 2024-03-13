@@ -29,4 +29,8 @@ export default defineNuxtConfig({
 		},
 		pocketbaseUrl: process.env.POCKETBASE_URL,
 	},
+	experimental: {
+		viewTransition: true
+	  }
+	
 })
