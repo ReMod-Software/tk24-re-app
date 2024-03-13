@@ -20,7 +20,7 @@
 					placeholder="Search for Properties!"
 					class="border-box flex-grow p-2 px-4 rounded-l-3xl"
 				>
-				<img
+				<NuxtImg
 					src="/svg/search.svg"
 					class="aspect-square bg-white invert h-full rounded-r-3xl p-3"
 				/>
@@ -90,7 +90,7 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<img
+					<NuxtImg
 						src="/places/haryana.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
@@ -100,16 +100,16 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<img
+					<NuxtImg loading="lazy"
 						src="/places/punjab.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
 					<h1 class="text-center text-2xl font-semibold">Punjab</h1>
 				</div>
 			</div>
-			<button
+			<NuxtLink to="/properties"
 				class="text-white rounded-xl uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4 max-w-fit"
-			>See All properties</button>
+			>See All properties</NuxtLink>
 
 			<h1 class="text-center text-2xl mt-8">
 				...of these various <span
@@ -123,7 +123,8 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<img
+					<NuxtImg
+					     loading="lazy"
 						src="/landing_grid/villa.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
@@ -133,7 +134,7 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<img
+					<NuxtImg loading="lazy"
 						src="/landing_grid/flat.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
@@ -143,7 +144,7 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<img
+					<NuxtImg loading="lazy"
 						src="/landing_grid/apartment.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
@@ -155,7 +156,7 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<img
+					<NuxtImg loading="lazy"
 						src="/landing_grid/urban.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>

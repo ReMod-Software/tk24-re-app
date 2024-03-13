@@ -1,8 +1,8 @@
 <template>
 	<header class="p-4 flex justify-between bg-transparent backdrop-blur-md sticky top-0 z-10 md:px-16">
-		<a href="/">
-			<img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
-		</a>
+		<NuxtLink to="/">
+			<NuxtImg src="/branding/beacon_logo_base.png" class="h-12 w-12" />
+		</NuxtLink>
 		<nav class="hidden md:flex gap-6 justify-center items-center">
 			<NuxtLink v-for="item in HEADER_NAV" :to='"../" + item.content'
 				class="text-2xl font-semibold text-center text-black no-underline hover:underline underline-offset-4 font-serif">
@@ -14,7 +14,7 @@
 				Login
 			</NuxtLink>
 		</nav>
-		<img src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
+		<NuxtImg src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
 	</header>
 </template>
 

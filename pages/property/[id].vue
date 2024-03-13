@@ -15,7 +15,7 @@
 					<button
 						class="flex gap-1 rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
 					>
-						<img
+						<NuxtImg
 							src="/svg/view--filled.svg"
 							class="h-6 w-6 mr-1 invert"
 						/>
@@ -24,7 +24,7 @@
 					<button
 						class="flex gap-1 bg-black text-white p-2 bg-opacity-25 backdrop-blur rounded-lg"
 					>
-						<img
+						<NuxtImg
 							src="/svg/catalog.svg"
 							class="h-6 w-6 mr-1 invert"
 						/>

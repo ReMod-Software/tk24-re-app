@@ -3,7 +3,7 @@
 		class="p-4 flex justify-between bg-transparent backdrop-blur-lg sticky top-0 items-center md:px-16"
 	>
 		<a class="flex aspect-square h-12 w-12" href="/">
-			<img src="/branding/beacon_logo_base.png" class="h-12 w-12" />
+			<NuxtImg loading="lazy" src="/branding/beacon_logo_base.png" class="h-12 w-12" />
 		</a>
 		<div
 			class="hidden md:flex w-auto md:w-[80%] h-full rounded-xl items-center px-12"
@@ -13,7 +13,7 @@
 				placeholder="Search for Properties!"
 				class="flex-grow rounded-l-xl bg-gray-100 p-3 outline-0"
 			>
-			<img
+			<NuxtImg
 				src="/svg/search.svg"
 				class="aspect-square bg-white invert h-full rounded-r-xl p-2"
 			/>
@@ -27,7 +27,7 @@
 				{{ item.content }}
 		</NuxtLink>
 		</nav>
-		<img src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
+		<NuxtImg src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
 	</header>
 
 	<main class="mb-16 md:mx-20 rounded-lg flex flex-col gap-4 min-h-[40rem]">
@@ -43,7 +43,7 @@
 						>
 							Filters
 						</h1>
-						<img
+						<NuxtImg
 							class="h-8 ms-2 w-8 rounded-lg bg-white invert p-1"
 							src="/svg/filter.svg"
 							alt="Filter icon"
@@ -129,7 +129,7 @@
 						placeholder="Search for Properties!"
 						class="border-box flex-grow rounded-l-xl border-gray-500 p-3 bg-gray-100"
 					>
-					<img
+					<NuxtImg
 						src="/svg/search.svg"
 						class="aspect-square bg-white invert h-full rounded-r-xl p-2"
 					/>
@@ -144,7 +144,7 @@
 								>
 									Filters
 								</h1>
-								<img
+								<NuxtImg
 									class="h-12 ms-2 w-12 rounded-lg bg-white invert p-2"
 									src="/svg/filter.svg"
 									alt="Filter icon"
@@ -239,9 +239,9 @@
 						Listings</span>"
 				</p>
 
-				<a href="/property/publish" class="text-center text-blue-500 text-xl font-bold hover:underline">
+				<NuxtLink to="/property/publish" class="text-center text-blue-500 text-xl font-bold hover:underline">
 					Post a Property
-				</a>
+				</NuxtLink>
 			</div>
 
 				<div
@@ -251,8 +251,8 @@
 						v-for="([k, v]) in Object.entries(PROPERTIES)"
 						class="border-solid border border-gray-300 rounded-[32px] p-4"
 					>
-						<a :href="`/property/` + v.id">
-							<img
+						<NuxtLink :to="`/property/` + v.id">
+							<NuxtImg
 								class="w-full rounded-t-3xl rounded-b-[34px] h-[22vh] mb-4"
 								:src='v.image'
 							/>
@@ -276,7 +276,7 @@
 									</p>
 								</div>
 							</div>
-						</a>
+						</NuxtLink>
 					</div>
 				</div>
 			</div>
