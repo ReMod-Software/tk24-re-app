@@ -20,7 +20,7 @@
 				v-for="([k, v]) in Object.entries(BLOG_POSTS)"
 				class="border-solid border border-gray-300 flex flex-col rounded-3xl"
 			>
-				<a class="flex flex-col w-full" :href="`/blog/${v.key}`">
+				<a class="flex flex-col w-full" :href="`/blog/${v.id}`">
 					<img
 						class="flex w-full p-4 aspect-[16/9] rounded-3xl"
 						:src="v.imageUrl"
@@ -56,7 +56,7 @@ interface BlogPost {
 	imageUrl: string
 	author: string
 	date: string
-	key: string
+	id: string
 }
 
 const BLOG_POSTS: Array<BlogPost> = await $fetch("/api/blogs")

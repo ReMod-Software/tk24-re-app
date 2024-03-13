@@ -36,9 +36,9 @@ import DOMPurify from 'dompurify';
 
 
 const route = useRoute()
-const key = route.params.key
+const id = route.params.id
 
-const post: Blog = await $fetch(`/api/blog?key=${key}`)
+const post: Blog = await $fetch(`/api/blog?id=${id}`)
 
 marked.use({
 	renderer: {

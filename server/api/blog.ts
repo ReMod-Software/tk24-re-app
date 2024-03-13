@@ -3,7 +3,7 @@ import { getDatabase, ref, get, onValue, child } from "firebase/database"
 
 
 export default defineEventHandler(async (event) => {
-	const { id } = BlogSchema.parse(getQuery(event));
+	const { id } = getQuery(event);
 
 	if (!id) {
 		return new Response("Blog key is required", {

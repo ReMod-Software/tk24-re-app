@@ -3,7 +3,7 @@ import { PropertySchema } from "~/server/validate";
 
 
 export default defineEventHandler(async (event) => {
-	const { id } = PropertySchema.parse(getQuery(event));
+	const { id } = getQuery(event);
 
 	if (!id) {
 		return new Response("Property id is required", {
