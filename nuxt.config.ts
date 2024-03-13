@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	modules: [
 		"@nuxtjs/tailwindcss",
-		'@nuxt/image',
+		"@nuxt/image",
 	],
 	css: [
 		"~/assets/css/main.css",
@@ -15,8 +15,8 @@ export default defineNuxtConfig({
 		},
 	},
 	image: {
-		inject: true
-	  },
+		inject: true,
+	},
 	runtimeConfig: {
 		firebase: {
 			apiKey: "AIzaSyAYjZmseIlXNXpvTl0RIvHAEvsuKsku2VE",
@@ -30,7 +30,6 @@ export default defineNuxtConfig({
 		pocketbaseUrl: process.env.POCKETBASE_URL,
 	},
 	experimental: {
-		viewTransition: true
-	  }
-	
+		viewTransition: true,
+	},
 })

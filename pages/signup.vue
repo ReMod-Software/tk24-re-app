@@ -9,14 +9,14 @@
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
 			<h1 class="text-4xl font-semibold">
-		        Hey! Welcome to Beacon!
+				Hey! Welcome to Beacon!
 			</h1>
 			<p class="text-justify">
 				Sign up to get view our collection of properties
 			</p>
 
 			<form class="flex flex-col gap-4">
-                <input
+				<input
 					placeholder="Full Name"
 					id="name"
 					class="p-4 rounded-xl border-solid border border-gray-300"
@@ -67,7 +67,7 @@ async function register() {
 		body: JSON.stringify({
 			email: email.value,
 			password: password.value,
-			name: name.value
+			name: name.value,
 		}),
 	})
 
@@ -95,7 +95,6 @@ async function register() {
 
 	document.location.href = "/"
 }
-
 </script>
 
 <style>

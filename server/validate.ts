@@ -1,6 +1,6 @@
-import {z} from "zod"
+import { z } from "zod"
 const PropertySchema = z.object({
-    title: z.string(),
+	title: z.string(),
 	author: z.string(),
 	description: z.string(),
 	image: z.string(),
@@ -14,17 +14,17 @@ const PropertySchema = z.object({
 	mapsLink: z.string().url().optional(),
 	city: z.string(),
 	state: z.string(),
-});
+})
 
 const BlogSchema = z.object({
-    name: z.string(),
+	name: z.string(),
 	description: z.string(),
 	imageUrl: z.string(),
 	author: z.string(),
 	date: z.string(),
 	id: z.string(),
-	content: z.string()
-});
-type Blog = z.infer<typeof BlogSchema>;
-type Property = z.infer<typeof PropertySchema>;
-export {PropertySchema, Property, BlogSchema, Blog};
+	content: z.string(),
+})
+type Blog = z.infer<typeof BlogSchema>
+type Property = z.infer<typeof PropertySchema>
+export { Blog, BlogSchema, Property, PropertySchema }

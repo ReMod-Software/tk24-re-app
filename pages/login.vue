@@ -63,7 +63,7 @@ async function register() {
 		}),
 	})
 
-    if (res.status !== 200) {
+	if (res.status !== 200) {
 		alert(await res.text())
 		return
 	}
@@ -71,7 +71,6 @@ async function register() {
 	const data = await res.json()
 	console.log(data)
 }
-
 </script>
 
 <style>

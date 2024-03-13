@@ -83,8 +83,7 @@
 							>
 								APPLY
 							</button>
-
-							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -205,15 +204,18 @@
 				</div>
 
 				<div class="flex justify-between items-center">
-				<p class="text-left text-2xl py-4">
-					Showing results for "<span class="italic">Latest
-						Listings</span>"
-				</p>
+					<p class="text-left text-2xl py-4">
+						Showing results for "<span class="italic">Latest
+							Listings</span>"
+					</p>
 
-				<NuxtLink to="/property/publish" class="text-center text-blue-500 text-xl font-bold hover:underline">
-					Post a Property
-				</NuxtLink>
-			</div>
+					<NuxtLink
+						to="/property/publish"
+						class="text-center text-blue-500 text-xl font-bold hover:underline"
+					>
+						Post a Property
+					</NuxtLink>
+				</div>
 
 				<div
 					class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-4"
@@ -225,7 +227,7 @@
 						<NuxtLink :to="`/property/` + v.id">
 							<NuxtImg
 								class="w-full rounded-t-3xl rounded-b-[34px] h-[22vh] mb-4"
-								:src='v.image'
+								:src="v.image"
 							/>
 							<div class="px-1">
 								<div
@@ -261,7 +263,6 @@
 import type { Property } from "~/server/validate"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
-
 
 const PROPERTIES: Property[] = await $fetch("/api/properties")
 

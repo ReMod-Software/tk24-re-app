@@ -100,14 +100,16 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<NuxtImg loading="lazy"
+					<NuxtImg
+						loading="lazy"
 						src="/places/punjab.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
 					<h1 class="text-center text-2xl font-semibold">Punjab</h1>
 				</div>
 			</div>
-			<NuxtLink to="/properties"
+			<NuxtLink
+				to="/properties"
 				class="text-white rounded-xl uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4 max-w-fit"
 			>See All properties</NuxtLink>
 
@@ -124,7 +126,7 @@
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
 					<NuxtImg
-					     loading="lazy"
+						loading="lazy"
 						src="/landing_grid/villa.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
@@ -134,7 +136,8 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<NuxtImg loading="lazy"
+					<NuxtImg
+						loading="lazy"
 						src="/landing_grid/flat.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
@@ -144,7 +147,8 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<NuxtImg loading="lazy"
+					<NuxtImg
+						loading="lazy"
 						src="/landing_grid/apartment.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
@@ -156,7 +160,8 @@
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
-					<NuxtImg loading="lazy"
+					<NuxtImg
+						loading="lazy"
 						src="/landing_grid/urban.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
