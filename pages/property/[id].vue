@@ -116,10 +116,10 @@
 					<h1 class="font-semibold text-2xl -mb-4">
 						Property Specifications
 					</h1>
-					<table>
+					<table class="mx-2">
 						<tr v-for="(value, key) in SPECS" :key="key">
 							<td class="text-lg font-semibold">{{ key }}</td>
-							<td class="text-lg">{{ value }}</td>
+							<td class="text-lg pl-4">{{ value }}</td>
 						</tr>
 					</table>
 				</div>
