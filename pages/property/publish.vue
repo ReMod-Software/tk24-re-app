@@ -4,8 +4,9 @@
 	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg">
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
 				<div
-					class="aspect-[4/3] flex items-end justify-between md:justify-end p-4 gap-2 rounded-xl"
+					class="aspect-[4/3] flex items-end justify-between md:justify-end p-4 gap-2 rounded-xl border border-gray-200"
 					id="image"
 					:style='"background-image: url(/photos/property/1"
 					+ "/main.jpg); background-size: cover;"'
@@ -13,7 +14,8 @@
 					<!--desc amenities specs -->
 
 					<button
-						class="flex gap-1 rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
+
+						class="flex gap-1 text-md rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
 					>
 						<img
 							src="/svg/view--filled.svg"
@@ -143,11 +145,11 @@
 							:key="key"
 							class="flex gap-4"
 						>
-							<td class="text-lg font-semibold w-[25%]">
+							<td class="text-lg font-semibold w-[40%]">
 								{{ key }}
 							</td>
 							<input
-								class="text-lg border border-1 rounded-lg p-2 min-w-[40%]"
+								class="text-lg border border-1 rounded-lg p-2 min-w-[50%] md:min-w-[40%]"
 							/>
 						</tr>
 					</table>
