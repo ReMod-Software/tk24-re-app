@@ -215,7 +215,7 @@ getAuth().onAuthStateChanged(function(user) {
 	username.value = user.displayName
   } else {
     alert("You need to be logged in to view this page")
-	//window.location.href = "/login"
+	window.location.href = "/login"
   }
 });
 

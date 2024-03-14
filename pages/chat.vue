@@ -8,9 +8,10 @@ const { messages, input, handleSubmit } = useChat();
 getAuth().onAuthStateChanged(function (user) {
   if (!user) {
     alert("You need to be logged in to access the AI chat")
-    // window.location.href = "/login"
+    window.location.href = "/login"
   }
 })
+const pfp = getAuth().currentUser?.photoURL;
 
 </script>
 
@@ -18,13 +19,24 @@ getAuth().onAuthStateChanged(function (user) {
   <main class="bg-[#201c1c] min-h-[100vh]">
     <Header />
 
-    <div class="flex flex-col py-2 w-full px-4 items-center pb-24">
+    <div class="flex flex-col py-2 w-full px-4 items-center pb-40">
       <h1 class="text-4xl font-semibold text-gray-300 mb-16">AI Chat</h1>
 
       <div class="flex flex-col items-center align-bottom rounded-3xl border border-gray-600 p-8 gap-4">
         <div v-for="m in messages" class="whitespace-pre-wrap w-[60vw]">
-          <h1 v-if="m.role === 'user'" class="text-4xl font-semibold text-gray-400">{{ m.content }}</h1>
-          <p v-else class="text-2xl ml-2 text-gray-200 mx-8 mb-16">{{ m.content }}</p>
+          <div v-if="m.role === 'user'" class="flex gap-4">
+            <NuxtImg
+              :src="pfp"
+              class="h-10 w-10 bg-white rounded-lg invert p-2" />
+          <h1 class="text-3xl font-semibold text-gray-400">{{ m.content }}</h1>
+          </div>
+          <div v-else class="flex gap-4">
+            <NuxtImg
+              src="/svg/openai.svg"
+              class="h-10 w-10 bg-white rounded-lg invert p-2" />
+          
+          <p class="text-xl ml-2 text-gray-200 mx-8 mb-8">{{ m.content }}</p>
+          </div>
         </div>
         <div v-if="messages.length === 0" class="text-gray-400 text-2xl">
           <h1 class="text-2xl text-gray-200 font-semibold">Here are some questions you can ask:</h1>
@@ -32,7 +44,6 @@ getAuth().onAuthStateChanged(function (user) {
           <p class="text-xl mt-4">Tell me more about beacon.</p>
           <p class="text-xl mt-4">What are the motives of this platform?</p>
           <p class="text-xl mt-4">What is the best deal in X state?</p>
-
         </div>
       </div>
       <div class="flex flex-col fixed bottom-0 w-full items-center gap-2">
