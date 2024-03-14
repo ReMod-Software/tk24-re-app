@@ -28,14 +28,14 @@
 					/>
 					<div class="px-4 mb-4">
 						<div class="flex justify-between opacity-50 mb-2">
-							<p>{{ v.date }}</p>
-							<p>by {{ v.author }}</p>
+							<p class="text-sm md:text-lg">{{ v.date }}</p>
+							<div class="flex"><p class="font-semibold">{{ v.author }}</p></div>
 						</div>
 
 						<h1 class="text-xl font-semibold">{{ v.name }}</h1>
 						<hr class="h-[1px] my-2">
 
-						<p class="text-lg">
+						<p class="md:text-lg text-md">
 							{{ v.description }}
 						</p>
 					</div>

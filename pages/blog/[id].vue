@@ -53,11 +53,10 @@ marked.use({
 			return `<span class="font-semibold text-xl md:text-2xl">${text}</span>`
 		},
 		text: (text: string) => {
-			return `<span class="text-gray-800 text-lg md:text-xl">${text}</span>`
+			return `<span class="text-gray-800 text-md md:text-xl">${text}</span>`
 		},
 		heading(text: string, level: number, raw: string) {
-			// if level 1, 4xl, level 2 3xl, level 3, xl
-			return `<h1 class="text-3xl md:text-${
+			return `<h1 class="text-xl md:text-${
 				5 - level
 			}xl font-bold text-gray-800 mb-2 mt-4">${raw}</h1>`
 		},

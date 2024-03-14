@@ -8,7 +8,7 @@
 		/>
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
-			<h1 class="text-4xl font-semibold">Great to see you again!</h1>
+			<h1 class="text-3xl md:text-4xl font-semibold">Great to see you again!</h1>
 			<p class="text-justify">
 				Sign in to your account to access your saved properties,
 				preferences, and more.

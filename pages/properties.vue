@@ -9,7 +9,7 @@
 						<h1 class="text-xl font-semibold text-gray-600 uppercase">
 							Filters
 						</h1>
-						<NuxtImg class="h-8 ms-2 w-8 rounded-lg bg-white invert p-1" src="/svg/filter.svg"
+						<NuxtImg class="h-8 ms-2 w-8 rounded-lg bg-white" src="/svg/filter.svg"
 							alt="Filter icon" />
 					</div>
 
@@ -47,7 +47,7 @@
 
 						<div class="flex justify-center">
 							<button
-								class="border-solid border-2 b-[#E49DDC] bg-gray-50 font-semibold text-lg p-2 rounded-lg w-full">
+								class="bg-gray-100 font-semibold text-lg p-2 rounded-lg w-full">
 								APPLY
 							</button>
 						</div>
@@ -105,7 +105,7 @@
 
 								<div class="flex justify-center">
 							<button
-								class="border-solid border-2 b-[#E49DDC] bg-gray-50 font-semibold text-lg p-2 rounded-lg w-full">
+								class="bg-gray-100 font-semibold text-lg p-2 rounded-lg w-full">
 								APPLY
 							</button>
 

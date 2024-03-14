@@ -22,11 +22,11 @@
 				>
 				<NuxtImg
 					src="/svg/search.svg"
-					class="aspect-square bg-white invert h-full rounded-r-3xl p-3"
+					class="aspect-square bg-white invert h-full rounded-r-3xl p-2 md:p-3"
 				/>
 			</div>
 		</div>
-		<div class="content md:mx-40 flex flex-col gap-8">
+		<div class="content xl:mx-20 xxl:mx-40 flex flex-col gap-8">
 			<h1 class="text-2xl text-center">
 				We care about our <span
 					class="font-serif italic font-semibold"
@@ -35,9 +35,9 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in CONSUMER_FEATURES"
-					class="border border-solid border-gray-300 flex flex-col gap-4 p-6 rounded-lg grad-box"
+					class="border border-solid border-gray-300 flex flex-col gap-4 p-6 rounded-xl grad-box"
 				>
-					<div class="flex justify-between items-center gap-4">
+					<div class="flex justify-between gap-4 flex-row-reverse">
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
 							class="h-10 w-10 md:h-16 md:w-16"
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 
-		<div class="content md:mx-40 flex flex-col gap-8">
+		<div class="content xl:mx-20 xxl:mx-40 flex flex-col gap-8">
 			<h1 class="text-2xl text-center">
 				...but, we also care about our <span
 					class="font-serif italic font-semibold"
@@ -61,7 +61,7 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in PROVIDER_FEATURES"
-					class="border border-solid border-gray-300 flex flex-col gap-4 p-6 rounded-lg grad-box"
+					class="border border-solid border-gray-300 flex flex-col gap-4 p-6 rounded-xl grad-box"
 				>
 					<div class="flex justify-between items-center gap-4">
 						<img
