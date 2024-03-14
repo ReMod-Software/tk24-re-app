@@ -6,7 +6,9 @@
 			class="rounded-xl flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-6 md:p-0 text-white"
 			id="main-hero"
 		>
-			<h1 class="text-center text-2xl md:text-4xl font-extralight dark:text-gray-200">
+			<h1
+				class="text-center text-2xl md:text-4xl font-extralight dark:text-gray-200"
+			>
 				Looking for a <span
 					class="font-serif text-3xl md:px-2 italic font-semibold md:text-5xl dark:text-gray-100"
 				>space?</span>
@@ -37,7 +39,9 @@
 					v-for="ft in CONSUMER_FEATURES"
 					class="flex flex-col gap-4 p-6 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
 				>
-					<div class="flex flex-col justify-between items-center gap-4">
+					<div
+						class="flex flex-col justify-between items-center gap-4"
+					>
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
 							class="h-10 w-10 md:h-16 md:w-16 dark:invert"
@@ -47,7 +51,9 @@
 						</h2>
 					</div>
 					<hr class="border-gray-400 dark:border-gray-500">
-					<p class="dark:text-gray-400 tracking-wide">{{ ft.description }}</p>
+					<p class="dark:text-gray-400 tracking-wide">
+						{{ ft.description }}
+					</p>
 				</div>
 			</div>
 		</div>
@@ -63,7 +69,9 @@
 					v-for="ft in PROVIDER_FEATURES"
 					class="flex flex-col gap-4 p-6 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
 				>
-					<div class="flex flex-col justify-between items-center gap-4">
+					<div
+						class="flex flex-col justify-between items-center gap-4"
+					>
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
 							class="h-10 md:h-16 w-10 md:w-16 dark:invert"
@@ -73,7 +81,9 @@
 						</h2>
 					</div>
 					<hr class="border-gray-400 dark:border-gray-500">
-					<p class="dark:text-gray-400 tracking-wide">{{ ft.description }}</p>
+					<p class="dark:text-gray-400 tracking-wide">
+						{{ ft.description }}
+					</p>
 				</div>
 			</div>
 		</div>
@@ -86,7 +96,9 @@
 				in...
 			</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-[50%] place-items-center">
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-[50%] place-items-center"
+			>
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
@@ -94,7 +106,11 @@
 						src="/places/haryana.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Haryana</h1>
+					<h1
+						class="text-center text-2xl font-semibold dark:text-gray-300"
+					>
+						Haryana
+					</h1>
 				</div>
 
 				<div
@@ -105,7 +121,11 @@
 						src="/places/punjab.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Punjab</h1>
+					<h1
+						class="text-center text-2xl font-semibold dark:text-gray-300"
+					>
+						Punjab
+					</h1>
 				</div>
 			</div>
 			<NuxtLink
@@ -130,7 +150,11 @@
 						src="/landing_grid/villa.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Villa</h1>
+					<h1
+						class="text-center text-2xl font-semibold dark:text-gray-300"
+					>
+						Villa
+					</h1>
 				</div>
 
 				<div
@@ -141,7 +165,11 @@
 						src="/landing_grid/flat.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Flat</h1>
+					<h1
+						class="text-center text-2xl font-semibold dark:text-gray-300"
+					>
+						Flat
+					</h1>
 				</div>
 
 				<div
@@ -152,7 +180,9 @@
 						src="/landing_grid/apartment.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">
+					<h1
+						class="text-center text-2xl font-semibold dark:text-gray-300"
+					>
 						Apartment
 					</h1>
 				</div>
@@ -165,7 +195,9 @@
 						src="/landing_grid/urban.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">
+					<h1
+						class="text-center text-2xl font-semibold dark:text-gray-300"
+					>
 						Urban
 					</h1>
 				</div>

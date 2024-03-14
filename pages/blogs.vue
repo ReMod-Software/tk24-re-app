@@ -29,10 +29,14 @@
 					<div class="px-4 mb-4 dark:text-gray-300">
 						<div class="flex justify-between opacity-50 mb-2">
 							<p class="text-sm md:text-lg">{{ v.date }}</p>
-							<div class="flex"><p class="font-semibold">{{ v.author }}</p></div>
+							<div class="flex">
+								<p class="font-semibold">{{ v.author }}</p>
+							</div>
 						</div>
 
-						<h1 class="text-xl font-semibold dark:text-gray-200">{{ v.name }}</h1>
+						<h1 class="text-xl font-semibold dark:text-gray-200">
+							{{ v.name }}
+						</h1>
 						<hr class="h-[1px] my-2 dark:border-gray-600">
 
 						<p class="md:text-lg text-md">

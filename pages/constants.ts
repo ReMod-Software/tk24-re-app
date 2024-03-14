@@ -2,17 +2,17 @@ const HEADER_NAV = [
 	{
 		"type": "text",
 		"content": "Properties",
-		"image": "/svg/catalog.svg"
+		"image": "/svg/catalog.svg",
 	},
 	{
 		"type": "text",
 		"content": "Blogs",
-		"image": "/svg/blog.svg"
+		"image": "/svg/blog.svg",
 	},
 	{
 		"type": "text",
 		"content": "About",
-		"image": "/svg/about.svg"
+		"image": "/svg/about.svg",
 	},
 ]
 

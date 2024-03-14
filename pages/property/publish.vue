@@ -4,7 +4,6 @@
 	<main class="py-8 p-4 pb-16 md:px-40 dark:bg-[#201c1c]">
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
 				<div
 					class="aspect-[4/3] flex items-end justify-between md:justify-center p-4 gap-2 rounded-xl"
 					id="image"
@@ -14,7 +13,6 @@
 					<!--desc amenities specs -->
 
 					<button
-
 						class="flex gap-1 text-md rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
 					>
 						<img
@@ -42,12 +40,14 @@
 								placeholder="Enter Property Name"
 								id="title"
 							/>
-							<span class="flex mt-4 gap-5 items-center justify-center font-light text-lg">By <input
-								type="text"
-								class="w-full p-1 border border-gray-400 rounded-lg inline-block font-normal px-2"
-								placeholder="Your Name"
-								id="title"
-							/></span>
+							<span
+								class="flex mt-4 gap-5 items-center justify-center font-light text-lg"
+							>By <input
+									type="text"
+									class="w-full p-1 border border-gray-400 rounded-lg inline-block font-normal px-2"
+									placeholder="Your Name"
+									id="title"
+								/></span>
 						</h1>
 
 						<div class="flex items-center gap-2">
@@ -84,7 +84,9 @@
 							<input type="checkbox" id="ready" class="w-8 h-8">
 							<p>
 								Ready to
-								<span class="text-lg italic font-semibold">Move-In</span>
+								<span
+									class="text-lg italic font-semibold"
+								>Move-In</span>
 							</p>
 						</div>
 					</div>
@@ -105,7 +107,9 @@
 				class="flex flex-col-reverse md:flex-row justify-between gap-8"
 			>
 				<div class="md:w-[70%] flex flex-col gap-8 dark:text-gray-400">
-					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-50 tracking-wide">
+					<h1
+						class="font-semibold text-2xl -mb-4 dark:text-gray-50 tracking-wide"
+					>
 						About the Property
 					</h1>
 					<textarea
@@ -114,12 +118,16 @@
 						id="description"
 					/>
 
-					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">Amenities</h1>
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">
+						Amenities
+					</h1>
 					<div
 						class="flex flex-col gap-2 justify-center items-center p-16 rounded-lg bg-gray-100"
 					>
 						<img src="/svg/add--filled.svg" class="h-20 w-20" />
-						<h1 class="text-gray-700 uppercase font-bold">List Ameneties</h1>
+						<h1 class="text-gray-700 uppercase font-bold">
+							List Ameneties
+						</h1>
 					</div>
 
 					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">
@@ -140,13 +148,13 @@
 						</tr>
 					</table>
 					<div class="flex justify-end">
-				<button
-					class="bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] text-white font-semibold text-lg px-4 py-3 rounded-lg w-[40%]"
-					@click="publish"
-				>
-					Verify & Publish
-				</button>
-			</div>
+						<button
+							class="bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] text-white font-semibold text-lg px-4 py-3 rounded-lg w-[40%]"
+							@click="publish"
+						>
+							Verify & Publish
+						</button>
+					</div>
 				</div>
 				<div class="md:w-[20%] flex flex-col gap-4 dark:text-gray-200">
 					<h1 class="font-semibold text-2xl">Contact</h1>
@@ -200,18 +208,18 @@
 </template>
 
 <script setup lang="ts">
-import { getAuth } from 'firebase/auth';
+import { getAuth } from "firebase/auth"
 
 const username = ref("")
 
 getAuth().onAuthStateChanged(function(user) {
-  if (user) {
-	username.value = user.displayName
-  } else {
-    alert("You need to be logged in to view this page")
-	window.location.href = "/login"
-  }
-});
+	if (user) {
+		username.value = user.displayName
+	} else {
+		alert("You need to be logged in to view this page")
+		window.location.href = "/login"
+	}
+})
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",
@@ -311,7 +319,7 @@ image {
 
 input {
 	-tw-bg-opacity: 1;
-    background-color: #e5e7eb;
+	background-color: #e5e7eb;
 }
 
 textarea {

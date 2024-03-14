@@ -1,22 +1,32 @@
 <template>
 	<Header />
 
-	<main class="md:px-20 grid grid-cols-1 md:grid-cols-2 p-4 py-12 md:py-4 dark:text-gray-800 dark:bg-[#201c1c]">
+	<main
+		class="md:px-20 grid grid-cols-1 md:grid-cols-2 p-4 py-12 md:py-4 dark:text-gray-800 dark:bg-[#201c1c]"
+	>
 		<img
 			src="/photos/login_img.png"
 			class="h-full w-full object-cover rounded-3xl aspect-ratio-[3/4] rounded-r-none hidden md:block"
 		/>
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
-			<h1 class="text-3xl md:text-4xl font-semibold dark:text-gray-200">Great to see you again!</h1>
+			<h1 class="text-3xl md:text-4xl font-semibold dark:text-gray-200">
+				Great to see you again!
+			</h1>
 			<p class="dark:text-gray-300 tracking-wide">
 				Sign in to your account to access your saved properties,
 				preferences, and more.
 			</p>
 
 			<div class="grid grid-cols-3 gap-4">
-				<div v-for="social in SIGN_IN_OPTIONS" class="flex justify-center items-center bg-black rounded-lg p-4">
-					<img :src="`/svg/logo--${social}.svg`" class="invert w-8 h-8" />
+				<div
+					v-for="social in SIGN_IN_OPTIONS"
+					class="flex justify-center items-center bg-black rounded-lg p-4"
+				>
+					<img
+						:src="`/svg/logo--${social}.svg`"
+						class="invert w-8 h-8"
+					/>
 				</div>
 			</div>
 
@@ -51,12 +61,14 @@
 </template>
 
 <script setup lang="ts">
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 
 const SIGN_IN_OPTIONS = [
-	"linkedin", "facebook", "x"
+	"linkedin",
+	"facebook",
+	"x",
 ]
 
 async function login() {

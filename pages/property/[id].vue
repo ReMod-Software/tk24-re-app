@@ -3,15 +3,31 @@
 
 	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg z-50">
 		<div
-			class="hidden absolute top-0 left-0 h-full w-full flex-col p-32 bg-black backdrop-blur-xl bg-opacity-65"
+			class="hidden absolute top-0 left-0 flex h-full w-full flex-col p-24 bg-black backdrop-blur-xl bg-opacity-65"
 			id="xr-modal"
 		>
 			<div
-				class="rounded-lg flex flex-col p-4 w-full h-full bg-white z-50"
-				style="
-					background-image: url('');
-				"
+				class="rounded-lg flex flex-col justify-between items-end p-4 w-full h-full bg-white z-50"
+				:style='"background-image: url(" + property.image
+				+ "); background-size: cover;"'
 			>
+				<div
+					class="flex justify-end bg-black bg-opacity-25 backdrop-blur-lg rounded-lg p-2"
+					@click="previewModal"
+				>
+					<img
+						src="/svg/close--filled.svg"
+						class="h-12 w-12 invert"
+					/>
+				</div>
+				<div class="flex w-full">
+					<div
+						class="flex gap-4 justify-center items-center bg-black bg-opacity-25 backdrop-blur-lg rounded-lg p-2"
+					>
+						<img src="/svg/move.svg" class="h-12 w-12 invert" />
+						<h1 class="text-2xl text-white">Drag to Move Around</h1>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="flex flex-col gap-8">
@@ -46,11 +62,15 @@
 				</div>
 				<div class="flex flex-col justify-between">
 					<div class="flex flex-col gap-4 dark:text-gray-300">
-						<h1 class="text-3xl font-semibold mb-2 dark:text-gray-50">
+						<h1
+							class="text-3xl font-semibold mb-2 dark:text-gray-50"
+						>
 							{{ property.title }}
-							<span class="font-light block text-lg dark:text-gray-200">By <span
-									class="italic font-sans font-semibold"
-								>{{ property.author }}</span></span>
+							<span
+								class="font-light block text-lg dark:text-gray-200"
+							>By <span class="italic font-sans font-semibold">{{
+									property.author
+								}}</span></span>
 						</h1>
 
 						<div class="flex items-center gap-2">
@@ -104,14 +124,18 @@
 				class="flex flex-col-reverse md:flex-row justify-between gap-8"
 			>
 				<div class="md:w-[70%] flex flex-col gap-8 dark:text-gray-300">
-					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-50 tracking-wide">
+					<h1
+						class="font-semibold text-2xl -mb-4 dark:text-gray-50 tracking-wide"
+					>
 						About the Property
 					</h1>
 					<p class="text-lg">
 						{{ property.description }}
 					</p>
 
-					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">Amenities</h1>
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">
+						Amenities
+					</h1>
 					<div
 						class="grid grid-cols-2 md:grid-cols-3 text-center gap-8"
 					>
@@ -202,8 +226,17 @@ import { useRoute } from "vue-router"
 import type { Property } from "~/server/validate"
 
 const previewModal = () => {
-	document.querySelectorAll("header, .w-8.h-8.invert.p-1, .w-10.h-10.bg-white.invert, .img-btn").forEach(el => el.classList.toggle("hidden"))
-	// document.querySelector("#xr-modal")?.classList.toggle("hidden flex")
+	window.scrollTo({
+		top: 0,
+		behavior: "smooth",
+	})
+
+	document.querySelectorAll(
+		"header, .w-8.h-8.invert.p-1, .img-btn, .w-10.h-10.invert",
+	).forEach(el => el.classList.toggle("hidden"))
+	document.querySelector("#xr-modal")?.classList.toggle("hidden")
+
+	document.body.classList.toggle("overflow-hidden")
 }
 
 const AMENITIES = {

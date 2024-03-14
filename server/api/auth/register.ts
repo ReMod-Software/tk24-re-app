@@ -1,4 +1,8 @@
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth"
+import {
+	createUserWithEmailAndPassword,
+	getAuth,
+	updateProfile,
+} from "firebase/auth"
 
 export default defineEventHandler(async (event) => {
 	const { email, password, fullname } = await readBody(event)

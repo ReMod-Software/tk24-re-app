@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 	modules: [
-		'@nuxtjs/tailwindcss',
-		'@nuxt/image',
-		'@nuxtjs/color-mode'
+		"@nuxtjs/tailwindcss",
+		"@nuxt/image",
+		"@nuxtjs/color-mode",
 	],
 	css: [
 		"~/assets/css/main.css",
@@ -34,6 +34,6 @@ export default defineNuxtConfig({
 		viewTransition: true,
 	},
 	colorMode: {
-		classSuffix: ''
-	}
+		classSuffix: "",
+	},
 })

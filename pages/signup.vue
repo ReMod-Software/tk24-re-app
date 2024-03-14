@@ -1,7 +1,9 @@
 <template>
 	<Header />
 
-	<main class="md:px-20 grid grid-cols-1 md:grid-cols-2 p-4 py-12 md:py-4 dark:bg-[#201c1c]">
+	<main
+		class="md:px-20 grid grid-cols-1 md:grid-cols-2 p-4 py-12 md:py-4 dark:bg-[#201c1c]"
+	>
 		<img
 			src="/photos/login_img.png"
 			class="h-full w-full object-cover rounded-3xl aspect-ratio-[3/4] rounded-r-none hidden md:block"
@@ -51,9 +53,13 @@
 </template>
 
 <script setup lang="ts">
+import {
+	createUserWithEmailAndPassword,
+	getAuth,
+	updateProfile,
+} from "firebase/auth"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 
 async function register() {
 	const email = document.getElementById("email") as HTMLInputElement
@@ -61,19 +67,20 @@ async function register() {
 	const name = document.getElementById("name") as HTMLInputElement
 
 	const auth = getAuth()
-	await createUserWithEmailAndPassword(auth, email.value, password.value).then((userCredential) => {
-		console.log(auth.currentUser)
+	await createUserWithEmailAndPassword(auth, email.value, password.value)
+		.then((userCredential) => {
+			console.log(auth.currentUser)
 
-		updateProfile(auth.currentUser!, {
-			displayName: name.value
-		}).then(() => {
-			console.log("Profile updated")
+			updateProfile(auth.currentUser!, {
+				displayName: name.value,
+			}).then(() => {
+				console.log("Profile updated")
+			}).catch((error) => {
+				console.log(error)
+			})
 		}).catch((error) => {
-			console.log(error)
+			alert(error.message)
 		})
-	}).catch((error) => {
-        alert(error.message)
-	})
 }
 </script>
 
