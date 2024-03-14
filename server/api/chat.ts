@@ -1,29 +1,31 @@
-import { ReplicateStream, StreamingTextResponse } from 'ai';
-import Replicate from 'replicate';
-import { experimental_buildLlama2Prompt } from 'ai/prompts';
+import OpenAI from 'openai';
+import { OpenAIStream } from 'ai';
+import { ChatCompletionMessageParam } from 'openai/resources/chat/index';
+ 
 export default defineLazyEventHandler(async () => {
  
-     
-    // Create a Replicate API client (that's edge friendly!)
-    const replicate = new Replicate({
-      auth: process.env.REPLICATE_API_KEY || '',
-    });
-    return defineEventHandler(async event => {
-        const { messages } = (await readBody(event))
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+  });
  
-        const response = await replicate.predictions.create({
-          stream: true,
-          version: '02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3',
-          input: {
-            prompt: experimental_buildLlama2Prompt(messages),
-          },
-        });
-       
-        // Convert the response into a friendly text-stream
-        const stream = await ReplicateStream(response);
-        // Respond with the stream
-        return new StreamingTextResponse(stream);
-       
-      });
+  return defineEventHandler(async event => {
+    // Extract the `prompt` from the body of the request
+    const { messages } = (await readBody(event)) as {
+      messages: ChatCompletionMessageParam[];
+    };
+ 
+    // Ask OpenAI for a streaming chat completion given the prompt
+    const response = await openai.chat.completions.create({
+      //custom model trained on beacon
+      model: 'ft:gpt-3.5-turbo-0125:personal::92X6FVe6',
+      stream: true,
+      messages: messages.map(message => ({
+        content: message.content,
+        role: message.role,
+      })),
     });
-   
+ 
+    // Convert the response into a friendly text-stream
+    return OpenAIStream(response);
+  });
+});
