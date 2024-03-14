@@ -1,7 +1,7 @@
 <template>
 	<Header />
 
-	<main class="p-4 pb-16 md:px-40 rounded-lg flex flex-col gap-4 dark:bg-[#201c1c]">
+	<main class="p-4 pb-16 md:px-40 flex flex-col gap-4 dark:bg-[#201c1c]">
 		<h1 class="text-2xl font-semibold text-black dark:text-gray-100">
 			Welcome to our Real Estate Insights!
 		</h1>
