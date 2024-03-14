@@ -35,9 +35,9 @@
 					<div class="flex flex-col gap-4">
 						<h1 class="text-3xl font-semibold mb-2">
 							{{ property.title }}
-							<span class="font-light block text-lg">By "<span
-									class="italic font-sans font-medium"
-								>{{ property.author }}</span>"</span>
+							<span class="font-light block text-lg">By <span
+									class="italic font-sans font-semibold"
+								>{{ property.author }}</span></span>
 						</h1>
 
 						<div class="flex items-center gap-2">
