@@ -205,13 +205,14 @@
 
 				<div class="flex justify-between items-center">
 					<p class="text-left text-2xl py-4">
-						Showing results for "<span class="italic">Latest
+						Showing results for "<span class="italic font-semibold">Latest
 							Listings</span>"
 					</p>
 
 					<NuxtLink
 						to="/property/publish"
 						class="text-center text-blue-500 text-xl font-bold hover:underline"
+						v-if="isLoggedIn"
 					>
 						Post a Property
 					</NuxtLink>
@@ -263,6 +264,21 @@
 import type { Property } from "~/server/validate"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
+import { getAuth, type Auth } from "firebase/auth";
+
+const isLoggedIn = ref(false)
+
+let auth: Auth;
+onMounted(() => {
+	auth = getAuth()
+	onAuthStateChanged(auth, (user) => {
+		if (user) {
+			isLoggedIn.value = true
+		} else {
+			isLoggedIn.value = false
+		}
+	})
+})
 
 const PROPERTIES: Property[] = await $fetch("/api/properties")
 
@@ -271,6 +287,7 @@ const formatter = new Intl.NumberFormat("en-IN", {
 	currency: "INR",
 	maximumFractionDigits: 0,
 })
+
 </script>
 
 <style>

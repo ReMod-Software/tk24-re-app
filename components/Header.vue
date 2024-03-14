@@ -20,18 +20,43 @@
 			>
 				Login
 			</NuxtLink>
+			<button
+				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-4 py-2 rounded-lg"
+				v-if="isLoggedIn"
+				@click="logout"
+			>
+				Logout
+			</button>
 		</nav>
 		<NuxtImg src="/svg/menu.svg" class="h-12 w-12 p-2 block md:hidden" />
 	</header>
 </template>
 
 <script setup lang="ts">
-import { auth } from "~/server/firebase"
 import { HEADER_NAV } from "../pages/constants"
+import { getAuth, onAuthStateChanged, signOut, type Auth } from "firebase/auth";
+import { firebaseConfig } from "~/server/firebase";
+
+const isLoggedIn = ref(false)
+
+let auth: Auth
+onMounted(() => {
+	auth = getAuth()
+	onAuthStateChanged(auth, (user) => {
+		if (user) {
+			isLoggedIn.value = true
+		} else {
+			isLoggedIn.value = false
+		}
+	})
+})
 
 const logout = async () => {
-	await auth.signOut()
-	window.location.href = "/"
+	signOut(auth).then(() => {
+		console.log("Logged out")
+	}).catch((error) => {
+		console.log(error)
+	})
 }
 </script>
 
