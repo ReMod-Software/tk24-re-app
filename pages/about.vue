@@ -35,7 +35,7 @@
 		</p>
 
 		<div
-			class="grid grid-cols-1 md:grid-cols-3 gap-4 md:px-20 py-8 rounded-xl"
+			class="grid grid-cols-1 md:grid-cols-2 gap-4 md:px-20 py-8 rounded-xl"
 		>
 			<div
 				v-for="([k, v]) in Object.entries(AUTHORS)"
@@ -109,26 +109,25 @@ const AUTHORS: Array<Author> = [
 		"name": "Ishat Gupta",
 		"pfp": "https://avatars.githubusercontent.com/u/62379502",
 		"description":
-			"Hello! I'm a 17-year-old weaving digital tapestries. Dive into my world and discover the magic I create! ",
+			"Heya, Fellow Software Engineer and Artist, former Minecraft/Microsoft Partner, founder of ReMod Limited.",
 	},
 	{
 		"name": "Ishan Jaiswal",
 		"pfp": "https://avatars.githubusercontent.com/u/71317082",
 		"description":
-			"Hello! I'm a 18-year-old developer and tech entusiast and I love learning and exploring things beyond my own domain! ",
+			"Hi! I'm a 18-year-old developer and tech entusiast, dabbling in Web Dev with Open Source and in AI/ML.",
 	},
 	{
 		"name": "Pranav Purwar",
 		"pfp": "https://avatars.githubusercontent.com/u/75154889",
 		"description":
-			"Hello! I'm a 16-year-old developer, always curious, always exploring!",
+			"'Ello! I'm a 16-year-old developer, creator of Cosmic IDE project, works on Chai.build at ReMod Limited.",
 	},
 	{
 		"name": "Sambhav Arora",
-		"pfp":
-			"https://media.discordapp.net/attachments/1208100360925741076/1208100712333185146/image.png?ex=65e20e77&is=65cf9977&hm=cb0c9c78767fbdf2d0d602f3f189186126a03c14a7470187d38c3ba37254d2f7&=&format=webp&quality=lossless&width=1052&height=1052",
+		"pfp": "https://avatars.githubusercontent.com/u/32336190?v=4",
 		"description":
-			"Hello! I'm a 17-year-old tech enthusiast, always curious, always exploring.",
+			"Hello! I'm a 17-year-old tech enthusiast and currently a Microsoft/Minecraft Partner, co-founder at ReMod Limited.",
 	},
 ]
 </script>

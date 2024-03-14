@@ -12,7 +12,7 @@
 			/>
 
 			<h1
-				class="text-2xl md:text-6xl text-gray-600 font-bold uppercase text-left w-full"
+				class="text-2xl md:text-6xl text-gray-600 font-bold uppercase text-left w-full px-2 md:px-4"
 				style="position: relative; "
 			>
 				{{ post.name }}
@@ -68,6 +68,7 @@ onMounted(async () => {
 	const content = document.getElementById("content")
 	if (content) {
 		content.innerHTML = DOMPurify.sanitize(
+			// @ts-ignore
 			marked.parse(post.content.replace(/\\n/g, "\n")),
 		)
 	}

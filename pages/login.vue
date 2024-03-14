@@ -14,6 +14,12 @@
 				preferences, and more.
 			</p>
 
+			<div class="grid grid-cols-3 gap-4">
+				<div v-for="social in SIGN_IN_OPTIONS" class="flex justify-center items-center bg-black rounded-lg p-4">
+					<img :src="`/svg/logo--${social}.svg`" class="invert w-8 h-8" />
+				</div>
+			</div>
+
 			<form class="flex flex-col gap-4">
 				<input
 					type="email"
@@ -47,6 +53,10 @@
 <script setup lang="ts">
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
+
+const SIGN_IN_OPTIONS = [
+	"linkedin", "facebook", "x"
+]
 
 async function register() {
 	const email = document.getElementById("email") as HTMLInputElement

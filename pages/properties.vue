@@ -15,7 +15,7 @@
 							Filters
 						</h1>
 						<NuxtImg
-							class="h-8 ms-2 w-8 rounded-lg bg-white invert p-1"
+							class="h-8 ms-2 w-8 rounded-lg bg-white invert p-1 opacity-35	"
 							src="/svg/filter.svg"
 							alt="Filter icon"
 						/>
@@ -79,7 +79,7 @@
 
 						<div class="flex justify-center">
 							<button
-								class="border-solid border-2 b-[#E49DDC] bg-gray-50 font-semibold text-lg p-2 rounded-lg w-full"
+								class="bg-gray-100 font-semibold text-lg p-2 rounded-lg w-full"
 							>
 								APPLY
 							</button>
@@ -211,8 +211,9 @@
 
 					<NuxtLink
 						to="/property/publish"
-						class="text-center text-blue-500 text-xl font-bold hover:underline"
+						class="flex justify-center items-center gap-2 text-center text-black text-xl font-medium no-underline border rounded-lg border-solid border-black pr-2"
 					>
+						<img src="/svg/arrow--up-right.svg" class="h-8 w-8 p-1 rounded-lg" />
 						Post a Property
 					</NuxtLink>
 				</div>
@@ -222,7 +223,7 @@
 				>
 					<div
 						v-for="([k, v]) in Object.entries(PROPERTIES)"
-						class="border-solid border border-gray-300 rounded-[32px] p-4"
+						class="p-4 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
 					>
 						<NuxtLink :to="`/property/` + v.id">
 							<NuxtImg

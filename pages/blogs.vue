@@ -18,11 +18,11 @@
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
 			<div
 				v-for="([k, v]) in Object.entries(BLOG_POSTS)"
-				class="border-solid border border-gray-300 flex flex-col rounded-3xl"
+				class="flex flex-col rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
 			>
 				<NuxtLink class="flex flex-col w-full" :to="`/blog/${v.id}`">
 					<NuxtImg
-						class="flex w-full p-4 aspect-[16/9] rounded-3xl"
+						class="flex w-full p-4 aspect-[16/9] rounded-[20px]"
 						:src="v.imageUrl"
 						loading="lazy"
 					/>

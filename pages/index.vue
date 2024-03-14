@@ -35,14 +35,14 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in CONSUMER_FEATURES"
-					class="border border-solid border-gray-500 flex flex-col gap-4 p-6 rounded-lg grad-box"
+					class="flex flex-col gap-4 p-6 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
 				>
-					<div class="flex justify-between items-center gap-4">
+					<div class="flex flex-col justify-between items-center gap-4">
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
 							class="h-16 w-16"
 						>
-						<h2 class="text-2xl font-semibold text-right">
+						<h2 class="text-xl font-semibold text-center">
 							{{ ft.name }}
 						</h2>
 					</div>
@@ -61,14 +61,14 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in PROVIDER_FEATURES"
-					class="border border-solid border-gray-500 flex flex-col gap-4 p-6 rounded-lg grad-box"
+					class="flex flex-col gap-4 p-6 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
 				>
-					<div class="flex justify-between items-center gap-4">
+					<div class="flex flex-col justify-between items-center gap-4">
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
 							class="h-16 w-16"
 						>
-						<h2 class="text-2xl font-semibold text-right">
+						<h2 class="text-xl font-semibold text-right">
 							{{ ft.name }}
 						</h2>
 					</div>
@@ -86,7 +86,7 @@
 				in...
 			</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 xl:grid-cols-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-[50%] place-items-center">
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
 				>
@@ -190,7 +190,7 @@ interface Feature {
 
 const CONSUMER_FEATURES: Feature[] = [
 	{
-		"name": "Personalized Property Matches",
+		"name": "Personalized Matches",
 		"description":
 			"We care about our consumers, and their quality of stay. Our advanced algorithms ensure you find the perfect property tailored to your preferences, saving you time and effort.",
 		"icon": "catalog",

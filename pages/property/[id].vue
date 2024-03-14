@@ -1,7 +1,19 @@
 <template>
 	<Header />
 
-	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg">
+	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg z-50">
+		<div
+			class="hidden absolute top-0 left-0 h-full w-full flex-col p-32 bg-black backdrop-blur-xl bg-opacity-65"
+			id="xr-modal"
+		>
+			<div
+				class="rounded-lg flex flex-col p-4 w-full h-full bg-white z-50"
+				style="
+					background-image: url('');
+				"
+			>
+			</div>
+		</div>
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div
@@ -13,7 +25,8 @@
 					<!--desc amenities specs -->
 
 					<button
-						class="flex gap-1 rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
+						class="img-btn flex gap-1 rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
+						@click="previewModal"
 					>
 						<NuxtImg
 							src="/svg/view--filled.svg"
@@ -22,7 +35,7 @@
 						View in 3D
 					</button>
 					<button
-						class="flex gap-1 bg-black text-white p-2 bg-opacity-25 backdrop-blur rounded-lg"
+						class="img-btn flex gap-1 bg-black text-white p-2 bg-opacity-25 backdrop-blur rounded-lg"
 					>
 						<NuxtImg
 							src="/svg/catalog.svg"
@@ -152,16 +165,30 @@
 					</a>
 
 					<a
-						class="flex flex-row items-center border border-black rounded-lg"
+						class="flex flex-col items-center border border-black rounded-lg"
 						href="mailto:contact@beacon.dev"
 					>
-						<img
-							src="/svg/location--filled.svg"
-							class="h-10 w-10 bg-white rounded-l-md invert p-2"
-						/>
-						<h1 class="text-lg font-semibold text-center flex-grow">
-							Open in Google Maps
-						</h1>
+						<div
+							class="flex w-full h-64 rounded-t-md border border-b-black"
+							style="
+							background-image: url('/places/screenie.png');
+							background-size: cover;
+							background-position: 50% 50%;
+						"
+						>
+							""
+						</div>
+						<div class="flex w-full justify-center items-center">
+							<img
+								src="/svg/location--filled.svg"
+								class="h-10 w-10 bg-white rounded-bl-md invert p-2"
+							/>
+							<h1
+								class="text-lg font-semibold text-center flex-grow"
+							>
+								Open in Google Maps
+							</h1>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -173,6 +200,11 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router"
 import type { Property } from "~/server/validate"
+
+const previewModal = () => {
+	document.querySelectorAll("header, .w-8.h-8.invert.p-1, .w-10.h-10.bg-white.invert, .img-btn").forEach(el => el.classList.toggle("hidden"))
+	// document.querySelector("#xr-modal")?.classList.toggle("hidden flex")
+}
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",

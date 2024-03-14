@@ -5,7 +5,7 @@
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div
-					class="aspect-[4/3] flex items-end justify-between md:justify-end p-4 gap-2 rounded-xl"
+					class="aspect-[4/3] flex items-end justify-between md:justify-center p-4 gap-2 rounded-xl"
 					id="image"
 					:style='"background-image: url(/photos/property/1"
 					+ "/main.jpg); background-size: cover;"'
@@ -19,7 +19,7 @@
 							src="/svg/view--filled.svg"
 							class="h-6 w-6 mr-1 invert"
 						/>
-						View in 3D
+						Upload 3D Panaroma
 					</button>
 					<button
 						class="flex gap-1 bg-black text-white p-2 bg-opacity-25 backdrop-blur rounded-lg"
@@ -28,19 +28,8 @@
 							src="/svg/catalog.svg"
 							class="h-6 w-6 mr-1 invert"
 						/>
-						View Images
+						Upload Images
 					</button>
-
-					<input
-						type="file"
-						id="choose-file"
-						name="choose-file"
-						accept="image/*"
-					/>
-					<label
-						class="rounded-lg bg-opacity-60 backdrop-blur text-white bg-blue-800 h-10 p-2 hover:bg-blue-200 hover:text-blue-900"
-						for="choose-file"
-					>Choose File</label>
 				</div>
 				<div class="flex flex-col justify-between">
 					<div class="flex flex-col gap-4">
@@ -48,12 +37,15 @@
 							<input
 								type="text"
 								class="w-full p-2 border border-gray-400 rounded-lg"
-								placeholder="Enter property name"
+								placeholder="Enter Property Name"
 								id="title"
 							/>
-							<span class="font-light block text-lg">By "<span
-									class="italic font-sans font-medium"
-								>{{ username }}</span>"</span>
+							<span class="flex mt-4 gap-5 items-center justify-center font-light text-lg">By <input
+								type="text"
+								class="w-full p-1 border border-gray-400 rounded-lg inline-block font-normal px-2"
+								placeholder="Your Name"
+								id="title"
+							/></span>
 						</h1>
 
 						<div class="flex items-center gap-2">
@@ -65,7 +57,7 @@
 							<input
 								class="text-lg w-full p-2 border border-gray-400 rounded-lg"
 								type="text"
-								placeholder="Enter property location"
+								placeholder="Enter Property Location"
 								id="location"
 							/>
 						</div>
@@ -87,10 +79,10 @@
 								class="h-8 w-8 bg-white invert p-1 rounded-lg"
 							/>
 
-							<input type="checkbox" id="ready" class="w-4 h-4">
+							<input type="checkbox" id="ready" class="w-8 h-8">
 							<p>
 								Ready to
-								<span class="text-lg italic">Move In</span>
+								<span class="text-lg italic font-semibold">Move-In</span>
 							</p>
 						</div>
 					</div>
@@ -122,26 +114,20 @@
 
 					<h1 class="font-semibold text-2xl -mb-4">Amenities</h1>
 					<div
-						class="grid grid-cols-2 md:grid-cols-3 text-center gap-8"
+						class="flex flex-col gap-2 justify-center items-center p-16 rounded-lg bg-gray-100"
 					>
-						<div
-							v-for="(value, key) in AMENITIES"
-							:key="key"
-							class="flex flex-col items-center gap-2"
-						>
-							<img :src="value" class="h-12 w-12" />
-							<p class="text-lg">{{ key }}</p>
-						</div>
+						<img src="/svg/add--filled.svg" class="h-20 w-20" />
+						<h1 class="text-gray-700 uppercase font-bold">List Ameneties</h1>
 					</div>
 
 					<h1 class="font-semibold text-2xl -mb-4">
 						Property Specifications
 					</h1>
-					<table class="flex flex-col gap-4">
+					<table class="flex flex-col gap-4 w-full">
 						<tr
 							v-for="(value, key) in SPECS"
 							:key="key"
-							class="flex gap-4"
+							class="flex gap-4 justify-between w-full"
 						>
 							<td class="text-lg font-semibold w-[25%]">
 								{{ key }}
@@ -151,6 +137,14 @@
 							/>
 						</tr>
 					</table>
+					<div class="flex justify-end">
+				<button
+					class="bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] text-white font-semibold text-lg px-4 py-3 rounded-lg w-[40%]"
+					@click="publish"
+				>
+					Verify & Publish
+				</button>
+			</div>
 				</div>
 				<div class="md:w-[20%] flex flex-col gap-4">
 					<h1 class="font-semibold text-2xl">Contact</h1>
@@ -163,8 +157,8 @@
 							class="h-10 w-10 bg-white rounded-l-md invert p-2"
 						/>
 						<input
-							class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
-							placeholder="Enter phone number"
+							class="text-lg font-semibold text-center flex-grow h-full w-full rounded-r-lg"
+							placeholder="Enter Phone Number"
 							id="number"
 						/>
 					</a>
@@ -177,8 +171,8 @@
 							class="h-10 w-10 bg-white rounded-l-md invert p-2"
 						/>
 						<input
-							class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
-							placeholder="Enter email address"
+							class="text-lg font-semibold text-center flex-grow h-full w-full rounded-r-lg"
+							placeholder="Enter Email Address"
 							id="email"
 						/>
 					</a>
@@ -191,21 +185,12 @@
 							class="h-10 w-10 bg-white rounded-l-md invert p-2"
 						/>
 						<input
-							class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
-							placeholder="Enter map link"
+							class="text-lg font-semibold text-center flex-grow h-full w-full rounded-r-lg"
+							placeholder="Enter Map Link"
 							id="maps"
 						/>
 					</a>
 				</div>
-			</div>
-
-			<div class="flex justify-center mt-8">
-				<button
-					class="border-solid border-2 b-[#E49DDC] text-white bg-blue-500 font-semibold text-lg p-2 rounded-xl w-full"
-					@click="publish"
-				>
-					PUBLISH
-				</button>
 			</div>
 		</div>
 	</main>
@@ -257,10 +242,6 @@ const photo = ref("")
 onMounted(() => {
 	const chooseFile = document.getElementById("choose-file")
 	const imgPreview = document.getElementById("image")
-
-	chooseFile!.addEventListener("change", function() {
-		getImgData()
-	})
 
 	function getImgData() {
 		const files = chooseFile!.files[0]
