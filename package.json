@@ -13,8 +13,11 @@
 	},
 	"dependencies": {
 		"@epic-web/cachified": "^5.1.2",
+		"@neondatabase/serverless": "^0.9.0",
 		"@nuxt/image": "^1.4.0",
 		"@nuxtjs/tailwindcss": "^6.11.4",
+		"@prisma/adapter-neon": "^5.11.0",
+		"@prisma/client": "5.11.0",
 		"@types/dompurify": "^3.0.5",
 		"@upstash/ratelimit": "^1.0.1",
 		"@upstash/redis": "^1.28.4",
@@ -40,9 +43,12 @@
 		"tailwindcss-animate": "^1.0.7",
 		"vue": "^3.4.15",
 		"vue-router": "^4.2.5",
+		"ws": "^8.16.0",
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {
 		"typescript": "^5.4.2"
+		"@types/ws": "^8.5.10",
+		"prisma": "^5.11.0"
 	}
 }

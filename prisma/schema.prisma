@@ -1,0 +1,35 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Property {
+  id       String      @id @default(uuid())
+  email    String   @unique
+  mapsLink String?
+  ready    Boolean
+  city     String
+  state    String
+  image    String
+  date     DateTime
+  price    Int
+  description String
+  contact  Int
+  location String
+  author   String
+}
+
+model Blog {
+  name String
+  id   String @id
+  imageUrl String
+  author String
+  date   DateTime
+  content String
+}
