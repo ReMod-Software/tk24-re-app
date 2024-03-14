@@ -1,5 +1,5 @@
 <template>
-    <header class="p-2 md:p-4 backdrop-blur-xl sticky top-0">
+    <header class="p-2 md:p-4 backdrop-blur-xl sticky top-0 dark:bg-[#201c1c]">
 
         <div class="flex items-center justify-between gap-4 pr-4">
             <div class="flex items-center gap-4 p-1">
@@ -7,17 +7,17 @@
                     src="/branding/beacon_logo_base.png"
                     alt="Logo" />
                 <NuxtLink to="/"
-                    class="scroll-m-20 text-2xl md:text-3xl font-medium text-gray-700 hover:underline">Beacon
+                    class="scroll-m-20 text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-100 hover:underline">Beacon
 				</NuxtLink>
             </div>
-            <nav class="hidden lg:flex gap-4 text-gray-600 justify-center items-center ">
+            <nav class="hidden lg:flex gap-4 text-gray-600 justify-center items-center">
                 <NuxtLink v-for="header in HEADER_NAV" :key="header.content" :to='`/${header.content}`'
-                    class="text-2xl font-semibold text-center  no-underline hover:underline underline-offset-4 font-serif">{{ header.content }}</NuxtLink>
+                    class="dark:text-gray-200 text-xl font-semibold text-center no-underline hover:underline underline-offset-4">{{ header.content }}</NuxtLink>
 
 					
 			<NuxtLink
 				to="/login"
-				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-4 py-2 rounded-lg"
+				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-3 py-1 rounded-lg"
 			>
 				Login
 			</NuxtLink>
@@ -28,6 +28,11 @@
 			>
 				Logout
 			</button>
+            <NuxtImg
+                class="h-8 w-8 cursor-pointer dark:invert"
+                src="/svg/dark.svg"
+                alt="Toggle Dark Mode"
+                @click="changeColor" />
             </nav>
 
             <Sheet>
@@ -73,6 +78,10 @@ import {
 } from '@/components/ui/sheet'
 import { database } from "~/server/firebase";
 import { getAuth, onAuthStateChanged, signOut, type Auth, } from "firebase/auth";
+
+const colorMode = useColorMode()
+const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ? 'dark' : 'light'))
+
 
 const isLoggedIn = ref(false)
 

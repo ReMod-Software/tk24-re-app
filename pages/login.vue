@@ -1,15 +1,15 @@
 <template>
 	<Header />
 
-	<main class="md:mx-20 grid grid-cols-1 md:grid-cols-2 m-4 my-12 md:my-4">
+	<main class="md:px-20 grid grid-cols-1 md:grid-cols-2 p-4 py-12 md:py-4 dark:text-gray-800 dark:bg-[#201c1c]">
 		<img
 			src="/photos/login_img.png"
 			class="h-full w-full object-cover rounded-3xl aspect-ratio-[3/4] rounded-r-none hidden md:block"
 		/>
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
-			<h1 class="text-3xl md:text-4xl font-semibold">Great to see you again!</h1>
-			<p class="text-justify">
+			<h1 class="text-3xl md:text-4xl font-semibold dark:text-gray-200">Great to see you again!</h1>
+			<p class="dark:text-gray-300 tracking-wide">
 				Sign in to your account to access your saved properties,
 				preferences, and more.
 			</p>
@@ -33,7 +33,7 @@
 				>Login</button>
 			</form>
 
-			<p class="text-right text-sm">
+			<p class="text-right text-sm dark:text-gray-300">
 				Don't have an account? <a
 					href="/signup"
 					class="underline grad-text underline-offset-2"
