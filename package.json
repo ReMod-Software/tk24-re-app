@@ -16,6 +16,7 @@
 		"@nuxt/image": "^1.4.0",
 		"@nuxtjs/tailwindcss": "^6.11.4",
 		"@types/dompurify": "^3.0.5",
+		"@upstash/ratelimit": "^1.0.1",
 		"@upstash/redis": "^1.28.4",
 		"ai": "^3.0.10",
 		"autoprefixer": "^10.4.17",
