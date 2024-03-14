@@ -1,33 +1,33 @@
 <template>
 	<Header />
 
-	<main class="p-4 rounded-3xl flex flex-col gap-8 md:gap-24">
+	<main class="p-4 flex flex-col gap-8 md:gap-24 dark:bg-[#201c1c]">
 		<div
 			class="rounded-xl flex gap-8 md:gap-16 flex-col justify-center items-center h-full w-full aspect-[4/3] md:aspect-[21/9] p-6 md:p-0 text-white"
 			id="main-hero"
 		>
-			<h1 class="text-center text-2xl md:text-4xl font-extralight">
+			<h1 class="text-center text-2xl md:text-4xl font-extralight dark:text-gray-200">
 				Looking for a <span
-					class="font-serif text-3xl md:px-2 italic font-semibold md:text-5xl"
+					class="font-serif text-3xl md:px-2 italic font-semibold md:text-5xl dark:text-gray-100"
 				>space?</span>
 				We have one <span
-					class="font-serif text-3xl md:px-2 italic font-semibold md:text-5xl"
+					class="font-serif text-3xl md:px-2 italic font-semibold md:text-5xl dark:text-gray-100"
 				>for you!</span>
 			</h1>
 			<div class="flex w-full md:w-[65%] rounded-3xl justify-center">
 				<input
 					type="search"
 					placeholder="Search for Properties!"
-					class="border-box flex-grow p-2 px-4 rounded-l-3xl"
+					class="border-box flex-grow p-4 rounded-l-3xl dark:bg-gray-200"
 				>
 				<NuxtImg
 					src="/svg/search.svg"
-					class="aspect-square bg-white invert h-full rounded-r-3xl p-2 md:p-3"
+					class="bg-white invert h-full rounded-r-3xl p-2 md:p-3"
 				/>
 			</div>
 		</div>
 		<div class="content xl:mx-20 xxl:mx-40 flex flex-col gap-8">
-			<h1 class="text-2xl text-center">
+			<h1 class="text-2xl text-center dark:text-gray-300">
 				We care about our <span
 					class="font-serif italic font-semibold"
 				>consumers</span>, and their quality of place...
@@ -40,20 +40,20 @@
 					<div class="flex flex-col justify-between items-center gap-4">
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
-							class="h-10 w-10 md:h-16 md:w-16"
+							class="h-10 w-10 md:h-16 md:w-16 dark:invert"
 						>
 						<h2 class="text-xl font-semibold text-center">
 							{{ ft.name }}
 						</h2>
 					</div>
-					<hr class="border-gray-400">
-					<p class="text-justify">{{ ft.description }}</p>
+					<hr class="border-gray-400 dark:border-gray-500">
+					<p class="dark:text-gray-400 tracking-wide">{{ ft.description }}</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="content xl:mx-20 xxl:mx-40 flex flex-col gap-8">
-			<h1 class="text-2xl text-center">
+			<h1 class="text-2xl text-center dark:text-gray-300">
 				...but, we also care about our <span
 					class="font-serif italic font-semibold"
 				>agents!</span>
@@ -66,20 +66,20 @@
 					<div class="flex flex-col justify-between items-center gap-4">
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
-							class="h-10 md:h-16 w-10 md:w-16"
+							class="h-10 md:h-16 w-10 md:w-16 dark:invert"
 						>
 						<h2 class="text-xl font-semibold text-right">
 							{{ ft.name }}
 						</h2>
 					</div>
-					<hr class="border-gray-400">
-					<p class="text-justify">{{ ft.description }}</p>
+					<hr class="border-gray-400 dark:border-gray-500">
+					<p class="dark:text-gray-400 tracking-wide">{{ ft.description }}</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="content md:mx-40 flex flex-col gap-8 items-center">
-			<h1 class="text-center text-2xl">
+			<h1 class="text-center text-2xl dark:text-gray-300">
 				We have <span
 					class="font-serif content italic font-semibold"
 				>properties</span>
@@ -94,7 +94,7 @@
 						src="/places/haryana.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold">Haryana</h1>
+					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Haryana</h1>
 				</div>
 
 				<div
@@ -105,7 +105,7 @@
 						src="/places/punjab.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold">Punjab</h1>
+					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Punjab</h1>
 				</div>
 			</div>
 			<NuxtLink
@@ -113,7 +113,7 @@
 				class="text-white rounded-xl uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4 max-w-fit"
 			>See All properties</NuxtLink>
 
-			<h1 class="text-center text-2xl mt-8">
+			<h1 class="text-center text-2xl mt-8 dark:text-gray-300">
 				...of these various <span
 					class="font-serif content italic font-semibold"
 				>kinds!</span>
@@ -130,7 +130,7 @@
 						src="/landing_grid/villa.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold">Villa</h1>
+					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Villa</h1>
 				</div>
 
 				<div
@@ -141,7 +141,7 @@
 						src="/landing_grid/flat.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold">Flat</h1>
+					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">Flat</h1>
 				</div>
 
 				<div
@@ -152,7 +152,7 @@
 						src="/landing_grid/apartment.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold">
+					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">
 						Apartment
 					</h1>
 				</div>
@@ -165,7 +165,7 @@
 						src="/landing_grid/urban.png"
 						class="flex h-full w-full items-center text-center justify-center hover:text-white hover:bg-[#0000007c] hover:backdrop-blur transition-all rounded-3xl"
 					/>
-					<h1 class="text-center text-2xl font-semibold">
+					<h1 class="text-center text-2xl font-semibold dark:text-gray-300">
 						Urban
 					</h1>
 				</div>

@@ -1,7 +1,7 @@
 <template>
 	<Header />
 
-	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg">
+	<main class="py-8 p-4 pb-16 md:px-40 dark:bg-[#201c1c]">
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -34,7 +34,7 @@
 					</button>
 				</div>
 				<div class="flex flex-col justify-between">
-					<div class="flex flex-col gap-4">
+					<div class="flex flex-col gap-4 dark:text-gray-300">
 						<h1 class="text-3xl font-semibold mb-2">
 							<input
 								type="text"
@@ -53,7 +53,7 @@
 						<div class="flex items-center gap-2">
 							<img
 								src="/svg/location--filled.svg"
-								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+								class="h-8 w-8 invert p-1 rounded-lg"
 							/>
 
 							<input
@@ -66,7 +66,7 @@
 						<div class="flex items-center gap-2">
 							<img
 								src="/svg/currency--rupee.svg"
-								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+								class="h-8 w-8 invert p-1 rounded-lg"
 							/>
 
 							<input
@@ -78,7 +78,7 @@
 						<div class="flex items-center gap-2">
 							<img
 								src="/svg/information--filled.svg"
-								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+								class="h-8 w-8 invert p-1 rounded-lg"
 							/>
 
 							<input type="checkbox" id="ready" class="w-8 h-8">
@@ -91,11 +91,11 @@
 					<div class="flex items-end justify-end gap-4 mt-8 md:mt-0">
 						<img
 							src="/svg/share.svg"
-							class="h-8 w-8 p-1 rounded-lg"
+							class="h-8 w-8 p-1 rounded-lg dark:invert"
 						/>
 						<img
 							src="/svg/favorite.svg"
-							class="h-8 w-8 p-1 rounded-lg"
+							class="h-8 w-8 p-1 rounded-lg dark:invert"
 						/>
 					</div>
 				</div>
@@ -104,17 +104,17 @@
 			<div
 				class="flex flex-col-reverse md:flex-row justify-between gap-8"
 			>
-				<div class="md:w-[70%] flex flex-col gap-8">
-					<h1 class="font-semibold text-2xl -mb-4">
+				<div class="md:w-[70%] flex flex-col gap-8 dark:text-gray-400">
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-50 tracking-wide">
 						About the Property
 					</h1>
 					<textarea
-						class="text-lg border border-gray-400 rounded-lg p-2 min-h-[20vh]"
+						class="text-lg border border-gray-400 rounded-lg p-2 min-h-[20vh] dark:bg-gray-200"
 						placeholder="Description about the property"
 						id="description"
 					/>
 
-					<h1 class="font-semibold text-2xl -mb-4">Amenities</h1>
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">Amenities</h1>
 					<div
 						class="flex flex-col gap-2 justify-center items-center p-16 rounded-lg bg-gray-100"
 					>
@@ -122,7 +122,7 @@
 						<h1 class="text-gray-700 uppercase font-bold">List Ameneties</h1>
 					</div>
 
-					<h1 class="font-semibold text-2xl -mb-4">
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">
 						Property Specifications
 					</h1>
 					<table class="flex flex-col gap-4 w-full">
@@ -148,15 +148,15 @@
 				</button>
 			</div>
 				</div>
-				<div class="md:w-[20%] flex flex-col gap-4">
+				<div class="md:w-[20%] flex flex-col gap-4 dark:text-gray-200">
 					<h1 class="font-semibold text-2xl">Contact</h1>
 
 					<a
-						class="flex flex-row items-center border border-black rounded-lg"
+						class="flex flex-row items-center border border-black dark:border-gray-600 rounded-lg"
 					>
 						<img
 							src="/svg/phone.svg"
-							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+							class="h-10 w-10 bg-white rounded-l-lg invert p-2"
 						/>
 						<input
 							class="text-lg font-semibold text-center flex-grow h-full w-full rounded-r-lg"
@@ -166,11 +166,11 @@
 					</a>
 
 					<a
-						class="flex flex-row items-center border border-black rounded-lg"
+						class="flex flex-row items-center border border-black dark:border-gray-600 rounded-lg"
 					>
 						<img
 							src="/svg/email.svg"
-							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+							class="h-10 w-10 bg-white rounded-l-lg invert p-2"
 						/>
 						<input
 							class="text-lg font-semibold text-center flex-grow h-full w-full rounded-r-lg"
@@ -180,11 +180,11 @@
 					</a>
 
 					<a
-						class="flex flex-row items-center border border-black rounded-lg"
+						class="flex flex-row items-center border border-black dark:border-gray-600 rounded-lg"
 					>
 						<img
 							src="/svg/location--filled.svg"
-							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+							class="h-10 w-10 bg-white rounded-l-lg invert p-2"
 						/>
 						<input
 							class="text-lg font-semibold text-center flex-grow h-full w-full rounded-r-lg"
@@ -307,6 +307,11 @@ image {
 #half {
 	height: 42%;
 	width: 100%;
+}
+
+input {
+	-tw-bg-opacity: 1;
+    background-color: #e5e7eb;
 }
 
 textarea {

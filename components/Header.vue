@@ -16,7 +16,7 @@
 
 			<NuxtLink
 				to="/login"
-				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-4 py-2 rounded-lg"
+				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-3 py-1 rounded-lg"
 			>
 				Login
 			</NuxtLink>
@@ -27,6 +27,11 @@
 			>
 				Logout
 			</button>
+            <NuxtImg
+                class="h-8 w-8 cursor-pointer dark:invert"
+                src="/svg/dark.svg"
+                alt="Toggle Dark Mode"
+                @click="changeColor" />
             </nav>
 
             <Sheet>
@@ -72,6 +77,10 @@ import {
 } from '@/components/ui/sheet'
 import { database } from "~/server/firebase";
 import { getAuth, onAuthStateChanged, signOut, type Auth, } from "firebase/auth";
+
+const colorMode = useColorMode()
+const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ? 'dark' : 'light'))
+
 
 const isLoggedIn = ref(false)
 

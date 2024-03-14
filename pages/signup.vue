@@ -1,17 +1,17 @@
 <template>
 	<Header />
 
-	<main class="md:mx-20 grid grid-cols-1 md:grid-cols-2 m-4 my-12 md:my-4">
+	<main class="md:px-20 grid grid-cols-1 md:grid-cols-2 p-4 py-12 md:py-4 dark:bg-[#201c1c]">
 		<img
 			src="/photos/login_img.png"
 			class="h-full w-full object-cover rounded-3xl aspect-ratio-[3/4] rounded-r-none hidden md:block"
 		/>
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
-			<h1 class="text-4xl font-semibold">
+			<h1 class="text-4xl font-semibold dark:text-gray-200">
 				Hey! Welcome to Beacon!
 			</h1>
-			<p class="text-justify">
+			<p class="dark:text-gray-300 tracking-wide">
 				Sign up to get view our collection of properties
 			</p>
 
@@ -39,7 +39,7 @@
 				>Register</button>
 			</form>
 
-			<p class="text-right text-sm">
+			<p class="text-right text-sm dark:text-gray-300">
 				Already have an account? <a
 					href="/login"
 					class="underline grad-text underline-offset-2"

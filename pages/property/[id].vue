@@ -45,10 +45,10 @@
 					</button>
 				</div>
 				<div class="flex flex-col justify-between">
-					<div class="flex flex-col gap-4">
-						<h1 class="text-3xl font-semibold mb-2">
+					<div class="flex flex-col gap-4 dark:text-gray-300">
+						<h1 class="text-3xl font-semibold mb-2 dark:text-gray-50">
 							{{ property.title }}
-							<span class="font-light block text-lg">By <span
+							<span class="font-light block text-lg dark:text-gray-200">By <span
 									class="italic font-sans font-semibold"
 								>{{ property.author }}</span></span>
 						</h1>
@@ -56,7 +56,7 @@
 						<div class="flex items-center gap-2">
 							<img
 								src="/svg/location--filled.svg"
-								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+								class="h-8 w-8 dark:invert p-1 rounded-lg"
 							/>
 
 							<p class="text-lg">
@@ -66,7 +66,7 @@
 						<div class="flex items-center gap-2">
 							<img
 								src="/svg/currency--rupee.svg"
-								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+								class="h-8 w-8 dark:invert p-1 rounded-lg"
 							/>
 
 							<p class="text-lg">
@@ -78,7 +78,7 @@
 						<div class="flex items-center gap-2">
 							<img
 								src="/svg/information--filled.svg"
-								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+								class="h-8 w-8 dark:invert p-1 rounded-lg"
 							/>
 
 							<p>
@@ -90,11 +90,11 @@
 					<div class="flex items-end justify-end gap-4 mt-8 md:mt-0">
 						<img
 							src="/svg/share.svg"
-							class="h-8 w-8 p-1 rounded-lg"
+							class="h-8 w-8 p-1 rounded-lg dark:invert"
 						/>
 						<img
 							src="/svg/favorite.svg"
-							class="h-8 w-8 p-1 rounded-lg"
+							class="h-8 w-8 p-1 rounded-lg dark:invert"
 						/>
 					</div>
 				</div>
@@ -103,15 +103,15 @@
 			<div
 				class="flex flex-col-reverse md:flex-row justify-between gap-8"
 			>
-				<div class="md:w-[70%] flex flex-col gap-8">
-					<h1 class="font-semibold text-2xl -mb-4">
+				<div class="md:w-[70%] flex flex-col gap-8 dark:text-gray-300">
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-50 tracking-wide">
 						About the Property
 					</h1>
 					<p class="text-lg">
 						{{ property.description }}
 					</p>
 
-					<h1 class="font-semibold text-2xl -mb-4">Amenities</h1>
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">Amenities</h1>
 					<div
 						class="grid grid-cols-2 md:grid-cols-3 text-center gap-8"
 					>
@@ -120,12 +120,12 @@
 							:key="key"
 							class="flex flex-col items-center gap-2"
 						>
-							<img :src="value" class="h-12 w-12" />
+							<img :src="value" class="h-12 w-12 dark:invert" />
 							<p class="text-lg">{{ key }}</p>
 						</div>
 					</div>
 
-					<h1 class="font-semibold text-2xl -mb-4">
+					<h1 class="font-semibold text-2xl -mb-4 dark:text-gray-100">
 						Property Specifications
 					</h1>
 					<table class="mx-2">
@@ -135,16 +135,16 @@
 						</tr>
 					</table>
 				</div>
-				<div class="md:w-[20%] flex flex-col gap-4">
+				<div class="md:w-[20%] flex flex-col gap-4 dark:text-gray-200">
 					<h1 class="font-semibold text-2xl">Contact</h1>
 
 					<a
-						class="flex flex-row items-center border border-black rounded-lg"
+						class="flex flex-row items-center border border-black dark:border-gray-600 rounded-lg"
 						:href='"tel:" + property.contact'
 					>
 						<img
 							src="/svg/phone.svg"
-							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+							class="h-10 w-10 bg-white rounded-l-lg invert p-2"
 						/>
 						<h1 class="text-lg font-semibold text-center flex-grow">
 							Call Now
@@ -152,12 +152,12 @@
 					</a>
 
 					<a
-						class="flex flex-row items-center border border-black rounded-lg"
+						class="flex flex-row items-center border border-black dark:border-gray-600 rounded-lg"
 						:href='"mailto:" + property.email'
 					>
 						<img
 							src="/svg/email.svg"
-							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+							class="h-10 w-10 bg-white rounded-l-lg invert p-2"
 						/>
 						<h1 class="text-lg font-semibold text-center flex-grow">
 							Email Now
