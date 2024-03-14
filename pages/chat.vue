@@ -4,7 +4,6 @@ import { getAuth } from 'firebase/auth';
 
 const { messages, input, handleSubmit } = useChat();
 
-
 getAuth().onAuthStateChanged(function (user) {
   if (!user) {
     alert("You need to be logged in to access the AI chat")
@@ -25,17 +24,13 @@ const pfp = getAuth().currentUser?.photoURL;
       <div class="flex flex-col items-center align-bottom rounded-3xl border border-gray-600 p-8 gap-4">
         <div v-for="m in messages" class="whitespace-pre-wrap w-[60vw]">
           <div v-if="m.role === 'user'" class="flex gap-4">
-            <NuxtImg
-              :src="pfp"
-              class="h-10 w-10 bg-white rounded-lg invert p-2" />
-          <h1 class="text-3xl font-semibold text-gray-400">{{ m.content }}</h1>
+            <NuxtImg :src="pfp" class="h-10 w-10 bg-white rounded-lg invert p-2" />
+            <h1 class="text-3xl font-semibold text-gray-400">{{ m.content }}</h1>
           </div>
           <div v-else class="flex gap-4">
-            <NuxtImg
-              src="/svg/openai.svg"
-              class="h-10 w-10 bg-white rounded-lg invert p-2" />
-          
-          <p class="text-xl ml-2 text-gray-200 mx-8 mb-8">{{ m.content }}</p>
+            <NuxtImg src="/svg/mistral.svg" class="h-10 w-10 bg-white rounded-lg invert p-2" />
+
+            <p class="text-xl ml-2 text-gray-200 mx-8 mb-8">{{ m.content }}</p>
           </div>
         </div>
         <div v-if="messages.length === 0" class="text-gray-400 text-2xl">
