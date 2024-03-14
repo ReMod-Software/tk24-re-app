@@ -43,7 +43,6 @@
 
 <script setup lang="ts">
 import { FOOTER_ITEMS, SOCIALS } from "../pages/constants"
-import Separator from "./ui/separator/Separator.vue";
 </script>
 
 <style>
