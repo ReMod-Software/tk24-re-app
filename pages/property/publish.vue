@@ -4,45 +4,90 @@
 	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg">
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				<div class="aspect-[4/3] flex items-end justify-between md:justify-end p-4 gap-2 rounded-xl border border-gray-200" id="image"
+
+				<div
+					class="aspect-[4/3] flex items-end justify-between md:justify-end p-4 gap-2 rounded-xl border border-gray-200"
+					id="image"
 					:style='"background-image: url(/photos/property/1"
-						+ "/main.jpg); background-size: cover;"'>
+					+ "/main.jpg); background-size: cover;"'
+				>
 					<!--desc amenities specs -->
 
 					<button
-						class="flex gap-1 text-md rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white">
+
+						class="flex gap-1 text-md rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
+					>
+						<img
+							src="/svg/view--filled.svg"
+							class="h-6 w-6 mr-1 invert"
+						/>
 						View in 3D
 					</button>
-					<button class="flex gap-1 bg-black text-white p-2 bg-opacity-25 backdrop-blur rounded-lg">
+					<button
+						class="flex gap-1 bg-black text-white p-2 bg-opacity-25 backdrop-blur rounded-lg"
+					>
+						<img
+							src="/svg/catalog.svg"
+							class="h-6 w-6 mr-1 invert"
+						/>
 						View Images
 					</button>
 
-					<input type="file" id="choose-file" name="choose-file" accept="image/*" />
-					<label class="rounded-lg bg-opacity-60 backdrop-blur text-white bg-blue-800 h-10 p-2 hover:bg-blue-200 hover:text-blue-900" for="choose-file">Choose File</label>
+					<input
+						type="file"
+						id="choose-file"
+						name="choose-file"
+						accept="image/*"
+					/>
+					<label
+						class="rounded-lg bg-opacity-60 backdrop-blur text-white bg-blue-800 h-10 p-2 hover:bg-blue-200 hover:text-blue-900"
+						for="choose-file"
+					>Choose File</label>
 				</div>
 				<div class="flex flex-col justify-between">
 					<div class="flex flex-col gap-4">
 						<h1 class="text-3xl font-semibold mb-2">
-							<input type="text" class="w-full p-2 border border-gray-400 rounded-lg"
-								placeholder="Enter property name" id="title" />
-							<span class="font-light block text-lg">By "<span class="italic font-sans font-medium">{{
-						username }}</span>"</span>
+							<input
+								type="text"
+								class="w-full p-2 border border-gray-400 rounded-lg"
+								placeholder="Enter property name"
+								id="title"
+							/>
+							<span class="font-light block text-lg">By "<span
+									class="italic font-sans font-medium"
+								>{{ username }}</span>"</span>
 						</h1>
 
 						<div class="flex items-center gap-2">
-							<img src="/svg/location--filled.svg" class="h-8 w-8 bg-white invert p-1 rounded-lg" />
+							<img
+								src="/svg/location--filled.svg"
+								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+							/>
 
-							<input class="text-lg w-full p-2 border border-gray-400 rounded-lg" type="text"
-								placeholder="Enter property location" id="location" />
+							<input
+								class="text-lg w-full p-2 border border-gray-400 rounded-lg"
+								type="text"
+								placeholder="Enter property location"
+								id="location"
+							/>
 						</div>
 						<div class="flex items-center gap-2">
-							<img src="/svg/currency--rupee.svg" class="h-8 w-8 bg-white invert p-1 rounded-lg" />
+							<img
+								src="/svg/currency--rupee.svg"
+								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+							/>
 
-							<input class="w-full p-2 border border-gray-400 rounded-lg text-lg"
-								placeholder="Property Price" id="price" />
+							<input
+								class="w-full p-2 border border-gray-400 rounded-lg text-lg"
+								placeholder="Property Price"
+								id="price"
+							/>
 						</div>
 						<div class="flex items-center gap-2">
-							<img src="/svg/information--filled.svg" class="h-8 w-8 bg-white invert p-1 rounded-lg" />
+							<img
+								src="/svg/information--filled.svg"
+								class="h-8 w-8 bg-white invert p-1 rounded-lg"
+							/>
 
 							<input type="checkbox" id="ready" class="w-4 h-4">
 							<p>
@@ -52,23 +97,40 @@
 						</div>
 					</div>
 					<div class="flex items-end justify-end gap-4 mt-8 md:mt-0">
-						<img src="/svg/share.svg" class="h-8 w-8 p-1 rounded-lg" />
-						<img src="/svg/favorite.svg" class="h-8 w-8 p-1 rounded-lg" />
+						<img
+							src="/svg/share.svg"
+							class="h-8 w-8 p-1 rounded-lg"
+						/>
+						<img
+							src="/svg/favorite.svg"
+							class="h-8 w-8 p-1 rounded-lg"
+						/>
 					</div>
 				</div>
 			</div>
 
-			<div class="flex flex-col-reverse md:flex-row justify-between gap-8">
+			<div
+				class="flex flex-col-reverse md:flex-row justify-between gap-8"
+			>
 				<div class="md:w-[70%] flex flex-col gap-8">
 					<h1 class="font-semibold text-2xl -mb-4">
 						About the Property
 					</h1>
-					<textarea class="text-lg border border-gray-400 rounded-lg p-2 min-h-[20vh]"
-						placeholder="Description about the property" id="description" />
+					<textarea
+						class="text-lg border border-gray-400 rounded-lg p-2 min-h-[20vh]"
+						placeholder="Description about the property"
+						id="description"
+					/>
 
 					<h1 class="font-semibold text-2xl -mb-4">Amenities</h1>
-					<div class="grid grid-cols-2 md:grid-cols-3 text-center gap-8">
-						<div v-for="(value, key) in AMENITIES" :key="key" class="flex flex-col items-center gap-2">
+					<div
+						class="grid grid-cols-2 md:grid-cols-3 text-center gap-8"
+					>
+						<div
+							v-for="(value, key) in AMENITIES"
+							:key="key"
+							class="flex flex-col items-center gap-2"
+						>
 							<img :src="value" class="h-12 w-12" />
 							<p class="text-lg">{{ key }}</p>
 						</div>
@@ -78,40 +140,72 @@
 						Property Specifications
 					</h1>
 					<table class="flex flex-col gap-4">
-						<tr v-for="(value, key) in SPECS" :key="key" class="flex gap-4">
-							<td class="text-lg font-semibold w-[40%]">{{ key }}</td>
-							<input class="text-lg border border-1 rounded-lg p-2 min-w-[50%] md:min-w-[40%]" />
+						<tr
+							v-for="(value, key) in SPECS"
+							:key="key"
+							class="flex gap-4"
+						>
+							<td class="text-lg font-semibold w-[40%]">
+								{{ key }}
+							</td>
+							<input
+								class="text-lg border border-1 rounded-lg p-2 min-w-[50%] md:min-w-[40%]"
+							/>
 						</tr>
 					</table>
 				</div>
 				<div class="md:w-[20%] flex flex-col gap-4">
 					<h1 class="font-semibold text-2xl">Contact</h1>
 
-					<a class="flex flex-row items-center border border-black rounded-lg">
-						<img src="/svg/phone.svg" class="h-10 w-10 bg-white rounded-l-md invert p-2" />
-						<input class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
-							placeholder="Enter phone number" id="number" />
+					<a
+						class="flex flex-row items-center border border-black rounded-lg"
+					>
+						<img
+							src="/svg/phone.svg"
+							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+						/>
+						<input
+							class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
+							placeholder="Enter phone number"
+							id="number"
+						/>
 					</a>
 
-					<a class="flex flex-row items-center border border-black rounded-lg">
-						<img src="/svg/email.svg" class="h-10 w-10 bg-white rounded-l-md invert p-2" />
-						<input class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
-							placeholder="Enter email address" id="email" />
-
+					<a
+						class="flex flex-row items-center border border-black rounded-lg"
+					>
+						<img
+							src="/svg/email.svg"
+							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+						/>
+						<input
+							class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
+							placeholder="Enter email address"
+							id="email"
+						/>
 					</a>
 
-					<a class="flex flex-row items-center border border-black rounded-lg">
-						<img src="/svg/location--filled.svg" class="h-10 w-10 bg-white rounded-l-md invert p-2" />
-						<input class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
-							placeholder="Enter map link" id="maps" />
-
+					<a
+						class="flex flex-row items-center border border-black rounded-lg"
+					>
+						<img
+							src="/svg/location--filled.svg"
+							class="h-10 w-10 bg-white rounded-l-md invert p-2"
+						/>
+						<input
+							class="text-lg font-semibold text-center flex-grow h-full rounded-r-lg"
+							placeholder="Enter map link"
+							id="maps"
+						/>
 					</a>
 				</div>
 			</div>
 
 			<div class="flex justify-center mt-8">
 				<button
-					class="border-solid border-2 b-[#E49DDC] text-white bg-blue-500 font-semibold text-lg p-2 rounded-xl w-full" @click="publish">
+					class="border-solid border-2 b-[#E49DDC] text-white bg-blue-500 font-semibold text-lg p-2 rounded-xl w-full"
+					@click="publish"
+				>
 					PUBLISH
 				</button>
 			</div>
@@ -121,7 +215,18 @@
 </template>
 
 <script setup lang="ts">
-import { auth } from "~/server/firebase"
+import { getAuth } from 'firebase/auth';
+
+const username = ref("")
+
+getAuth().onAuthStateChanged(function(user) {
+  if (user) {
+	username.value = user.displayName
+  } else {
+    alert("You need to be logged in to view this page")
+	window.location.href = "/login"
+  }
+});
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",
@@ -158,58 +263,54 @@ const SPECS = {
 	"Address": "Port Blair, Andaman and Nicobar",
 }
 
-const username = auth.currentUser?.displayName
-
-const photo = ref('')
+const photo = ref("")
 
 onMounted(() => {
-const chooseFile = document.getElementById("choose-file");
-const imgPreview = document.getElementById("image");
+	const chooseFile = document.getElementById("choose-file")
+	const imgPreview = document.getElementById("image")
 
-chooseFile!.addEventListener("change", function () {
-  getImgData();
-});
+	chooseFile!.addEventListener("change", function() {
+		getImgData()
+	})
 
-function getImgData() {
-  const files = chooseFile!.files[0];
-  if (files) {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(files);
-    fileReader.addEventListener("load", function () {
-		photo.value = fileReader.result
-      imgPreview!.style.backgroundImage = `url(${this.result})`;
-    });
-  }
-}
-});
+	function getImgData() {
+		const files = chooseFile!.files[0]
+		if (files) {
+			const fileReader = new FileReader()
+			fileReader.readAsDataURL(files)
+			fileReader.addEventListener("load", function() {
+				photo.value = fileReader.result
+				imgPreview!.style.backgroundImage = `url(${this.result})`
+			})
+		}
+	}
+})
 
 function publish() {
 	const data = {
-		title: document.getElementById('title')!.value,
-		author: username || 'Anonymous',
-		description: document.getElementById('description')!.value,
+		title: document.getElementById("title")!.value,
+		author: username || "Anonymous",
+		description: document.getElementById("description")!.value,
 		image: photo.value,
 		date: new Date().toISOString(),
-		price: document.getElementById('price')!.value,
-		location: document.getElementById('location')!.value,
-		contact: document.getElementById('number')!.value,
-		email: document.getElementById('email')!.value,
-		ready: document.getElementById('ready')!.checked,
-		mapsLink: document.getElementById('maps')!.value,
+		price: document.getElementById("price")!.value,
+		location: document.getElementById("location")!.value,
+		contact: document.getElementById("number")!.value,
+		email: document.getElementById("email")!.value,
+		ready: document.getElementById("ready")!.checked,
+		mapsLink: document.getElementById("maps")!.value,
 	}
 
 	console.log(data)
 
 	// send data to server
-	const response = $fetch('/api/publishProperty', {
-		method: 'POST',
-		body: JSON.stringify(data)
+	const response = $fetch("/api/publishProperty", {
+		method: "POST",
+		body: JSON.stringify(data),
 	})
 
-	alert('Property Published')
+	alert("Property Published")
 }
-
-
 </script>
 
 <style>
@@ -234,17 +335,15 @@ textarea {
 }
 
 [type="file"] {
-  height: 0;  
-  width: 0;
-  overflow: hidden;
+	height: 0;
+	width: 0;
+	overflow: hidden;
 }
 [type="file"] + label {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 [type="file"] + label:hover {
-  color: #3639f4;
+	color: #3639f4;
 }
-
-
 </style>

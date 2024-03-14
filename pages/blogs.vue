@@ -68,5 +68,4 @@ const BLOG_POSTS: Array<BlogPost> = await $fetch("/api/blogs")
 	background-image: url("/photos/search_bg.webp");
 	background-size: cover;
 }
-
 </style>

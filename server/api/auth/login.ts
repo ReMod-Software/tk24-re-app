@@ -1,5 +1,4 @@
-import { signInWithEmailAndPassword } from "firebase/auth"
-import { auth } from '~/server/firebase'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 
 export default defineEventHandler(async (event) => {
 	const { email, password } = await readBody(event)
@@ -10,15 +9,15 @@ export default defineEventHandler(async (event) => {
 		})
 	}
 
-    if (auth.currentUser) {
-        return new Response("You are already signed in", {
-            status: 400,
-        })
-    }
+	if (auth.currentUser) {
+		return new Response("You are already signed in", {
+			status: 400,
+		})
+	}
 
 	try {
 		await signInWithEmailAndPassword(
-			auth,
+			getAuth(),
 			email.toString().toLowerCase(),
 			password.toString(),
 		)
@@ -29,7 +28,6 @@ export default defineEventHandler(async (event) => {
 			})
 		}
 	}
-    
 
 	return new Response("Success", {
 		headers: {

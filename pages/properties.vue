@@ -50,7 +50,6 @@
 								class="border-solid border-2 b-[#E49DDC] bg-gray-50 font-semibold text-lg p-2 rounded-lg w-full">
 								APPLY
 							</button>
-
 						</div>
 					</div>
 				</div>
@@ -115,12 +114,15 @@
 
 				<div class="flex justify-between items-center">
 					<p class="text-left text-lg md:text-2xl py-4">
-						Showing results for "<span class="italic">Latest
+						Showing results for "<span class="italic font-semibold">Latest
 							Listings</span>"
 					</p>
 
-					<NuxtLink to="/property/publish"
-						class="text-center text-blue-500 text-lg md:text-xl font-bold hover:underline">
+					<NuxtLink
+						to="/property/publish"
+						class="text-center text-blue-500 text-lg md:text-xl font-bold hover:underline"
+						v-if="isLoggedIn"
+					>
 						Post a Property
 					</NuxtLink>
 				</div>
@@ -130,6 +132,7 @@
 						class="border-solid border border-gray-300 rounded-[32px] p-4">
 						<NuxtLink :to="`/property/` + v.id">
 							<NuxtImg class="w-full rounded-t-3xl rounded-b-[34px] h-[22vh] mb-4" :src='v.image' />
+
 							<div class="px-1">
 								<div class="flex justify-between opacity-50 mb-2">
 									<p class="text-md text-gray-800">
@@ -161,12 +164,27 @@ import type { Property } from "~/server/validate"
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
 import { ref } from "vue";
+import { getAuth, type Auth, onAuthStateChanged } from "firebase/auth";
 
 const showFilters = ref(false)
 
 function toggleFilters() {
 	showFilters.value = !showFilters.value
 }
+
+const isLoggedIn = ref(false)
+
+let auth: Auth;
+onMounted(() => {
+	auth = getAuth()
+	onAuthStateChanged(auth, (user) => {
+		if (user) {
+			isLoggedIn.value = true
+		} else {
+			isLoggedIn.value = false
+		}
+	})
+})
 
 const PROPERTIES: Property[] = await $fetch("/api/properties")
 
@@ -175,6 +193,7 @@ const formatter = new Intl.NumberFormat("en-IN", {
 	currency: "INR",
 	maximumFractionDigits: 0,
 })
+
 </script>
 
 <style>

@@ -9,7 +9,8 @@ Beacon is a revolutionary real estate platform dedicated to redefining the indus
 Beacon utilizes a cutting-edge tech stack to deliver seamless performance and exceptional user experience:
 
 - Vue.js and Nuxt.js for frontend development
-- Pocketbase and Hono for backend database management
+- Firebase for backend database management
+- Fine tuned Mistral AI for chatbot assistance.
 - Node.js for server-side scripting
 - TypeScript for enhanced code readability and maintainability
 - TailwindCSS for efficient and responsive UI design

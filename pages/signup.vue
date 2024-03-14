@@ -9,14 +9,14 @@
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
 			<h1 class="text-4xl font-semibold">
-		        Hey! Welcome to Beacon!
+				Hey! Welcome to Beacon!
 			</h1>
 			<p class="text-justify">
 				Sign up to get view our collection of properties
 			</p>
 
 			<form class="flex flex-col gap-4">
-                <input
+				<input
 					placeholder="Full Name"
 					id="name"
 					class="p-4 rounded-xl border-solid border border-gray-300"
@@ -53,49 +53,28 @@
 <script setup lang="ts">
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 
 async function register() {
 	const email = document.getElementById("email") as HTMLInputElement
 	const password = document.getElementById("password") as HTMLInputElement
 	const name = document.getElementById("name") as HTMLInputElement
 
-	const res = await fetch("/api/auth/register", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			email: email.value,
-			password: password.value,
-			name: name.value
-		}),
+	const auth = getAuth()
+	await createUserWithEmailAndPassword(auth, email.value, password.value).then((userCredential) => {
+		console.log(auth.currentUser)
+
+		updateProfile(auth.currentUser!, {
+			displayName: name.value
+		}).then(() => {
+			console.log("Profile updated")
+		}).catch((error) => {
+			console.log(error)
+		})
+	}).catch((error) => {
+        alert(error.message)
 	})
-
-	alert(await res.text())
-
-	if (res.status !== 200) {
-		return
-	}
-
-	const login = await fetch("/api/auth/login", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			email: email.value,
-			password: password.value,
-		}),
-	})
-
-	if (login.status !== 200) {
-		alert(await login.text())
-		return
-	}
-
-	document.location.href = "/"
 }
-
 </script>
 
 <style>

@@ -75,7 +75,6 @@
 						</div>
 					</div>
 					<div class="flex items-end justify-end gap-4 mt-8 md:mt-0">
-						
 						<img
 							src="/svg/share.svg"
 							class="h-8 w-8 p-1 rounded-lg"
