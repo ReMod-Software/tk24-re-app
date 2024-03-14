@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getAuth } from "firebase/auth"
+import { getDatabase } from "@firebase/database"
 
 const firebaseConfig = {
 	apiKey: "AIzaSyAYjZmseIlXNXpvTl0RIvHAEvsuKsku2VE",
@@ -12,7 +12,8 @@ const firebaseConfig = {
 	databaseURL: "https://beacon-735fe-default-rtdb.firebaseio.com",
 }
 
-const firebaseApp = initializeApp(firebaseConfig)
-const auth = getAuth(firebaseApp)
+initializeApp(firebaseConfig)
 
-export { auth, firebaseApp }
+const database = getDatabase()
+
+export { firebaseConfig, database }

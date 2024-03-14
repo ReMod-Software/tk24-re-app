@@ -1,22 +1,49 @@
 <script setup lang="ts">
 import { useChat } from 'ai/vue';
- 
+import { getAuth } from 'firebase/auth';
+
 const { messages, input, handleSubmit } = useChat();
+
+
+getAuth().onAuthStateChanged(function (user) {
+  if (!user) {
+    alert("You need to be logged in to access the AI chat")
+    // window.location.href = "/login"
+  }
+})
+
 </script>
- 
+
 <template>
-  <div class="flex flex-col w-full max-w-md py-24 mx-auto stretch">
-    <div v-for="m in messages" key="m.id" class="whitespace-pre-wrap">
-      {{ m.role === 'user' ? 'User: ' : 'AI: ' }}
-      {{ m.content }}
+  <main class="bg-[#201c1c] min-h-[100vh]">
+    <Header />
+
+    <div class="flex flex-col py-2 w-full px-4 items-center pb-24">
+      <h1 class="text-4xl font-semibold text-gray-300 mb-16">AI Chat</h1>
+
+      <div class="flex flex-col items-center align-bottom rounded-3xl border border-gray-600 p-8 gap-4">
+        <div v-for="m in messages" class="whitespace-pre-wrap w-[60vw]">
+          <h1 v-if="m.role === 'user'" class="text-4xl font-semibold text-gray-400">{{ m.content }}</h1>
+          <p v-else class="text-2xl ml-2 text-gray-200 mx-8 mb-16">{{ m.content }}</p>
+        </div>
+        <div v-if="messages.length === 0" class="text-gray-400 text-2xl">
+          <h1 class="text-2xl text-gray-200 font-semibold">Here are some questions you can ask:</h1>
+          <p class="text-xl mt-4">How to list a property on Beacon?</p>
+          <p class="text-xl mt-4">Tell me more about beacon.</p>
+          <p class="text-xl mt-4">What are the motives of this platform?</p>
+          <p class="text-xl mt-4">What is the best deal in X state?</p>
+
+        </div>
+      </div>
+      <div class="flex flex-col fixed bottom-0 w-full items-center gap-2">
+        <form @submit="handleSubmit" class="flex gap-4 mb-6 rounded-xl shadow-xl w-[60%]">
+          <input class="p-4 w-full bg-gray-700 rounded-xl shadow-xl" v-model="input" placeholder="Say something..." />
+          <button class="bg-blue-700 text-blue-100 p-4 rounded-xl shadow-xl" type="submit">Send</button>
+        </form>
+        <p class="text-gray-400 text-base mb-4">
+          Please note the AI might not be able to answer all the questions correctly.
+        </p>
+      </div>
     </div>
- 
-    <form @submit="handleSubmit">
-      <input
-        class="fixed bottom-0 w-full max-w-md p-2 mb-8 border border-gray-300 rounded shadow-xl"
-        v-model="input"
-        placeholder="Say something..."
-      />
-    </form>
-  </div>
+  </main>
 </template>

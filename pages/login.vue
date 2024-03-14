@@ -8,7 +8,7 @@
 		/>
 
 		<div class="flex flex-col gap-4 justify-center md:px-20">
-			<h1 class="text-4xl font-semibold">Great to see you again!</h1>
+			<h1 class="text-3xl md:text-4xl font-semibold">Great to see you again!</h1>
 			<p class="text-justify">
 				Sign in to your account to access your saved properties,
 				preferences, and more.
@@ -35,7 +35,7 @@
 				/>
 				<button
 					class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4"
-					@click="register"
+					@click="login"
 				>Login</button>
 			</form>
 
@@ -53,33 +53,27 @@
 <script setup lang="ts">
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 
 const SIGN_IN_OPTIONS = [
 	"linkedin", "facebook", "x"
 ]
 
-async function register() {
+async function login() {
 	const email = document.getElementById("email") as HTMLInputElement
 	const password = document.getElementById("password") as HTMLInputElement
 
-	const res = await fetch("/api/auth/login", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			email: email.value,
-			password: password.value,
-		}),
-	})
-
-	if (res.status !== 200) {
-		alert(await res.text())
-		return
-	}
-
-	const data = await res.json()
-	console.log(data)
+	const auth = getAuth()
+	signInWithEmailAndPassword(auth, email.value, password.value)
+		.then((userCredential) => {
+			console.log(auth.currentUser)
+		})
+		.catch((error) => {
+			const errorCode = error.code
+			const errorMessage = error.message
+			console.log(errorCode, errorMessage)
+			alert(errorMessage)
+		})
 }
 </script>
 

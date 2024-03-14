@@ -7,7 +7,7 @@
 			About <span class="italic">Beacon</span>
 		</h1>
 
-		<p class="text-gray-600 font-serif">
+		<p class="text-gray-600 text-lg md:text-xl font-serif px-2 md:px-0">
 			At <span class="italic">Beacon</span>
 			, we are driven by a simple yet powerful mission: to revolutionize
 			the real estate experience for consumers like you. We exist because
@@ -39,7 +39,7 @@
 		>
 			<div
 				v-for="([k, v]) in Object.entries(AUTHORS)"
-				class="flex flex-col gap-2 border-gray-500 border-solid border p-4 justify-center text-center items-center rounded-xl"
+				class="flex flex-col gap-2 border-gray-400 border-solid border p-4 justify-center text-center items-center rounded-xl"
 			>
 				<img :src="v.pfp" class="h-32 w-32 rounded-full" />
 				<p class="text-center font-semibold">{{ v.name }}</p>
@@ -51,7 +51,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			<div class="flex flex-col gap-4">
 				<h1 class="font-semibold text-2xl">Wanna reach out?</h1>
-				<p>
+				<p class="text-lg md:text-xl">
 					Please fill the form and we'll try to reach out to you as
 					soon as possible.
 				</p>

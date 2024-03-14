@@ -4,6 +4,7 @@
 	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg">
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
 				<div
 					class="aspect-[4/3] flex items-end justify-between md:justify-center p-4 gap-2 rounded-xl"
 					id="image"
@@ -13,7 +14,8 @@
 					<!--desc amenities specs -->
 
 					<button
-						class="flex gap-1 rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
+
+						class="flex gap-1 text-md rounded-lg bg-gradient-to-br backdrop-blur from-[#86B5FC] to-[#E49DDC] p-2 text-white"
 					>
 						<img
 							src="/svg/view--filled.svg"
@@ -129,11 +131,11 @@
 							:key="key"
 							class="flex gap-4 justify-between w-full"
 						>
-							<td class="text-lg font-semibold w-[25%]">
+							<td class="text-lg font-semibold w-[40%]">
 								{{ key }}
 							</td>
 							<input
-								class="text-lg border border-1 rounded-lg p-2 min-w-[40%]"
+								class="text-lg border border-1 rounded-lg p-2 min-w-[50%] md:min-w-[40%]"
 							/>
 						</tr>
 					</table>
@@ -198,7 +200,18 @@
 </template>
 
 <script setup lang="ts">
-import { auth } from "~/server/firebase"
+import { getAuth } from 'firebase/auth';
+
+const username = ref("")
+
+getAuth().onAuthStateChanged(function(user) {
+  if (user) {
+	username.value = user.displayName
+  } else {
+    alert("You need to be logged in to view this page")
+	window.location.href = "/login"
+  }
+});
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",
@@ -234,8 +247,6 @@ const SPECS = {
 	"Property on Floor": "Ground",
 	"Address": "Port Blair, Andaman and Nicobar",
 }
-
-const username = auth.currentUser?.displayName
 
 const photo = ref("")
 
