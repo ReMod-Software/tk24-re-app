@@ -1,5 +1,4 @@
-import { signInWithEmailAndPassword } from "firebase/auth"
-import { auth } from "~/server/firebase"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 
 export default defineEventHandler(async (event) => {
 	const { email, password } = await readBody(event)
@@ -18,7 +17,7 @@ export default defineEventHandler(async (event) => {
 
 	try {
 		await signInWithEmailAndPassword(
-			auth,
+			getAuth(),
 			email.toString().toLowerCase(),
 			password.toString(),
 		)

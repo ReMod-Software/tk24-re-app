@@ -53,47 +53,27 @@
 <script setup lang="ts">
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue"
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 
 async function register() {
 	const email = document.getElementById("email") as HTMLInputElement
 	const password = document.getElementById("password") as HTMLInputElement
 	const name = document.getElementById("name") as HTMLInputElement
 
-	const res = await fetch("/api/auth/register", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			email: email.value,
-			password: password.value,
-			name: name.value,
-		}),
+	const auth = getAuth()
+	await createUserWithEmailAndPassword(auth, email.value, password.value).then((userCredential) => {
+		console.log(auth.currentUser)
+
+		updateProfile(auth.currentUser!, {
+			displayName: name.value
+		}).then(() => {
+			console.log("Profile updated")
+		}).catch((error) => {
+			console.log(error)
+		})
+	}).catch((error) => {
+        alert(error.message)
 	})
-
-	alert(await res.text())
-
-	if (res.status !== 200) {
-		return
-	}
-
-	const login = await fetch("/api/auth/login", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			email: email.value,
-			password: password.value,
-		}),
-	})
-
-	if (login.status !== 200) {
-		alert(await login.text())
-		return
-	}
-
-	document.location.href = "/"
 }
 </script>
 

@@ -213,7 +213,18 @@
 </template>
 
 <script setup lang="ts">
-import { auth } from "~/server/firebase"
+import { getAuth } from 'firebase/auth';
+
+const username = ref("")
+
+getAuth().onAuthStateChanged(function(user) {
+  if (user) {
+	username.value = user.displayName
+  } else {
+    alert("You need to be logged in to view this page")
+	window.location.href = "/login"
+  }
+});
 
 const AMENITIES = {
 	"Swimming Pool": "/svg/swim.svg",
@@ -249,8 +260,6 @@ const SPECS = {
 	"Property on Floor": "Ground",
 	"Address": "Port Blair, Andaman and Nicobar",
 }
-
-const username = auth.currentUser?.displayName
 
 const photo = ref("")
 

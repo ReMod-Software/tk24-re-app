@@ -126,7 +126,7 @@ const AUTHORS: Array<Author> = [
 	{
 		"name": "Sambhav Arora",
 		"pfp":
-			"https://media.discordapp.net/attachments/1208100360925741076/1208100712333185146/image.png?ex=65e20e77&is=65cf9977&hm=cb0c9c78767fbdf2d0d602f3f189186126a03c14a7470187d38c3ba37254d2f7&=&format=webp&quality=lossless&width=1052&height=1052",
+			"https://media.discordapp.net/attachments/1208100360925741076/1208100712333185146/image.png?ex=65fdbdf7&is=65eb48f7&hm=d421d05f00cab65099bb1012cf5396a7003ac87481fae90216011fffb66eff37&=&format=webp&quality=lossless&width=1052&height=1052",
 		"description":
 			"Hello! I'm a 17-year-old tech enthusiast, always curious, always exploring.",
 	},
