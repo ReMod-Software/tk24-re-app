@@ -1,5 +1,5 @@
 <template>
-	<footer class="flex flex-col p-12 bg-[#262626] gap-12 md:px-16">
+	<footer class="flex flex-col p-12 bg-[#262626] dark:bg-[#1a1515] gap-12 md:px-16">
 		<div class="flex flex-col md:flex-row justify-between gap-4">
 			<img
 				src="/branding/beacon_logo_base.png"

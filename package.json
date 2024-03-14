@@ -47,8 +47,9 @@
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {
-		"typescript": "^5.4.2",
+		"@nuxtjs/color-mode": "^3.3.2",
 		"@types/ws": "^8.5.10",
-		"prisma": "^5.11.0"
+		"prisma": "^5.11.0",
+		"typescript": "^5.4.2"
 	}
 }

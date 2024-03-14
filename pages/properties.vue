@@ -1,21 +1,21 @@
 <template>
 	<Header />
 
-	<main class="mb-16 md:mx-20 rounded-lg flex flex-col gap-4 min-h-[40rem]">
+	<main class="pb-16 md:px-20 flex flex-col gap-4 min-h-[40rem] dark:bg-[#201c1c]">
 		<div class="flex flex-row gap-2 mb-128 h-full" style="grid-template-columns: 25% 75%;">
 			<div class="hidden md:flex p-4 w-1/4 border-solid border-gray-500">
 				<div class="flex-col w-full flex">
 					<div class="flex justify-between items-center">
-						<h1 class="text-xl font-semibold text-gray-600 uppercase">
+						<h1 class="text-xl font-semibold text-gray-600 dark:text-gray-200 uppercase">
 							Filters
 						</h1>
-						<NuxtImg class="h-8 ms-2 w-8 rounded-lg bg-white" src="/svg/filter.svg"
+						<NuxtImg class="h-8 ms-2 w-8 rounded-lg dark:invert" src="/svg/filter.svg"
 							alt="Filter icon" />
 					</div>
 
 					<div class="flex-col">
-						<div class="py-2" id="box">
-							<p class="uppercase font-semibold text-xs">Type</p>
+						<div class="py-2 dark:text-gray-300" id="box">
+							<p class="uppercase font-semibold text-sm dark:text-gray-300">Type</p>
 							<input type="checkbox" id="apartment" value="Apartment">
 							<label>Apartment</label><br>
 							<input type="checkbox" id="bungalow" value="Bungalow">
@@ -23,8 +23,8 @@
 							<input type="checkbox" id="flat" value="Flat">
 							<label>Mansion</label><br>
 						</div>
-						<div class="py-2" id="box">
-							<p class="uppercase font-semibold text-xs">Size</p>
+						<div class="py-2 dark:text-gray-300" id="box">
+							<p class="uppercase font-semibold text-sm dark:text-gray-300">Size</p>
 							<input type="checkbox" id="1bhk" value="1 BHK">
 							<label for="vehicle1">1 BHK</label><br>
 							<input type="checkbox" id="2bhk" value="2 BHK">
@@ -32,22 +32,22 @@
 							<input type="checkbox" id="3bhk" value="3 BHK">
 							<label for="vehicle1">3 BHK</label><br>
 						</div>
-						<div class="py-2" id="box">
+						<div class="py-2 dark:text-gray-300" id="box">
 							<p class="uppercase font-semibold text-xs">
 								Price Range
 							</p>
 							<div class="flex flex-row justify-between">
 								<input type="number" id="min" name="min" min="0" max="1000000000"
-									class="bg-gray-100 font-serif w-[40%] p-1" step="0.01" value="0">
+									class="bg-gray-100 dark:bg-gray-700 font-serif w-[40%] p-1" step="0.01" value="0">
 								<p>-</p>
 								<input type="number" id="max" name="max" min="0" max="1000000000"
-									class="bg-gray-100 font-serif w-[40%] p-1" step="0.01" value="10000000">
+									class="bg-gray-100 dark:bg-gray-700 font-serif w-[40%] p-1" step="0.01" value="10000000">
 							</div>
 						</div>
 
 						<div class="flex justify-center">
 							<button
-								class="bg-gray-100 font-semibold text-lg p-2 rounded-lg w-full">
+								class="bg-gray-100 dark:bg-blue-800 dark:text-blue-200 font-semibold text-lg p-2 rounded-lg w-full">
 								APPLY
 							</button>
 						</div>
@@ -113,15 +113,14 @@
 							</div>
 
 				<div class="flex justify-between items-center">
-					<p class="text-left text-lg md:text-2xl py-4">
-						Showing results for "<span class="italic font-semibold">Latest
+					<p class="text-left text-lg md:text-2xl py-4 dark:text-gray-300">
+						Showing results for "<span class="italic font-semibold text-white">Latest
 							Listings</span>"
 					</p>
 
 					<NuxtLink
 						to="/property/publish"
-						class="text-center text-blue-500 text-lg md:text-xl font-bold hover:underline"
-						v-if="isLoggedIn"
+						class="text-center text-blue-500 dark:text-blue-400 text-lg md:text-xl font-bold hover:underline"
 					>
 						Post a Property
 					</NuxtLink>
@@ -129,22 +128,22 @@
 
 				<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-4">
 					<div v-for="([k, v]) in Object.entries(PROPERTIES)"
-						class="border-solid border border-gray-300 rounded-[32px] p-4">
+						class="border-solid border border-gray-300 dark:border-gray-600 rounded-[32px] p-4">
 						<NuxtLink :to="`/property/` + v.id">
 							<NuxtImg class="w-full rounded-t-3xl rounded-b-[34px] h-[22vh] mb-4" :src='v.image' />
 
 							<div class="px-1">
 								<div class="flex justify-between opacity-50 mb-2">
-									<p class="text-md text-gray-800">
+									<p class="text-md text-gray-800 dark:text-gray-100 tracking-tight font-medium leading-1">
 										{{ v.location }}
 									</p>
 								</div>
-								<h1 class="text-xl font-bold">{{ v.title }}</h1>
-								<hr class="h-[1px] my-4">
+								<h1 class="text-xl font-bold dark:text-gray-100">{{ v.title }}</h1>
+								<hr class="h-[1px] my-4 dark:border-gray-600">
 
-								<div class="flex flex-col justify-between flex-grow">
+								<div class="flex flex-col justify-between flex-grow dark:text-gray-400">
 									<p>{{ v.description }}</p>
-									<p class="text-right text-gray-500 pt-4">
+									<p class="text-right text-gray-500 dark:text-gray-200 pt-4">
 										{{ formatter.format(v.price) }}
 									</p>
 								</div>

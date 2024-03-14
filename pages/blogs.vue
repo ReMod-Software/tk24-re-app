@@ -1,11 +1,11 @@
 <template>
 	<Header />
 
-	<main class="m-4 mb-16 md:mx-40 rounded-lg flex flex-col gap-4">
-		<h1 class="text-2xl font-semibold text-black">
+	<main class="p-4 pb-16 md:px-40 flex flex-col gap-4 dark:bg-[#201c1c]">
+		<h1 class="text-2xl font-semibold text-black dark:text-gray-100">
 			Welcome to our Real Estate Insights!
 		</h1>
-		<p class="hidden md:block">
+		<p class="hidden md:block dark:text-gray-400">
 			Embark on a journey of discovery with our engaging blog, where we
 			delve into the dynamic world of real estate, offering valuable
 			insights, expert advice, and inspiring stories to guide you through
@@ -18,7 +18,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
 			<div
 				v-for="([k, v]) in Object.entries(BLOG_POSTS)"
-				class="border-solid border border-gray-300 flex flex-col rounded-3xl"
+				class="border-solid border border-gray-300 dark:border-gray-600 flex flex-col rounded-3xl"
 			>
 				<NuxtLink class="flex flex-col w-full" :to="`/blog/${v.id}`">
 					<NuxtImg
@@ -26,14 +26,14 @@
 						:src="v.imageUrl"
 						loading="lazy"
 					/>
-					<div class="px-4 mb-4">
+					<div class="px-4 mb-4 dark:text-gray-300">
 						<div class="flex justify-between opacity-50 mb-2">
 							<p class="text-sm md:text-lg">{{ v.date }}</p>
 							<div class="flex"><p class="font-semibold">{{ v.author }}</p></div>
 						</div>
 
-						<h1 class="text-xl font-semibold">{{ v.name }}</h1>
-						<hr class="h-[1px] my-2">
+						<h1 class="text-xl font-semibold dark:text-gray-200">{{ v.name }}</h1>
+						<hr class="h-[1px] my-2 dark:border-gray-600">
 
 						<p class="md:text-lg text-md">
 							{{ v.description }}
