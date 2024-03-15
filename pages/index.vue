@@ -37,21 +37,21 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in CONSUMER_FEATURES"
-					class="flex flex-col gap-4 p-6 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
+					class="flex flex-col gap-4 p-6 rounded-lg dark:bg-transparent dark:border dark:border-gray-700 hover:shadow-xl hover:shadow-gray-400 dark:hover:shadow-gray-700 transition-all"
 				>
 					<div
 						class="flex flex-col justify-between items-center gap-4"
 					>
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
-							class="h-10 w-10 md:h-16 md:w-16 dark:invert"
+							class="h-10 w-10 md:h-16 md:w-16 dark:invert opacity-80"
 						>
-						<h2 class="text-xl font-semibold text-center">
+						<h2 class="text-xl font-semibold text-center dark:text-gray-100">
 							{{ ft.name }}
 						</h2>
 					</div>
 					<hr class="border-gray-400 dark:border-gray-500">
-					<p class="dark:text-gray-400 tracking-wide">
+					<p class="dark:text-gray-400 antialiased font-sans text-md">
 						{{ ft.description }}
 					</p>
 				</div>
@@ -67,21 +67,21 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in PROVIDER_FEATURES"
-					class="flex flex-col gap-4 p-6 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
+					class="flex flex-col gap-4 p-6 rounded-xl bg-gray-100 dark:bg-transparent dark:border dark:border-gray-700 hover:shadow-xl hover:shadow-gray-400 dark:hover:shadow-gray-700 transition-all"
 				>
 					<div
 						class="flex flex-col justify-between items-center gap-4"
 					>
 						<img
 							:src='"/svg/" + ft.icon + ".svg"'
-							class="h-10 md:h-16 w-10 md:w-16 dark:invert"
+							class="h-10 md:h-16 w-10 md:w-16 dark:invert opacity-80"
 						>
-						<h2 class="text-xl font-semibold text-right">
+						<h2 class="text-xl font-semibold text-right dark:text-gray-100">
 							{{ ft.name }}
 						</h2>
 					</div>
 					<hr class="border-gray-400 dark:border-gray-500">
-					<p class="dark:text-gray-400 tracking-wide">
+					<p class="dark:text-gray-400 antialiased font-sans text-md">
 						{{ ft.description }}
 					</p>
 				</div>

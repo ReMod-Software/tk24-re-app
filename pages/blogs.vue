@@ -18,7 +18,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
 			<div
 				v-for="([k, v]) in Object.entries(BLOG_POSTS)"
-				class="flex flex-col rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
+				class="flex flex-col rounded-lg bg-gray-100 dark:bg-transparent dark:border dark:border-gray-700 hover:shadow-xl hover:shadow-gray-400 dark:hover:shadow-gray-700 transition-all"
 			>
 				<NuxtLink class="flex flex-col w-full" :to="`/blog/${v.id}`">
 					<NuxtImg
@@ -39,7 +39,7 @@
 						</h1>
 						<hr class="h-[1px] my-2 dark:border-gray-600">
 
-						<p class="md:text-lg text-md">
+						<p class="md:text-lg text-md antialiased">
 							{{ v.description }}
 						</p>
 					</div>

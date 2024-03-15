@@ -17,7 +17,7 @@
 							Filters
 						</h1>
 						<NuxtImg
-							class="h-8 ms-2 w-8 rounded-lg bg-white invert p-1 opacity-35"
+							class="h-8 ms-2 w-8 rounded-lg  p-1 opacity-60 dark:invert"
 							src="/svg/filter.svg"
 							alt="Filter icon"
 						/>
@@ -89,8 +89,7 @@
 
 						<div class="flex justify-center">
 							<button
-								class="bg-gray-100 font-semibold text-lg p-2 rounded-lg w-full"
-							>
+                                class="bg-gray-100 dark:bg-blue-800 dark:text-blue-200 font-semibold text-lg p-2 rounded-lg w-full">
 								APPLY
 							</button>
 						</div>
@@ -192,17 +191,17 @@
 						class="text-left text-lg md:text-2xl py-4 dark:text-gray-300"
 					>
 						Showing results for "<span
-							class="italic font-semibold text-white"
+							class="italic font-semibold dark:text-white"
 						>Latest Listings</span>"
 					</p>
 
 					<NuxtLink
 						to="/property/publish"
-						class="flex justify-center items-center gap-2 text-center text-black text-xl font-medium no-underline border rounded-lg border-solid border-black pr-2"
+						class="flex justify-center items-center gap-2 text-center text-black dark:text-gray-400 text-xl font-medium no-underline border rounded-lg border-solid border-black dark:border-gray-600 pr-2"
 					>
 						<img
 							src="/svg/arrow--up-right.svg"
-							class="h-8 w-8 p-1 rounded-lg"
+							class="h-8 w-8 p-1 rounded-lg dark:invert opacity-80"
 						/>
 						Post a Property
 					</NuxtLink>
@@ -213,38 +212,22 @@
 				>
 					<div
 						v-for="([k, v]) in Object.entries(PROPERTIES)"
-						class="p-4 rounded-lg bg-gray-100 hover:shadow-xl hover:shadow-gray-400 transition-all"
-					>
-						<NuxtLink :to="`/property/` + v.id">
-							<NuxtImg
-								class="w-full rounded-t-3xl rounded-b-[34px] h-[22vh] mb-4"
-								:src="v.image"
-							/>
+                        class="border-solid border border-gray-300 dark:border-gray-600 rounded-[32px] p-4 hover:shadow-xl hover:shadow-gray-400 dark:hover:shadow-gray-700 transition-all">
+					<NuxtLink :to="`/property/` + v.id">
+							<NuxtImg class="w-full rounded-t-3xl rounded-b-[34px] h-[22vh] mb-4" :src='v.image' />
 
 							<div class="px-1">
-								<div
-									class="flex justify-between opacity-50 mb-2"
-								>
-									<p
-										class="text-md text-gray-800 dark:text-gray-100 tracking-tight font-medium leading-1"
-									>
+								<div class="flex justify-between opacity-50 mb-2">
+									<p class="text-md text-gray-800 dark:text-gray-100 tracking-tight font-medium leading-1">
 										{{ v.location }}
-									</p>
+				    				</p>
 								</div>
-								<h1
-									class="text-xl font-bold dark:text-gray-100"
-								>
-									{{ v.title }}
-								</h1>
+								<h1 class="text-xl font-bold dark:text-gray-100">{{ v.title }}</h1>
 								<hr class="h-[1px] my-4 dark:border-gray-600">
 
-								<div
-									class="flex flex-col justify-between flex-grow dark:text-gray-400"
-								>
+								<div class="flex flex-col justify-between flex-grow dark:text-gray-400">
 									<p>{{ v.description }}</p>
-									<p
-										class="text-right text-gray-500 dark:text-gray-200 pt-4"
-									>
+									<p class="text-right text-gray-500 dark:text-gray-200 pt-4">
 										{{ formatter.format(v.price) }}
 									</p>
 								</div>

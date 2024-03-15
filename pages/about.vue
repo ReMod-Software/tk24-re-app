@@ -8,7 +8,7 @@
 		</h1>
 
 		<p
-			class="text-gray-600 text-lg md:text-xl font-serif px-2 md:px-0 dark:text-gray-300 tracking-wide"
+			class="text-gray-600 text-lg md:text-xl font-serif px-2 md:px-0 dark:text-gray-200 tracking-wide"
 		>
 			At <span class="italic">Beacon</span>
 			, we are driven by a simple yet powerful mission: to revolutionize
@@ -65,13 +65,13 @@
 				</p>
 				<div class="flex flex-col gap-2">
 					<div class="flex items-center gap-2">
-						<img src="/svg/email.svg" class="h-8 w-8 dark:invert" />
-						<p>contact@beacon.dev</p>
+						<img src="/svg/email.svg" class="h-8 w-8 dark:invert p-1" />
+						<a href="mailto:contact@beacon.dev" class="text-lg underline underline-offset-2">contact@beacon.dev</a>
 					</div>
 
 					<div class="flex items-center gap-2">
-						<img src="/svg/phone.svg" class="h-8 w-8 dark:invert" />
-						<p>+91 98721 31743</p>
+						<img src="/svg/phone.svg" class="h-8 w-8 dark:invert p-1" />
+						<a href="tel:+919872131743" class="text-lg underline underline-offset-2">+91 98721 31743</a>
 					</div>
 				</div>
 			</div>

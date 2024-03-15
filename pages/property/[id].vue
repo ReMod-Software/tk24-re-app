@@ -1,7 +1,7 @@
 <template>
 	<Header />
 
-	<main class="my-8 m-4 mb-16 md:mx-40 rounded-lg z-50">
+	<main class="py-8 p-4 pb-16 md:px-40 z-50  dark:bg-[#201c1c]">
 		<div
 			class="hidden absolute top-0 left-0 flex h-full w-full flex-col p-24 bg-black backdrop-blur-xl bg-opacity-65"
 			id="xr-modal"
@@ -144,8 +144,8 @@
 							:key="key"
 							class="flex flex-col items-center gap-2"
 						>
-							<img :src="value" class="h-12 w-12 dark:invert" />
-							<p class="text-lg">{{ key }}</p>
+							<img :src="value" class="h-12 w-12 dark:invert dark:opacity-80" />
+							<p class="text-lg dark:text-gray-100">{{ key }}</p>
 						</div>
 					</div>
 
@@ -189,20 +189,19 @@
 					</a>
 
 					<a
-						class="flex flex-col items-center border border-black rounded-lg"
-						href="mailto:contact@beacon.dev"
+						class="flex flex-col items-center border border-black dark:border-gray-600 rounded-lg"
+						:href="property.mapsLink"
 					>
 						<div
-							class="flex w-full h-64 rounded-t-md border border-b-black"
+							class="flex w-full h-64 rounded-t-lg border border-b-black"
 							style="
 							background-image: url('/places/screenie.png');
 							background-size: cover;
 							background-position: 50% 50%;
 						"
 						>
-							""
 						</div>
-						<div class="flex w-full justify-center items-center">
+						<div class="flex w-full justify-center items-center rounded-b-lg">
 							<img
 								src="/svg/location--filled.svg"
 								class="h-10 w-10 bg-white rounded-bl-md invert p-2"

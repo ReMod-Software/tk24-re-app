@@ -5,7 +5,7 @@
 		<div class="flex flex-col gap-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div
-					class="aspect-[4/3] flex items-end justify-between md:justify-center p-4 gap-2 rounded-xl"
+					class="aspect-[4/3] flex items-end justify-between md:justify-center p-4 gap-2 rounded-2xl dark:border dark:border-gray-600"
 					id="image"
 					:style='"background-image: url(/photos/property/1"
 					+ "/main.jpg); background-size: cover;"'
@@ -36,15 +36,15 @@
 						<h1 class="text-3xl font-semibold mb-2">
 							<input
 								type="text"
-								class="w-full p-2 border border-gray-400 rounded-lg"
+								class="w-full p-2 border border-gray-400 dark:border-gray-600 rounded-lg"
 								placeholder="Enter Property Name"
 								id="title"
 							/>
 							<span
-								class="flex mt-4 gap-5 items-center justify-center font-light text-lg"
+								class="flex mt-4 gap-5 items-center justify-center font-light text-lg dark:text-gray-200"
 							>By <input
 									type="text"
-									class="w-full p-1 border border-gray-400 rounded-lg inline-block font-normal px-2"
+									class="w-full p-1 border border-gray-400 dark:border-gray-600 rounded-lg inline-block font-normal px-2"
 									placeholder="Your Name"
 									id="title"
 								/></span>
@@ -57,7 +57,7 @@
 							/>
 
 							<input
-								class="text-lg w-full p-2 border border-gray-400 rounded-lg"
+								class="text-lg w-full p-2 border border-gray-400 dark:border-gray-600 rounded-lg"
 								type="text"
 								placeholder="Enter Property Location"
 								id="location"
@@ -70,7 +70,7 @@
 							/>
 
 							<input
-								class="w-full p-2 border border-gray-400 rounded-lg text-lg"
+								class="w-full p-2 border border-gray-400 dark:border-gray-600 rounded-lg text-lg"
 								placeholder="Property Price"
 								id="price"
 							/>
@@ -81,7 +81,7 @@
 								class="h-8 w-8 invert p-1 rounded-lg"
 							/>
 
-							<input type="checkbox" id="ready" class="w-8 h-8">
+							<input type="checkbox" id="ready" class="w-4 h-4">
 							<p>
 								Ready to
 								<span
@@ -113,7 +113,7 @@
 						About the Property
 					</h1>
 					<textarea
-						class="text-lg border border-gray-400 rounded-lg p-2 min-h-[20vh] dark:bg-gray-200"
+						class="text-lg border border-gray-400 rounded-lg p-2 min-h-[20vh] dark:bg-gray-800 dark:border-gray-600 text-gray-50"
 						placeholder="Description about the property"
 						id="description"
 					/>
@@ -122,10 +122,10 @@
 						Amenities
 					</h1>
 					<div
-						class="flex flex-col gap-2 justify-center items-center p-16 rounded-lg bg-gray-100"
+						class="flex flex-col gap-2 justify-center items-center p-16 rounded-lg bg-gray-100 dark:bg-gray-800"
 					>
-						<img src="/svg/add--filled.svg" class="h-20 w-20" />
-						<h1 class="text-gray-700 uppercase font-bold">
+						<img src="/svg/add--filled.svg" class="h-20 w-20 dark:invert" />
+						<h1 class="text-gray-700 dark:text-gray-200 uppercase font-bold">
 							List Ameneties
 						</h1>
 					</div>
@@ -143,7 +143,7 @@
 								{{ key }}
 							</td>
 							<input
-								class="text-lg border border-1 rounded-lg p-2 min-w-[50%] md:min-w-[40%]"
+								class="text-lg border border-1 dark:border-gray-600 rounded-lg p-2 min-w-[50%] md:min-w-[40%]"
 							/>
 						</tr>
 					</table>
@@ -220,17 +220,6 @@ getAuth().onAuthStateChanged(function(user) {
 		window.location.href = "/login"
 	}
 })
-
-const AMENITIES = {
-	"Swimming Pool": "/svg/swim.svg",
-	"Safety Equipments": "/svg/lifesaver.svg",
-	"24x7 Security": "/svg/security.svg",
-	"Power Backup": "/svg/battery--charging.svg",
-	"CCTV Surveillance": "/svg/video--filled.svg",
-	"Cafeteria": "/svg/cafe.svg",
-	"24x7 Water Supply": "/svg/humidity.svg",
-	"Property Staff": "/svg/help-desk.svg",
-}
 
 const SPECS = {
 	"Property Type": "Villa",
@@ -319,7 +308,16 @@ image {
 
 input {
 	-tw-bg-opacity: 1;
-	background-color: #e5e7eb;
+	background-color: #201c1c7f;
+}
+
+input::placeholder {
+  color: #97a1b0;
+  opacity: 1; /* Firefox */
+}
+
+input::-ms-input-placeholder { /* Edge 12 -18 */
+	color: #97a1b0;
 }
 
 textarea {
