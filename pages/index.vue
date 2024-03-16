@@ -20,7 +20,7 @@
 				<input
 					type="search"
 					placeholder="Search for Properties!"
-					class="border-box flex-grow p-4 rounded-l-3xl dark:bg-gray-200"
+					class="border-box flex-grow p-2 md:p-4 rounded-l-3xl dark:bg-gray-200"
 				>
 				<NuxtImg
 					src="/svg/search.svg"
@@ -34,7 +34,7 @@
 					class="font-serif italic font-semibold"
 				>consumers</span>, and their quality of place...
 			</h1>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in CONSUMER_FEATURES"
 					class="flex flex-col gap-4 p-6 rounded-lg dark:bg-transparent dark:border dark:border-gray-700 hover:shadow-xl hover:shadow-gray-400 dark:hover:shadow-gray-700 transition-all"
@@ -64,7 +64,7 @@
 					class="font-serif italic font-semibold"
 				>agents!</span>
 			</h1>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 xl:grid-cols-4">
 				<div
 					v-for="ft in PROVIDER_FEATURES"
 					class="flex flex-col gap-4 p-6 rounded-xl bg-gray-100 dark:bg-transparent dark:border dark:border-gray-700 hover:shadow-xl hover:shadow-gray-400 dark:hover:shadow-gray-700 transition-all"
@@ -97,7 +97,7 @@
 			</h1>
 
 			<div
-				class="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-[50%] place-items-center"
+				class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 md:px-0 md:w-[50%] place-items-center"
 			>
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"
@@ -140,7 +140,7 @@
 			</h1>
 
 			<div
-				class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-4 mb-4"
+				class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-8 md:gap-4 mb-4 px-8 md:px-0"
 			>
 				<div
 					class="flex flex-col grid-item w-full text-xl font-semibold uppercase gap-4"

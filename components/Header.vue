@@ -39,35 +39,36 @@
                 src="/svg/dark.svg"
                 alt="Toggle Dark Mode"
                 @click="changeColor" />
+				</nav>
 
             <Sheet>
                 <SheetTrigger class="lg:hidden">
-                    <NuxtImg class="h-8 w-8" src="/svg/menu.svg" alt="Menu" />
+                    <NuxtImg class="h-8 w-8 dark:invert" src="/svg/menu.svg" alt="Menu" />
                 </SheetTrigger>
 
-                <SheetContent class="p-4 flex flex-col rounded-s-3xl border border-l-2 border-slate-200 bg-slate-100">
+                <SheetContent class="p-4 flex flex-col rounded-s-3xl border border-l-2 border-slate-200 dark:border-gray-800 bg-slate-100 dark:bg-[#201c1c]">
 
                 <SheetHeader class="text-gray-200">
-                    <SheetTitle class="text-2xl font-semibold text-gray-800">Menu</SheetTitle>
+                    <SheetTitle class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Menu</SheetTitle>
                 </SheetHeader>
 
                         <div class="flex flex-col gap-4 py-8">
-                            <NuxtLink v-for="header in HEADER_NAV" class="flex items-center gap-2 text-left rounded-3xl text-xl font-medium hover:underline p-3 bg-slate-200" :to='`/${header.content}`'>
-                                <img class="h-12 w-12 p-1" :src="header.image" :alt="header.content"  />
+                            <NuxtLink v-for="header in HEADER_NAV" class="flex items-center gap-2 text-left rounded-3xl text-xl hover:underline p-3 bg-slate-200 dark:bg-gray-800 dark:text-gray-200 font-semibold" :to='`/${header.content}`'>
+                                <img class="h-12 w-12 p-1 opacity-70 dark:invert" :src="header.image" :alt="header.content"  />
                                 {{ header.content }}
 							</NuxtLink>
 
-							<NuxtLink class="flex items-center gap-2 text-left rounded-3xl text-xl font-medium hover:underline p-3 pl-6 bg-slate-200" to="/login">
+							<NuxtLink v-if="isLoggedIn" class="text-left rounded-3xl text-xl pl-6 hover:underline p-4 bg-slate-200 dark:bg-gray-800 dark:text-gray-200 font-semibold" @click="logout">
+                                Logout
+							</NuxtLink>
+
+							<NuxtLink v-else class="text-left rounded-3xl text-xl hover:underline p-4 pl-6 bg-slate-200 dark:bg-gray-800 dark:text-gray-200 font-semibold" to="/login">
                                 Login
 							</NuxtLink>
 
-							<NuxtLink v-if="isLoggedIn" class="flex items-center gap-2 text-left rounded-3xl text-xl font-medium pl-6 hover:underline p-3 bg-slate-200" @click="logout">
-                                Logout
-							</NuxtLink>
                         </div>
                 </SheetContent>
             </Sheet>
-        </nav>
     </header>
 </template>
   
@@ -107,8 +108,10 @@ onMounted(() => {
 const logout = async () => {
 	signOut(auth).then(() => {
 		console.log("Logged out")
+		alert("Logged out successfully")
 	}).catch((error) => {
 		console.log(error)
+		alert("An error occurred")
 	})
 }
 </script>
