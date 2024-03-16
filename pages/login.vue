@@ -43,10 +43,10 @@
 					id="password"
 					class="p-4 rounded-xl border-solid border border-gray-300"
 				/>
-				<button
-					class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4"
+				<a
+				    class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4 cursor-pointer text-center"
 					@click="login"
-				>Login</button>
+				>Login</a>
 			</form>
 
 			<p class="text-right text-sm dark:text-gray-300">
@@ -79,12 +79,10 @@ async function login() {
 	signInWithEmailAndPassword(auth, email.value, password.value)
 		.then((userCredential) => {
 			console.log(auth.currentUser)
+			alert("Logged in successfully")
 		})
 		.catch((error) => {
-			const errorCode = error.code
-			const errorMessage = error.message
-			console.log(errorCode, errorMessage)
-			alert(errorMessage)
+			alert(error.message)
 		})
 }
 </script>

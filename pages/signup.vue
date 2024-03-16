@@ -35,10 +35,10 @@
 					id="password"
 					class="p-4 rounded-xl border-solid border border-gray-300"
 				/>
-				<button
-					class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4"
+				<a
+				    class="text-white rounded-lg uppercase font-semibold bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] p-4 cursor-pointer text-center"
 					@click="register"
-				>Register</button>
+				>Register</a>
 			</form>
 
 			<p class="text-right text-sm dark:text-gray-300">
@@ -75,8 +75,10 @@ async function register() {
 				displayName: name.value,
 			}).then(() => {
 				console.log("Profile updated")
+				alert("Registered successfully")
 			}).catch((error) => {
 				console.log(error)
+				alert(error.message)
 			})
 		}).catch((error) => {
 			alert(error.message)

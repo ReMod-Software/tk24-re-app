@@ -19,12 +19,6 @@
 				{{ item.content }}
 			</NuxtLink>
 
-			<NuxtLink
-				to="/login"
-				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] dark:from-[#de74d1] dark:to-[#3183ff] px-3 py-1 rounded-lg"
-			>
-				Login
-			</NuxtLink>
 			<button
 				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] px-4 py-2 rounded-lg"
 				v-if="isLoggedIn"
@@ -32,6 +26,14 @@
 			>
 				Logout
 			</button>
+
+			<NuxtLink
+			    v-else
+				to="/login"
+				class="text-2xl font-semibold text-center no-underline hover:underline font-serif text-white bg-gradient-to-br from-[#E49DDC] to-[#86B5FC] dark:from-[#de74d1] dark:to-[#3183ff] px-3 py-1 rounded-lg"
+			>
+				Login
+			</NuxtLink>
             <NuxtImg
                 class="h-8 w-8 cursor-pointer dark:invert"
                 src="/svg/dark.svg"
@@ -78,13 +80,15 @@ import {
     SheetTrigger,
 	SheetHeader
 } from '@/components/ui/sheet'
-import { database } from "~/server/firebase";
+import { firebaseConfig } from "~/server/firebase";
+import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged, signOut, type Auth, } from "firebase/auth";
 import { ref } from "vue";
 
 const colorMode = useColorMode()
 const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ? 'dark' : 'light'))
 
+initializeApp(firebaseConfig)
 
 const isLoggedIn = ref(false)
 

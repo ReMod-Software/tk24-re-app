@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { useChat } from "ai/vue"
 import { getAuth } from "firebase/auth"
+import { getApp, initializeApp } from "firebase/app";
+import { firebaseConfig } from "~/server/firebase";
+
+initializeApp(firebaseConfig)
 
 const { messages, input, handleSubmit } = useChat()
 
-getAuth().onAuthStateChanged(function(user) {
-	// if (!user) {
-	//   alert("You need to be logged in to access the AI chat")
-	//   window.location.href = "/login"
-	// }
+getAuth().onAuthStateChanged(function (user) {
+  // if (!user) {
+  //   alert("You need to be logged in to access the AI chat")
+  //   window.location.href = "/login"
+  // }
 })
 const pfp = getAuth().currentUser?.photoURL
 </script>
@@ -42,7 +46,8 @@ const pfp = getAuth().currentUser?.photoURL
       </div>
       <div class="flex flex-col fixed bottom-0 w-full items-center gap-2">
         <form @submit="handleSubmit" class="flex gap-4 mb-6 rounded-xl w-[60%]">
-          <input class="p-4 w-full dark:bg-gray-700 rounded-xl shadow-xl" v-model="input" placeholder="Say something..." />
+          <input class="p-4 w-full dark:bg-gray-700 rounded-xl shadow-xl" v-model="input"
+            placeholder="Say something..." />
           <button class="bg-blue-700 text-blue-100 p-4 rounded-xl shadow-xl" type="submit">Send</button>
         </form>
         <p class="text-gray-400 text-base mb-4">
@@ -55,6 +60,6 @@ const pfp = getAuth().currentUser?.photoURL
 
 <style>
 #chat-btn {
-	display: none;
+  display: none;
 }
 </style>

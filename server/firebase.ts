@@ -12,8 +12,4 @@ const firebaseConfig = {
 	databaseURL: "https://beacon-735fe-default-rtdb.firebaseio.com",
 }
 
-initializeApp(firebaseConfig)
-
-const database = getDatabase()
-
-export { database, firebaseConfig }
+export { firebaseConfig }
